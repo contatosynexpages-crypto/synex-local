@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synex — Automação para comércio local</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #17130F;
+    --bg-soft: #1F1A15;
+    --panel: #F2EBDD;
+    --panel-line: #E4D9C2;
+    --ink: #F5EFE3;
+    --ink-soft: #C8BEAC;
+    --ink-on-panel: #241D14;
+    --ink-on-panel-soft: #6B6152;
+    --accent: #E8283A;
+    --accent-2: #FFB020;
+    --line: rgba(245,239,227,0.12);
+    --radius: 14px;
+    --ok: #7FC98C;
+    --err: #FF8B7A;
+  }
+  [data-theme="dark"], :root:not([data-theme="light"]) {
+    --bg: #17130F; --bg-soft: #1F1A15; --panel: #F2EBDD; --panel-line: #E4D9C2;
+    --ink: #F5EFE3; --ink-soft: #C8BEAC; --ink-on-panel: #241D14; --ink-on-panel-soft: #6B6152;
+    --accent: #E8283A; --accent-2: #FFB020; --line: rgba(245,239,227,0.12);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand-word {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .stripe {
+    height: 6px;
+    background: repeating-linear-gradient(90deg, var(--accent) 0 28px, var(--accent-2) 28px 56px);
+  }
+
+  header.top {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(23,19,15,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .top-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1080px; margin: 0 auto;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .brand-word { font-size: 19px; color: var(--ink); }
+  .brand-word span { color: var(--accent); }
+  .top-tag { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  .top-actions { display: flex; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 14.5px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-accent { background: var(--accent); color: #FDEDEF; }
+  .btn-accent:hover { background: #FF3244; }
+  .btn-outline {
+    background: transparent; color: var(--ink); border-color: var(--line);
+  }
+  .btn-outline:hover { background: rgba(245,239,227,0.06); }
+  .btn-dark { background: var(--ink-on-panel); color: var(--panel); }
+  .btn-dark:hover { background: #382C1E; }
+  .btn-sm { padding: 9px 16px; font-size: 13.5px; }
+  .btn:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+  .hero { padding: 76px 0 64px; }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 4.6vw, 50px);
+    line-height: 1.08;
+  }
+  .hero p.lede {
+    font-size: 18px; color: var(--ink-soft); max-width: 46ch; margin: 20px 0 30px;
+  }
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .hero-note { font-size: 13.5px; color: var(--ink-soft); margin-top: 18px; }
+
+  .phone {
+    background: #0E0C09;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 14px;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .phone-screen {
+    background: #0B141A;
+    border-radius: 18px;
+    padding: 16px 12px 14px;
+    min-height: 380px;
+    display: flex; flex-direction: column;
+  }
+  .phone-head {
+    display: flex; align-items: center; gap: 10px;
+    padding-bottom: 12px; margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .phone-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #fff; font-family: 'Space Grotesk', sans-serif;
+    flex-shrink: 0;
+  }
+  .phone-name { font-size: 13.5px; color: #EFEFEF; font-weight: 600; }
+  .phone-status { font-size: 11px; color: #7FC98C; }
+  .bubble { max-width: 78%; padding: 9px 12px; border-radius: 14px; font-size: 13px; margin-bottom: 10px; line-height: 1.45; }
+  .bubble.in { background: #1F2C33; color: #E9EDEE; border-bottom-left-radius: 4px; }
+  .bubble.out { background: var(--accent); color: #FDEDEF; margin-left: auto; border-bottom-right-radius: 4px; }
+  .bubble .time { display: block; font-size: 10px; opacity: 0.65; margin-top: 4px; }
+  .typing { display: flex; gap: 4px; padding: 9px 12px; background: #1F2C33; border-radius: 14px; width: fit-content; border-bottom-left-radius: 4px; }
+  .typing span { width: 5px; height: 5px; border-radius: 50%; background: #8FA0A6; opacity: 0.6; }
+
+  .panel-section { background: var(--panel); color: var(--ink-on-panel); padding: 68px 0; }
+  .panel-section h2 { color: var(--ink-on-panel); }
+  .section-head { max-width: 56ch; margin-bottom: 40px; }
+  .section-head h2 { font-size: clamp(26px, 3.2vw, 34px); }
+  .section-head p { font-size: 16px; color: var(--ink-on-panel-soft); margin-top: 12px; }
+
+  .pain-rows { display: grid; gap: 0; border-top: 1px solid var(--panel-line); }
+  .pain-row { display: grid; grid-template-columns: 40px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--panel-line); align-items: flex-start; }
+  .pain-row svg { width: 22px; height: 22px; color: var(--accent); margin-top: 3px; }
+  .pain-row h3 { font-size: 16.5px; font-weight: 600; }
+  .pain-row p { margin: 4px 0 0; font-size: 14.5px; color: var(--ink-on-panel-soft); }
+
+  .dark-section { padding: 72px 0; }
+  .segment-tabs { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+  .segment-tab {
+    padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line);
+    background: transparent; color: var(--ink-soft);
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13.5px;
+    cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .segment-tab.active { background: var(--accent); color: #FDEDEF; border-color: var(--accent); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 28px; }
+  .services-grid.is-hidden { display: none; }
+  .svc-card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px 24px; border-top: 3px solid var(--accent); }
+  .svc-card:nth-child(2n) { border-top-color: var(--accent-2); }
+  .svc-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(232,40,58,0.14); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .svc-card:nth-child(2n) .svc-icon { background: rgba(255,176,32,0.14); }
+  .svc-icon svg { width: 20px; height: 20px; color: var(--accent); }
+  .svc-card:nth-child(2n) .svc-icon svg { color: var(--accent-2); }
+  .svc-card h3 { font-size: 17px; margin-bottom: 8px; }
+  .svc-card p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 16px; }
+  .svc-link { font-size: 13.5px; font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: none; border: none; cursor: pointer; padding: 0; font-family: inherit; }
+  .svc-card:nth-child(2n) .svc-link { color: var(--accent-2); }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 40px; }
+  .step { position: relative; padding: 0 20px 0 0; }
+  .step:not(:last-child)::after { content: ""; position: absolute; top: 17px; left: calc(100% - 10px); width: calc(100% - 10px); border-top: 1px dashed var(--panel-line); }
+  .step-num { width: 34px; height: 34px; border-radius: 50%; background: var(--ink-on-panel); color: var(--panel); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 1; }
+  .step h3 { font-size: 15.5px; margin-bottom: 6px; }
+  .step p { font-size: 13.5px; color: var(--ink-on-panel-soft); margin: 0; }
+
+  .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 72px 0; }
+  .trust h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 16px; }
+  .trust p { color: var(--ink-soft); font-size: 15.5px; max-width: 48ch; }
+  .trust-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .stat b { font-family: 'Space Grotesk', sans-serif; font-size: 26px; display: block; color: var(--accent-2); }
+  .stat span { font-size: 13px; color: var(--ink-soft); }
+
+  .form-section { padding: 76px 0; }
+  .form-wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: flex-start; }
+  .form-wrap h2 { font-size: clamp(26px, 3.2vw, 34px); }
+  .form-wrap .form-copy p { color: var(--ink-soft); font-size: 15.5px; margin-top: 14px; max-width: 40ch; }
+  .form-copy ul { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 12px; }
+  .form-copy li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--ink-soft); }
+  .form-copy li svg { width: 16px; height: 16px; color: var(--accent-2); flex-shrink: 0; margin-top: 3px; }
+
+  .lead-card { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px; padding: 32px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 7px; }
+  .field input, .field select, .field textarea {
+    width: 100%; background: #14100C; border: 1px solid var(--line); color: var(--ink);
+    border-radius: 10px; padding: 11px 13px; font-size: 14.5px; font-family: 'Inter', sans-serif;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--accent-2); outline-offset: 1px; }
+  .field textarea { resize: vertical; min-height: 74px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field-error { display: none; font-size: 12.5px; color: var(--err); margin-top: 6px; }
+  .field.has-error input, .field.has-error select { border-color: var(--err); }
+  .field.has-error .field-error { display: block; }
+  .lead-submit { width: 100%; justify-content: center; margin-top: 6px; }
+  .lead-status { font-size: 13px; margin-top: 12px; display: none; }
+  .lead-status.show { display: block; }
+  .lead-status.ok { color: var(--ok); }
+  .lead-status.err { color: var(--err); }
+
+  .cta-final { text-align: left; }
+  .cta-final .inner { background: linear-gradient(135deg, #201410 0%, #17130F 100%); border: 1px solid var(--line); border-radius: 20px; padding: 52px 44px; display: grid; grid-template-columns: 1.2fr auto; gap: 30px; align-items: center; }
+  .cta-final h2 { font-size: clamp(24px, 3.2vw, 32px); margin-bottom: 10px; }
+  .cta-final p { color: var(--ink-soft); font-size: 15.5px; margin: 0; max-width: 42ch; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 40px; }
+  .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+  .footer-inner .brand-word { font-size: 16px; }
+  footer .fine { font-size: 12.5px; color: var(--ink-soft); }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .phone { margin-top: 20px; }
+    .trust { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+    .step:nth-child(2)::after { display: none; }
+    .cta-final .inner { grid-template-columns: 1fr; text-align: left; }
+    .form-wrap { grid-template-columns: 1fr; }
+    .field-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .steps { grid-template-columns: 1fr; }
+    .step::after { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+  }
+
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .fade-up.d1 { animation-delay: 0.08s; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div>
+      <p class="brand-word">Synex<span>·</span>Local</p>
+      <p class="top-tag">Automação para comércio de Itanhaém e Peruíbe</p>
+    </div>
+    <div class="top-actions">
+      <a class="btn btn-outline btn-sm" href="#contato">Fazer diagnóstico</a>
+      <a class="btn btn-accent btn-sm" href="https://wa.me/5513988811950?text=Oi!%20Vi%20o%20site%20da%20Synex%20Local%20e%20queria%20entender%20como%20funciona%20pro%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="fade-up">
+      <h1>Enquanto sua loja dorme, seu cliente já foi comprar em outro lugar.</h1>
+      <p class="lede">A gente monta o atendimento, a agenda e a recompra do seu comércio pra funcionar sozinho — no WhatsApp, com a cara do seu negócio.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-accent" href="#contato">Fazer diagnóstico gratuito</a>
+        <a class="btn btn-outline" href="#servicos">Ver o que fazemos</a>
+      </div>
+      <p class="hero-note">Diagnóstico de 15 minutos, sem compromisso. Atendimento presencial na região.</p>
+    </div>
+    <div class="fade-up d1">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-head">
+            <div class="phone-avatar">RS</div>
+            <div>
+              <div class="phone-name">Restaurante Sabor da Praia</div>
+              <div class="phone-status">online</div>
+            </div>
+          </div>
+          <div class="bubble in">Oi, vocês tão abertos? Que horas fecha hoje?<span class="time">22:47</span></div>
+          <div class="bubble out">Abertos sim! Hoje fechamos às 23h30. Quer ver o cardápio ou já fazer o pedido por aqui? 🍽️<span class="time">22:47</span></div>
+          <div class="bubble in">Quero pedir uma marmita de peixe<span class="time">22:48</span></div>
+          <div class="typing"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<section class="panel-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Onde o comércio local perde cliente sem perceber</h2>
+      <p>Não é falta de qualidade. É o momento em que ninguém está olhando.</p>
+    </div>
+    <div class="pain-rows">
+      <div class="pain-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><h3>Mensagem chega fora do horário e some no meio das conversas</h3><p>O cliente pergunta às 22h, ninguém responde, e de manhã já foi comprar em outro lugar.</p></div>
+      </div>
+      <div class="pain-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <div><h3>Cliente esquece o horário marcado e não avisa</h3><p>Sem lembrete automático, cada furo de agenda é tempo parado que não volta.</p></div>
+      </div>
+      <div class="pain-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 11-3-6.2"/><path d="M20 4v5h-5"/></svg>
+        <div><h3>Cliente compra uma vez e some</h3><p>Sem um toque de "sentimos sua falta", a recompra depende só da sorte.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>O que a gente monta pro seu negócio</h2>
+      <p>Cada serviço resolve um ponto onde você hoje está perdendo movimento. Escolha o segmento, um serviço no formulário abaixo, ou peça o combo completo.</p>
+    </div>
+    <div class="segment-tabs">
+      <button type="button" class="segment-tab active" id="tab-comercio" onclick="mostrarSegmento('comercio')">Comércio local</button>
+      <button type="button" class="segment-tab" id="tab-veiculos" onclick="mostrarSegmento('veiculos')">Revenda de veículos</button>
+    </div>
+    <div class="services-grid" id="services-comercio">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.56L3 21l1.94-5.6A8.5 8.5 0 1121 11.5z"/></svg></div>
+        <h3>Atendimento no WhatsApp</h3>
+        <p>Bot com IA responde pedido, dúvida e horário na hora, 24h — sem parecer robô engessado.</p>
+        <button class="svc-link" data-service="Atendimento no WhatsApp" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg></div>
+        <h3>Agendamento com lembrete</h3>
+        <p>Cliente marca sozinho e recebe lembrete automático antes do horário. Menos furo, mais cadeira ocupada.</p>
+        <button class="svc-link" data-service="Agendamento com lembrete" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Cardápio digital com pedido</h3>
+        <p>Cliente escolhe, monta o pedido e paga direto pelo WhatsApp. Sem app, sem taxa de marketplace.</p>
+        <button class="svc-link" data-service="Cardápio digital com pedido" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg></div>
+        <h3>Página + anúncio pra região</h3>
+        <p>Página de vendas e campanha no Instagram/Facebook mirando quem mora perto do seu negócio.</p>
+        <button class="svc-link" data-service="Página + anúncio pra região" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 8.6a5.5 5.5 0 00-9.4-3.9L12 5.3l-.6-.6A5.5 5.5 0 002 8.6c0 6 10 11.4 10 11.4s10-5.4 10-11.4z"/></svg></div>
+        <h3>Fidelização automática</h3>
+        <p>Mensagem de "faz tempo que você não vem" e cupom de aniversário disparados sem ninguém lembrar.</p>
+        <button class="svc-link" data-service="Fidelização automática" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+    </div>
+
+    <div class="services-grid is-hidden" id="services-veiculos">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.56L3 21l1.94-5.6A8.5 8.5 0 1121 11.5z"/></svg></div>
+        <h3>Qualificação de lead no WhatsApp</h3>
+        <p>Bot pergunta modelo, forma de pagamento e se tem carro na troca — só chega no vendedor quem tá quente.</p>
+        <button class="svc-link" data-service="Qualificação de lead no WhatsApp" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg></div>
+        <h3>Agendamento de test-drive</h3>
+        <p>Cliente marca sozinho e recebe lembrete. Vendedor não fica esperando quem esquece de aparecer.</p>
+        <button class="svc-link" data-service="Agendamento de test-drive" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Catálogo com atualização automática</h3>
+        <p>"Chegou carro novo no seu perfil" enviado sozinho pra quem já demonstrou interesse em modelo parecido.</p>
+        <button class="svc-link" data-service="Catálogo com atualização automática" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg></div>
+        <h3>Página + anúncio segmentado</h3>
+        <p>Campanha mirando quem busca carro na região, com o lead caindo direto no bot de qualificação.</p>
+        <button class="svc-link" data-service="Página + anúncio segmentado (veículos)" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 11-3-6.2"/><path d="M20 4v5h-5"/></svg></div>
+        <h3>Follow-up de proposta parada</h3>
+        <p>Cliente que simulou e sumiu recebe um toque automático em poucos dias — "ainda tá pensando no Onix?".</p>
+        <button class="svc-link" data-service="Follow-up de proposta parada" onclick="preencherServico(this)">Quero esse →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel-section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Como funciona</h2>
+      <p>Do primeiro papo até o fluxo rodando sozinho.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Conversa de 15 minutos</h3><p>Entendemos o negócio e onde você mais perde cliente hoje.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Montagem do fluxo</h3><p>Configuramos bot, agenda ou cardápio com a cara do seu negócio.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Teste e ajuste</h3><p>Rodamos por alguns dias e afinamos as respostas com você.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Acompanhamento</h3><p>Mensalidade cobre manutenção e ajustes conforme o movimento muda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="wrap trust">
+    <div>
+      <h2>Feito por quem é da região</h2>
+      <p>A Synex é de Itanhaém/Peruíbe. A gente senta com você, entende o movimento do seu comércio e ajusta o fluxo até fazer sentido pro seu dia a dia — não é um sistema genérico de fora.</p>
+    </div>
+    <div class="trust-stats">
+      <div class="stat"><b>24h</b><span>bot respondendo mesmo com a loja fechada</span></div>
+      <div class="stat"><b>0 app</b><span>tudo roda dentro do WhatsApp que o cliente já usa</span></div>
+      <div class="stat"><b>1 fluxo</b><span>configurado pro jeito que seu negócio já funciona</span></div>
+      <div class="stat"><b>Local</b><span>suporte presencial, sem depender de call center</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="contato">
+  <div class="wrap form-wrap">
+    <div class="form-copy fade-up">
+      <h2>Peça seu diagnóstico gratuito</h2>
+      <p>Preenche os dados do seu negócio. A gente chama você no WhatsApp com uma ideia concreta pro seu caso — sem enrolação.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>Resposta em até 1 dia útil</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>Sem custo pra conversar e entender seu caso</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>Atendimento presencial em Itanhaém/Peruíbe</li>
+      </ul>
+    </div>
+
+    <form class="lead-card" id="leadForm" novalidate>
+      <div class="field" id="f-nome">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar">
+        <span class="field-error">Digite seu nome.</span>
+      </div>
+      <div class="field-row">
+        <div class="field" id="f-negocio">
+          <label for="negocio">Nome do negócio</label>
+          <input type="text" id="negocio" name="negocio" placeholder="Ex: Restaurante Sabor da Praia">
+          <span class="field-error">Digite o nome do negócio.</span>
+        </div>
+        <div class="field" id="f-tipo">
+          <label for="tipo">Tipo de negócio</label>
+          <select id="tipo" name="tipo">
+            <option value="">Selecione</option>
+            <option>Restaurante ou lanchonete</option>
+            <option>Salão ou clínica de estética</option>
+            <option>Consultório ou clínica</option>
+            <option>Petshop</option>
+            <option>Loja física</option>
+            <option>Revenda de veículos</option>
+            <option>Outro</option>
+          </select>
+          <span class="field-error">Selecione o tipo de negócio.</span>
+        </div>
+      </div>
+      <div class="field" id="f-servico">
+        <label for="servico">Serviço de interesse</label>
+        <select id="servico" name="servico">
+          <option value="">Selecione</option>
+          <optgroup label="Comércio local">
+            <option>Atendimento no WhatsApp</option>
+            <option>Agendamento com lembrete</option>
+            <option>Cardápio digital com pedido</option>
+            <option>Página + anúncio pra região</option>
+            <option>Fidelização automática</option>
+          </optgroup>
+          <optgroup label="Revenda de veículos">
+            <option>Qualificação de lead no WhatsApp</option>
+            <option>Agendamento de test-drive</option>
+            <option>Catálogo com atualização automática</option>
+            <option>Página + anúncio segmentado (veículos)</option>
+            <option>Follow-up de proposta parada</option>
+          </optgroup>
+          <option>Quero ver o combo completo</option>
+        </select>
+        <span class="field-error">Selecione o serviço que te interessa.</span>
+      </div>
+      <div class="field" id="f-whats">
+        <label for="whats">WhatsApp pra contato</label>
+        <input type="tel" id="whats" name="whats" placeholder="(13) 99999-9999">
+        <span class="field-error">Digite um WhatsApp válido.</span>
+      </div>
+      <div class="field">
+        <label for="msg">Conte um pouco do seu negócio (opcional)</label>
+        <textarea id="msg" name="msg" placeholder="Ex: tenho um salão e perco muito horário marcado"></textarea>
+      </div>
+      <button type="submit" class="btn btn-accent lead-submit" id="leadSubmit">Enviar e chamar no WhatsApp</button>
+      <p class="lead-status" id="leadStatus"></p>
+    </form>
+  </div>
+</section>
+
+<section class="dark-section cta-final">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <h2>Prefere ir direto?</h2>
+        <p>Manda uma mensagem contando o que você vende — a gente responde com uma ideia concreta pro seu caso.</p>
+      </div>
+      <a class="btn btn-dark" href="https://wa.me/5513988811950?text=Oi!%20Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20do%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Falar no WhatsApp agora</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <p class="brand-word">Synex<span>·</span>Local</p>
+      <p class="fine">Itanhaém / Peruíbe — SP</p>
+    </div>
+    <p class="fine">© 2026 Synex. Automação de atendimento pra comércio local.</p>
+  </div>
+</footer>
+
+<script>
+function mostrarSegmento(seg) {
+  var comercio = document.getElementById('services-comercio');
+  var veiculos = document.getElementById('services-veiculos');
+  var tabComercio = document.getElementById('tab-comercio');
+  var tabVeiculos = document.getElementById('tab-veiculos');
+  if (seg === 'veiculos') {
+    comercio.classList.add('is-hidden');
+    veiculos.classList.remove('is-hidden');
+    tabVeiculos.classList.add('active');
+    tabComercio.classList.remove('active');
+  } else {
+    veiculos.classList.add('is-hidden');
+    comercio.classList.remove('is-hidden');
+    tabComercio.classList.add('active');
+    tabVeiculos.classList.remove('active');
+  }
+}
+
+function preencherServico(btn) {
+  var val = btn.getAttribute('data-service');
+  var sel = document.getElementById('servico');
+  sel.value = val;
+  document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('nome').focus({ preventScroll: true });
+}
+
+function clearError(fieldId) {
+  var el = document.getElementById(fieldId);
+  if (el) el.classList.remove('has-error');
+}
+
+function setError(fieldId) {
+  var el = document.getElementById(fieldId);
+  if (el) el.classList.add('has-error');
+}
+
+['nome','negocio','tipo','servico','whats'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', function () { clearError('f-' + id); });
+});
+
+document.getElementById('leadForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  var nome = document.getElementById('nome').value.trim();
+  var negocio = document.getElementById('negocio').value.trim();
+  var tipo = document.getElementById('tipo').value;
+  var servico = document.getElementById('servico').value;
+  var whats = document.getElementById('whats').value.trim();
+  var msg = document.getElementById('msg').value.trim();
+
+  var valid = true;
+  if (!nome) { setError('f-nome'); valid = false; } else { clearError('f-nome'); }
+  if (!negocio) { setError('f-negocio'); valid = false; } else { clearError('f-negocio'); }
+  if (!tipo) { setError('f-tipo'); valid = false; } else { clearError('f-tipo'); }
+  if (!servico) { setError('f-servico'); valid = false; } else { clearError('f-servico'); }
+  var digits = whats.replace(/\D/g, '');
+  if (digits.length < 10) { setError('f-whats'); valid = false; } else { clearError('f-whats'); }
+
+  if (!valid) return;
+
+  var submitBtn = document.getElementById('leadSubmit');
+  var status = document.getElementById('leadStatus');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+
+  var lead = {
+    nome: nome, negocio: negocio, tipo: tipo, servico: servico,
+    whats: whats, msg: msg, criadoEm: new Date().toISOString()
+  };
+
+  try {
+    var db = await window.claude.use('db');
+    if (db) {
+      var id = 'lead_' + Date.now();
+      await db.doc('leads/' + id).set(lead);
+    }
+  } catch (err) {}
+
+  var texto = 'Oi! Meu nome é ' + nome + ', do ' + negocio + ' (' + tipo + '). ' +
+    'Tenho interesse em: ' + servico + '.' + (msg ? ' Detalhes: ' + msg : '') +
+    ' Meu WhatsApp: ' + whats;
+  var url = 'https://wa.me/5513988811950?text=' + encodeURIComponent(texto);
+
+  status.textContent = 'Recebemos seus dados. Abrindo o WhatsApp...';
+  status.className = 'lead-status show ok';
+  window.open(url, '_blank', 'noopener');
+
+  submitBtn.disabled = false;
+  submitBtn.textContent = 'Enviar e chamar no WhatsApp';
+});
+</script>
+
+</body>
+</html>
