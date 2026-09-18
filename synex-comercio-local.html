@@ -3,7 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Synex — Automação para comércio local</title>
+<title>Páginas de Vendas para Comércio Local | Synex — Itanhaém e Peruíbe</title>
+<meta name="description" content="Criação de páginas de vendas para comércio local, revendas de veículos e prestadores de serviço em Itanhaém e Peruíbe-SP. Diagnóstico gratuito pelo WhatsApp.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gusoares21.github.io/synex-local/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E8283A'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-weight='700' font-size='32' fill='%23FDEDEF' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Synex Local">
+<meta property="og:title" content="Páginas de Vendas para Comércio Local | Synex — Itanhaém e Peruíbe">
+<meta property="og:description" content="Criação de páginas de vendas para comércio local, revendas de veículos e prestadores de serviço em Itanhaém e Peruíbe-SP. Diagnóstico gratuito pelo WhatsApp.">
+<meta property="og:url" content="https://gusoares21.github.io/synex-local/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Páginas de Vendas para Comércio Local | Synex">
+<meta name="twitter:description" content="Criação de páginas de vendas para comércio local, revendas de veículos e prestadores de serviço em Itanhaém e Peruíbe-SP.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Synex Local",
+  "description": "Criação de páginas de vendas para comércio local, revendas de veículos e prestadores de serviço.",
+  "areaServed": [
+    { "@type": "City", "name": "Itanhaém" },
+    { "@type": "City", "name": "Peruíbe" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Itanhaém",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5513988811950",
+  "url": "https://gusoares21.github.io/synex-local/",
+  "priceRange": "R$297+"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -97,8 +134,8 @@
     display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center;
   }
   .hero h1 {
-    font-size: clamp(32px, 4.6vw, 50px);
-    line-height: 1.08;
+    font-size: clamp(30px, 4.2vw, 46px);
+    line-height: 1.1;
   }
   .hero p.lede {
     font-size: 18px; color: var(--ink-soft); max-width: 46ch; margin: 20px 0 30px;
@@ -106,53 +143,52 @@
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
   .hero-note { font-size: 13.5px; color: var(--ink-soft); margin-top: 18px; }
 
-  .phone {
+  /* Browser mockup */
+  .browser {
     background: #0E0C09;
     border: 1px solid var(--line);
-    border-radius: 28px;
-    padding: 14px;
-    max-width: 320px;
+    border-radius: 16px;
+    padding: 10px;
+    max-width: 420px;
     margin: 0 auto;
     box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
   }
-  .phone-screen {
-    background: #0B141A;
-    border-radius: 18px;
-    padding: 16px 12px 14px;
-    min-height: 380px;
-    display: flex; flex-direction: column;
+  .browser-bar { display: flex; align-items: center; gap: 8px; padding: 4px 6px 12px; }
+  .browser-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .browser-dot.r { background: #FF5F56; }
+  .browser-dot.y { background: #FFBD2E; }
+  .browser-dot.g { background: #27C93F; }
+  .browser-url {
+    margin-left: 8px; flex: 1; background: #1B1712; border-radius: 7px; padding: 5px 12px;
+    font-size: 11.5px; color: var(--ink-soft); font-family: 'Inter', sans-serif;
   }
-  .phone-head {
-    display: flex; align-items: center; gap: 10px;
-    padding-bottom: 12px; margin-bottom: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+  .site-preview { background: var(--panel); border-radius: 10px; overflow: hidden; }
+  .sp-hero {
+    padding: 26px 20px 22px; text-align: center;
+    background: linear-gradient(180deg, #FBF6EC 0%, var(--panel) 100%);
   }
-  .phone-avatar {
-    width: 34px; height: 34px; border-radius: 50%;
-    background: var(--accent); display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700; color: #fff; font-family: 'Space Grotesk', sans-serif;
-    flex-shrink: 0;
+  .sp-badge {
+    width: 40px; height: 40px; border-radius: 10px; background: var(--accent);
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;
+    margin: 0 auto 10px;
   }
-  .phone-name { font-size: 13.5px; color: #EFEFEF; font-weight: 600; }
-  .phone-status { font-size: 11px; color: #7FC98C; }
-  .bubble { max-width: 78%; padding: 9px 12px; border-radius: 14px; font-size: 13px; margin-bottom: 10px; line-height: 1.45; }
-  .bubble.in { background: #1F2C33; color: #E9EDEE; border-bottom-left-radius: 4px; }
-  .bubble.out { background: var(--accent); color: #FDEDEF; margin-left: auto; border-bottom-right-radius: 4px; }
-  .bubble .time { display: block; font-size: 10px; opacity: 0.65; margin-top: 4px; }
-  .typing { display: flex; gap: 4px; padding: 9px 12px; background: #1F2C33; border-radius: 14px; width: fit-content; border-bottom-left-radius: 4px; }
-  .typing span { width: 5px; height: 5px; border-radius: 50%; background: #8FA0A6; opacity: 0.6; }
+  .sp-hero h4 { font-size: 15px; color: var(--ink-on-panel); margin-bottom: 4px; }
+  .sp-hero p { font-size: 11.5px; color: var(--ink-on-panel-soft); margin: 0 0 14px; }
+  .sp-cta {
+    display: inline-block; background: var(--accent); color: #FDEDEF; font-size: 11.5px;
+    font-weight: 600; padding: 8px 16px; border-radius: 999px; font-family: 'Space Grotesk', sans-serif;
+  }
+  .sp-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px 16px 18px; }
+  .sp-card { background: #fff; border-radius: 8px; padding: 10px 8px; text-align: center; border: 1px solid var(--panel-line); }
+  .sp-card .ico { width: 20px; height: 20px; margin: 0 auto 6px; color: var(--accent-2); }
+  .sp-card span { font-size: 9.5px; color: var(--ink-on-panel-soft); display: block; }
 
   .panel-section { background: var(--panel); color: var(--ink-on-panel); padding: 68px 0; }
   .panel-section h2 { color: var(--ink-on-panel); }
   .section-head { max-width: 56ch; margin-bottom: 40px; }
   .section-head h2 { font-size: clamp(26px, 3.2vw, 34px); }
   .section-head p { font-size: 16px; color: var(--ink-on-panel-soft); margin-top: 12px; }
-
-  .pain-rows { display: grid; gap: 0; border-top: 1px solid var(--panel-line); }
-  .pain-row { display: grid; grid-template-columns: 40px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--panel-line); align-items: flex-start; }
-  .pain-row svg { width: 22px; height: 22px; color: var(--accent); margin-top: 3px; }
-  .pain-row h3 { font-size: 16.5px; font-weight: 600; }
-  .pain-row p { margin: 4px 0 0; font-size: 14.5px; color: var(--ink-on-panel-soft); }
 
   .dark-section { padding: 72px 0; }
   .segment-tabs { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
@@ -188,8 +224,24 @@
   .trust p { color: var(--ink-soft); font-size: 15.5px; max-width: 48ch; }
   .trust-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .stat { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
-  .stat b { font-family: 'Space Grotesk', sans-serif; font-size: 26px; display: block; color: var(--accent-2); }
+  .stat b { font-family: 'Space Grotesk', sans-serif; font-size: 24px; display: block; color: var(--accent-2); }
   .stat span { font-size: 13px; color: var(--ink-soft); }
+
+  /* Complementos (secondary, quieter) */
+  .addon-section { padding: 56px 0 72px; }
+  .addon-head { max-width: 60ch; margin-bottom: 30px; }
+  .addon-head .eyebrow { font-size: 13px; color: var(--accent-2); font-weight: 600; margin-bottom: 8px; }
+  .addon-head h2 { font-size: clamp(22px, 2.8vw, 28px); }
+  .addon-head p { font-size: 15px; color: var(--ink-soft); margin-top: 10px; }
+  .addon-list { border-top: 1px solid var(--line); }
+  .addon-row {
+    display: grid; grid-template-columns: 36px 1fr; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--line); align-items: flex-start;
+  }
+  .addon-row svg { width: 20px; height: 20px; color: var(--accent-2); margin-top: 2px; }
+  .addon-row h4 { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .addon-row p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+  .addon-note { margin-top: 22px; font-size: 14px; color: var(--ink-soft); }
 
   .form-section { padding: 76px 0; }
   .form-wrap { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: flex-start; }
@@ -212,6 +264,12 @@
   .field-error { display: none; font-size: 12.5px; color: var(--err); margin-top: 6px; }
   .field.has-error input, .field.has-error select { border-color: var(--err); }
   .field.has-error .field-error { display: block; }
+  .field-check {
+    display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px;
+    background: #14100C; border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px;
+  }
+  .field-check input { width: auto; margin-top: 2px; accent-color: var(--accent-2); }
+  .field-check label { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
   .lead-submit { width: 100%; justify-content: center; margin-top: 6px; }
   .lead-status { font-size: 13px; margin-top: 12px; display: none; }
   .lead-status.show { display: block; }
@@ -230,7 +288,7 @@
 
   @media (max-width: 860px) {
     .hero-grid { grid-template-columns: 1fr; }
-    .phone { margin-top: 20px; }
+    .browser { margin-top: 20px; }
     .trust { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
     .step:nth-child(2)::after { display: none; }
@@ -241,6 +299,7 @@
   @media (max-width: 560px) {
     .steps { grid-template-columns: 1fr; }
     .step::after { display: none; }
+    .sp-row { grid-template-columns: repeat(3, 1fr); }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -258,11 +317,11 @@
   <div class="top-inner">
     <div>
       <p class="brand-word">Synex<span>·</span>Local</p>
-      <p class="top-tag">Automação para comércio de Itanhaém e Peruíbe</p>
+      <p class="top-tag">Páginas de vendas para comércio de Itanhaém e Peruíbe</p>
     </div>
     <div class="top-actions">
-      <a class="btn btn-outline btn-sm" href="#contato">Fazer diagnóstico</a>
-      <a class="btn btn-accent btn-sm" href="https://wa.me/5513988811950?text=Oi!%20Vi%20o%20site%20da%20Synex%20Local%20e%20queria%20entender%20como%20funciona%20pro%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn btn-outline btn-sm" href="#contato">Quero minha página</a>
+      <a class="btn btn-accent btn-sm" href="https://wa.me/5513988811950?text=Oi!%20Vi%20o%20site%20da%20Synex%20Local%20e%20queria%20entender%20como%20fazer%20a%20p%C3%A1gina%20do%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
   </div>
 </header>
@@ -270,28 +329,41 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="fade-up">
-      <h1>Enquanto sua loja dorme, seu cliente já foi comprar em outro lugar.</h1>
-      <p class="lede">A gente monta o atendimento, a agenda e a recompra do seu comércio pra funcionar sozinho — no WhatsApp, com a cara do seu negócio.</p>
+      <h1>Quem procura seu negócio no Google hoje não encontra nada.</h1>
+      <p class="lede">A gente cria uma página de vendas profissional pro seu negócio — rápida, bonita e pronta pra transformar visita em cliente. Automação de atendimento e agenda é o complemento, pra quando você quiser ir além.</p>
       <div class="hero-ctas">
-        <a class="btn btn-accent" href="#contato">Fazer diagnóstico gratuito</a>
-        <a class="btn btn-outline" href="#servicos">Ver o que fazemos</a>
+        <a class="btn btn-accent" href="#contato">Quero minha página</a>
+        <a class="btn btn-outline" href="#servicos">Ver os pacotes</a>
       </div>
       <p class="hero-note">Diagnóstico de 15 minutos, sem compromisso. Atendimento presencial na região.</p>
     </div>
     <div class="fade-up d1">
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="phone-head">
-            <div class="phone-avatar">RS</div>
-            <div>
-              <div class="phone-name">Restaurante Sabor da Praia</div>
-              <div class="phone-status">online</div>
+      <div class="browser">
+        <div class="browser-bar">
+          <span class="browser-dot r"></span><span class="browser-dot y"></span><span class="browser-dot g"></span>
+          <span class="browser-url">seunegocio.com.br</span>
+        </div>
+        <div class="site-preview">
+          <div class="sp-hero">
+            <div class="sp-badge">SB</div>
+            <h4>Salão Bella Itanhaém</h4>
+            <p>Cortes, coloração e estética — agende o seu horário</p>
+            <span class="sp-cta">Chamar no WhatsApp</span>
+          </div>
+          <div class="sp-row">
+            <div class="sp-card">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              <span>Horários</span>
+            </div>
+            <div class="sp-card">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>
+              <span>Serviços</span>
+            </div>
+            <div class="sp-card">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 5.5 3.5C14 6.5 15.5 5 17.5 5 21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+              <span>Avaliações</span>
             </div>
           </div>
-          <div class="bubble in">Oi, vocês tão abertos? Que horas fecha hoje?<span class="time">22:47</span></div>
-          <div class="bubble out">Abertos sim! Hoje fechamos às 23h30. Quer ver o cardápio ou já fazer o pedido por aqui? 🍽️<span class="time">22:47</span></div>
-          <div class="bubble in">Quero pedir uma marmita de peixe<span class="time">22:48</span></div>
-          <div class="typing"><span></span><span></span><span></span></div>
         </div>
       </div>
     </div>
@@ -303,21 +375,37 @@
 <section class="panel-section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Onde o comércio local perde cliente sem perceber</h2>
-      <p>Não é falta de qualidade. É o momento em que ninguém está olhando.</p>
+      <h2>Sem página, seu negócio some da decisão do cliente</h2>
+      <p>Ele já pesquisa antes de comprar ou contratar. Se não acha nada sobre você, decide por quem apareceu.</p>
     </div>
-    <div class="pain-rows">
-      <div class="pain-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <div><h3>Mensagem chega fora do horário e some no meio das conversas</h3><p>O cliente pergunta às 22h, ninguém responde, e de manhã já foi comprar em outro lugar.</p></div>
+    <div class="pain-rows" style="display:grid;gap:0;border-top:1px solid var(--panel-line);">
+      <div class="pain-row" style="display:grid;grid-template-columns:40px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--panel-line);align-items:flex-start;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px;height:22px;color:var(--accent);margin-top:3px;"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        <div>
+          <h3 style="font-size:16.5px;font-weight:600;">Cliente pesquisa e só acha um perfil parado</h3>
+          <p style="margin:4px 0 0;font-size:14.5px;color:var(--ink-on-panel-soft);">Sem site, a busca no Google não leva a lugar nenhum — e a concorrência aparece primeiro.</p>
+        </div>
       </div>
-      <div class="pain-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-        <div><h3>Cliente esquece o horário marcado e não avisa</h3><p>Sem lembrete automático, cada furo de agenda é tempo parado que não volta.</p></div>
+      <div class="pain-row" style="display:grid;grid-template-columns:40px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--panel-line);align-items:flex-start;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px;height:22px;color:var(--accent);margin-top:3px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div>
+          <h3 style="font-size:16.5px;font-weight:600;">Sem página, falta credibilidade</h3>
+          <p style="margin:4px 0 0;font-size:14.5px;color:var(--ink-on-panel-soft);">Um perfil de rede social não passa a mesma confiança que uma página profissional com seu nome.</p>
+        </div>
       </div>
-      <div class="pain-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 11-3-6.2"/><path d="M20 4v5h-5"/></svg>
-        <div><h3>Cliente compra uma vez e some</h3><p>Sem um toque de "sentimos sua falta", a recompra depende só da sorte.</p></div>
+      <div class="pain-row" style="display:grid;grid-template-columns:40px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--panel-line);align-items:flex-start;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px;height:22px;color:var(--accent);margin-top:3px;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <div>
+          <h3 style="font-size:16.5px;font-weight:600;">Quem presta serviço vive só de indicação</h3>
+          <p style="margin:4px 0 0;font-size:14.5px;color:var(--ink-on-panel-soft);">Sem página, cada cliente novo depende de alguém lembrar de você. Com página, você aparece sozinho pra quem nunca ouviu falar do seu trabalho.</p>
+        </div>
+      </div>
+      <div class="pain-row" style="display:grid;grid-template-columns:40px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--panel-line);align-items:flex-start;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px;height:22px;color:var(--accent);margin-top:3px;"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg>
+        <div>
+          <h3 style="font-size:16.5px;font-weight:600;">Anúncio pago sem página perde dinheiro</h3>
+          <p style="margin:4px 0 0;font-size:14.5px;color:var(--ink-on-panel-soft);">Trafego pra um perfil sem estrutura converte muito menos do que pra uma página feita pra vender.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -326,76 +414,74 @@
 <section class="dark-section" id="servicos">
   <div class="wrap">
     <div class="section-head">
-      <h2>O que a gente monta pro seu negócio</h2>
-      <p>Cada serviço resolve um ponto onde você hoje está perdendo movimento. Escolha o segmento, um serviço no formulário abaixo, ou peça o combo completo.</p>
+      <h2>Sua página de vendas, do jeito que seu negócio precisa</h2>
+      <p>Escolha o segmento e o pacote. A página é o principal — automação você soma depois, se fizer sentido.</p>
     </div>
     <div class="segment-tabs">
       <button type="button" class="segment-tab active" id="tab-comercio" onclick="mostrarSegmento('comercio')">Comércio local</button>
       <button type="button" class="segment-tab" id="tab-veiculos" onclick="mostrarSegmento('veiculos')">Revenda de veículos</button>
+      <button type="button" class="segment-tab" id="tab-prestadores" onclick="mostrarSegmento('prestadores')">Prestadores de serviço</button>
     </div>
     <div class="services-grid" id="services-comercio">
       <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.56L3 21l1.94-5.6A8.5 8.5 0 1121 11.5z"/></svg></div>
-        <h3>Atendimento no WhatsApp</h3>
-        <p>Bot com IA responde pedido, dúvida e horário na hora, 24h — sem parecer robô engessado.</p>
-        <button class="svc-link" data-service="Atendimento no WhatsApp" onclick="preencherServico(this)">Quero esse →</button>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg></div>
-        <h3>Agendamento com lembrete</h3>
-        <p>Cliente marca sozinho e recebe lembrete automático antes do horário. Menos furo, mais cadeira ocupada.</p>
-        <button class="svc-link" data-service="Agendamento com lembrete" onclick="preencherServico(this)">Quero esse →</button>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg></div>
+        <h3>Página de vendas</h3>
+        <p>Uma página só, direto ao ponto: quem você é, o que vende, fotos e botão de WhatsApp pra chamar agora.</p>
+        <button class="svc-link" data-service="Página de vendas" onclick="preencherServico(this)">Quero essa →</button>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
-        <h3>Cardápio digital com pedido</h3>
-        <p>Cliente escolhe, monta o pedido e paga direto pelo WhatsApp. Sem app, sem taxa de marketplace.</p>
-        <button class="svc-link" data-service="Cardápio digital com pedido" onclick="preencherServico(this)">Quero esse →</button>
+        <h3>Página + cardápio ou catálogo</h3>
+        <p>Página com cardápio digital ou catálogo de produtos embutido, pro cliente ver tudo antes de decidir.</p>
+        <button class="svc-link" data-service="Página + cardápio ou catálogo" onclick="preencherServico(this)">Quero essa →</button>
       </div>
       <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg></div>
-        <h3>Página + anúncio pra região</h3>
-        <p>Página de vendas e campanha no Instagram/Facebook mirando quem mora perto do seu negócio.</p>
-        <button class="svc-link" data-service="Página + anúncio pra região" onclick="preencherServico(this)">Quero esse →</button>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 8.6a5.5 5.5 0 00-9.4-3.9L12 5.3l-.6-.6A5.5 5.5 0 002 8.6c0 6 10 11.4 10 11.4s10-5.4 10-11.4z"/></svg></div>
-        <h3>Fidelização automática</h3>
-        <p>Mensagem de "faz tempo que você não vem" e cupom de aniversário disparados sem ninguém lembrar.</p>
-        <button class="svc-link" data-service="Fidelização automática" onclick="preencherServico(this)">Quero esse →</button>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h3>Página + agenda de horários</h3>
+        <p>Pra salão, clínica ou petshop: cliente vê horário disponível e marca direto pela sua página.</p>
+        <button class="svc-link" data-service="Página + agenda de horários" onclick="preencherServico(this)">Quero essa →</button>
       </div>
     </div>
 
     <div class="services-grid is-hidden" id="services-veiculos">
       <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.56L3 21l1.94-5.6A8.5 8.5 0 1121 11.5z"/></svg></div>
-        <h3>Qualificação de lead no WhatsApp</h3>
-        <p>Bot pergunta modelo, forma de pagamento e se tem carro na troca — só chega no vendedor quem tá quente.</p>
-        <button class="svc-link" data-service="Qualificação de lead no WhatsApp" onclick="preencherServico(this)">Quero esse →</button>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg></div>
-        <h3>Agendamento de test-drive</h3>
-        <p>Cliente marca sozinho e recebe lembrete. Vendedor não fica esperando quem esquece de aparecer.</p>
-        <button class="svc-link" data-service="Agendamento de test-drive" onclick="preencherServico(this)">Quero esse →</button>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg></div>
+        <h3>Página de vendas</h3>
+        <p>Apresentação da revenda: quem você é, endereço, contato — pronta pra aparecer no Google.</p>
+        <button class="svc-link" data-service="Página de vendas (veículos)" onclick="preencherServico(this)">Quero essa →</button>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
-        <h3>Catálogo com atualização automática</h3>
-        <p>"Chegou carro novo no seu perfil" enviado sozinho pra quem já demonstrou interesse em modelo parecido.</p>
-        <button class="svc-link" data-service="Catálogo com atualização automática" onclick="preencherServico(this)">Quero esse →</button>
+        <h3>Página + vitrine de veículos</h3>
+        <p>Catálogo dos carros disponíveis, com fotos, preço e ficha técnica, que você mesmo atualiza.</p>
+        <button class="svc-link" data-service="Página + vitrine de veículos" onclick="preencherServico(this)">Quero essa →</button>
       </div>
       <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg></div>
-        <h3>Página + anúncio segmentado</h3>
-        <p>Campanha mirando quem busca carro na região, com o lead caindo direto no bot de qualificação.</p>
-        <button class="svc-link" data-service="Página + anúncio segmentado (veículos)" onclick="preencherServico(this)">Quero esse →</button>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+        <h3>Página + agenda de test-drive</h3>
+        <p>Cliente vê o carro que quer e já marca o test-drive direto pela página.</p>
+        <button class="svc-link" data-service="Página + agenda de test-drive" onclick="preencherServico(this)">Quero essa →</button>
+      </div>
+    </div>
+
+    <div class="services-grid is-hidden" id="services-prestadores">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg></div>
+        <h3>Página de vendas</h3>
+        <p>Quem você é, quais serviços presta, área de atendimento e botão de WhatsApp pra chamar agora.</p>
+        <button class="svc-link" data-service="Página de vendas (prestador de serviço)" onclick="preencherServico(this)">Quero essa →</button>
       </div>
       <div class="svc-card">
-        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 11-3-6.2"/><path d="M20 4v5h-5"/></svg></div>
-        <h3>Follow-up de proposta parada</h3>
-        <p>Cliente que simulou e sumiu recebe um toque automático em poucos dias — "ainda tá pensando no Onix?".</p>
-        <button class="svc-link" data-service="Follow-up de proposta parada" onclick="preencherServico(this)">Quero esse →</button>
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+        <h3>Página + portfólio</h3>
+        <p>Galeria de antes/depois ou trabalhos realizados — essencial pra quem vende resultado visual.</p>
+        <button class="svc-link" data-service="Página + portfólio" onclick="preencherServico(this)">Quero essa →</button>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 9v11"/></svg></div>
+        <h3>Página + orçamento rápido</h3>
+        <p>Formulário simples (serviço, urgência, bairro) que cai direto no seu WhatsApp, sem precisar checar Instagram o dia todo.</p>
+        <button class="svc-link" data-service="Página + orçamento rápido" onclick="preencherServico(this)">Quero essa →</button>
       </div>
     </div>
   </div>
@@ -405,13 +491,13 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Como funciona</h2>
-      <p>Do primeiro papo até o fluxo rodando sozinho.</p>
+      <p>Do primeiro papo até a página no ar.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><h3>Conversa de 15 minutos</h3><p>Entendemos o negócio e onde você mais perde cliente hoje.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Montagem do fluxo</h3><p>Configuramos bot, agenda ou cardápio com a cara do seu negócio.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Teste e ajuste</h3><p>Rodamos por alguns dias e afinamos as respostas com você.</p></div>
-      <div class="step"><div class="step-num">4</div><h3>Acompanhamento</h3><p>Mensalidade cobre manutenção e ajustes conforme o movimento muda.</p></div>
+      <div class="step"><div class="step-num">1</div><h3>Conversa de 15 minutos</h3><p>Entendemos o negócio e o que a página precisa mostrar pra convencer o cliente.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Design e conteúdo</h3><p>Montamos a página com a cara do seu negócio — texto, fotos e estrutura pensados pra vender.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Página no ar</h3><p>Publicamos rápido, pronta pra aparecer no Google e ser compartilhada.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Automação, se quiser</h3><p>Depois da página, você soma WhatsApp, agenda ou fidelização quando fizer sentido.</p></div>
     </div>
   </div>
 </section>
@@ -420,21 +506,50 @@
   <div class="wrap trust">
     <div>
       <h2>Feito por quem é da região</h2>
-      <p>A Synex é de Itanhaém/Peruíbe. A gente senta com você, entende o movimento do seu comércio e ajusta o fluxo até fazer sentido pro seu dia a dia — não é um sistema genérico de fora.</p>
+      <p>A Synex é de Itanhaém/Peruíbe. A gente senta com você, entende o negócio e monta uma página que faz sentido pro seu dia a dia — não é um template genérico de fora.</p>
     </div>
     <div class="trust-stats">
-      <div class="stat"><b>24h</b><span>bot respondendo mesmo com a loja fechada</span></div>
-      <div class="stat"><b>0 app</b><span>tudo roda dentro do WhatsApp que o cliente já usa</span></div>
-      <div class="stat"><b>1 fluxo</b><span>configurado pro jeito que seu negócio já funciona</span></div>
-      <div class="stat"><b>Local</b><span>suporte presencial, sem depender de call center</span></div>
+      <div class="stat"><b>Rápida</b><span>página no ar em poucos dias</span></div>
+      <div class="stat"><b>Mobile</b><span>funciona perfeita no celular do cliente</span></div>
+      <div class="stat"><b>Google</b><span>estruturada pra aparecer nas buscas</span></div>
+      <div class="stat"><b>Local</b><span>suporte presencial, sem call center</span></div>
     </div>
+  </div>
+</section>
+
+<section class="addon-section">
+  <div class="wrap">
+    <div class="addon-head">
+      <p class="eyebrow">Complemento opcional</p>
+      <h2>Depois que sua página estiver no ar, dá pra ir além</h2>
+      <p>Automação não é o principal — é o que você soma quando a página já estiver vendendo e fizer sentido pro seu movimento.</p>
+    </div>
+    <div class="addon-list">
+      <div class="addon-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.4 7.56L3 21l1.94-5.6A8.5 8.5 0 1121 11.5z"/></svg>
+        <div><h4>Atendimento automático no WhatsApp</h4><p>Bot com IA responde pedido, dúvida e horário 24h.</p></div>
+      </div>
+      <div class="addon-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        <div><h4>Lembrete automático de agendamento</h4><p>Cliente recebe lembrete antes do horário — menos furo de agenda.</p></div>
+      </div>
+      <div class="addon-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/></svg>
+        <div><h4>Anúncio segmentado pra região</h4><p>Campanha no Instagram/Facebook mirando quem mora perto do seu negócio.</p></div>
+      </div>
+      <div class="addon-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 8.6a5.5 5.5 0 00-9.4-3.9L12 5.3l-.6-.6A5.5 5.5 0 002 8.6c0 6 10 11.4 10 11.4s10-5.4 10-11.4z"/></svg>
+        <div><h4>Fidelização automática</h4><p>Mensagem de "faz tempo que você não vem" e cupom de aniversário, sem ninguém lembrar.</p></div>
+      </div>
+    </div>
+    <p class="addon-note">Quer incluir algum desses no seu pacote? Marca a opção no formulário abaixo que a gente já conversa sobre isso junto.</p>
   </div>
 </section>
 
 <section class="form-section" id="contato">
   <div class="wrap form-wrap">
     <div class="form-copy fade-up">
-      <h2>Peça seu diagnóstico gratuito</h2>
+      <h2>Peça sua página de vendas</h2>
       <p>Preenche os dados do seu negócio. A gente chama você no WhatsApp com uma ideia concreta pro seu caso — sem enrolação.</p>
       <ul>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4L19 6"/></svg>Resposta em até 1 dia útil</li>
@@ -452,7 +567,7 @@
       <div class="field-row">
         <div class="field" id="f-negocio">
           <label for="negocio">Nome do negócio</label>
-          <input type="text" id="negocio" name="negocio" placeholder="Ex: Restaurante Sabor da Praia">
+          <input type="text" id="negocio" name="negocio" placeholder="Ex: Salão Bella Itanhaém">
           <span class="field-error">Digite o nome do negócio.</span>
         </div>
         <div class="field" id="f-tipo">
@@ -465,41 +580,47 @@
             <option>Petshop</option>
             <option>Loja física</option>
             <option>Revenda de veículos</option>
+            <option>Prestador de serviço (reforma, elétrica, estética, aulas etc.)</option>
             <option>Outro</option>
           </select>
           <span class="field-error">Selecione o tipo de negócio.</span>
         </div>
       </div>
       <div class="field" id="f-servico">
-        <label for="servico">Serviço de interesse</label>
+        <label for="servico">Pacote de interesse</label>
         <select id="servico" name="servico">
           <option value="">Selecione</option>
           <optgroup label="Comércio local">
-            <option>Atendimento no WhatsApp</option>
-            <option>Agendamento com lembrete</option>
-            <option>Cardápio digital com pedido</option>
-            <option>Página + anúncio pra região</option>
-            <option>Fidelização automática</option>
+            <option>Página de vendas</option>
+            <option>Página + cardápio ou catálogo</option>
+            <option>Página + agenda de horários</option>
           </optgroup>
           <optgroup label="Revenda de veículos">
-            <option>Qualificação de lead no WhatsApp</option>
-            <option>Agendamento de test-drive</option>
-            <option>Catálogo com atualização automática</option>
-            <option>Página + anúncio segmentado (veículos)</option>
-            <option>Follow-up de proposta parada</option>
+            <option>Página de vendas (veículos)</option>
+            <option>Página + vitrine de veículos</option>
+            <option>Página + agenda de test-drive</option>
           </optgroup>
-          <option>Quero ver o combo completo</option>
+          <optgroup label="Prestadores de serviço">
+            <option>Página de vendas (prestador de serviço)</option>
+            <option>Página + portfólio</option>
+            <option>Página + orçamento rápido</option>
+          </optgroup>
+          <option>Não sei ainda, quero conversar</option>
         </select>
-        <span class="field-error">Selecione o serviço que te interessa.</span>
+        <span class="field-error">Selecione o pacote que te interessa.</span>
       </div>
       <div class="field" id="f-whats">
         <label for="whats">WhatsApp pra contato</label>
         <input type="tel" id="whats" name="whats" placeholder="(13) 99999-9999">
         <span class="field-error">Digite um WhatsApp válido.</span>
       </div>
+      <div class="field-check">
+        <input type="checkbox" id="addon" name="addon">
+        <label for="addon">Também quero saber sobre automação (WhatsApp, agenda, fidelização) como complemento da página</label>
+      </div>
       <div class="field">
         <label for="msg">Conte um pouco do seu negócio (opcional)</label>
-        <textarea id="msg" name="msg" placeholder="Ex: tenho um salão e perco muito horário marcado"></textarea>
+        <textarea id="msg" name="msg" placeholder="Ex: tenho um salão e ainda não tenho nenhuma página"></textarea>
       </div>
       <button type="submit" class="btn btn-accent lead-submit" id="leadSubmit">Enviar e chamar no WhatsApp</button>
       <p class="lead-status" id="leadStatus"></p>
@@ -512,9 +633,9 @@
     <div class="inner">
       <div>
         <h2>Prefere ir direto?</h2>
-        <p>Manda uma mensagem contando o que você vende — a gente responde com uma ideia concreta pro seu caso.</p>
+        <p>Manda uma mensagem contando o que você vende — a gente responde com uma ideia concreta pra sua página.</p>
       </div>
-      <a class="btn btn-dark" href="https://wa.me/5513988811950?text=Oi!%20Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20do%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Falar no WhatsApp agora</a>
+      <a class="btn btn-dark" href="https://wa.me/5513988811950?text=Oi!%20Quero%20fazer%20a%20p%C3%A1gina%20de%20vendas%20do%20meu%20com%C3%A9rcio." target="_blank" rel="noopener">Falar no WhatsApp agora</a>
     </div>
   </div>
 </section>
@@ -525,27 +646,24 @@
       <p class="brand-word">Synex<span>·</span>Local</p>
       <p class="fine">Itanhaém / Peruíbe — SP</p>
     </div>
-    <p class="fine">© 2026 Synex. Automação de atendimento pra comércio local.</p>
+    <p class="fine">© 2026 Synex. Páginas de vendas pra comércio local.</p>
   </div>
 </footer>
 
 <script>
+var SEGMENTOS = ['comercio', 'veiculos', 'prestadores'];
 function mostrarSegmento(seg) {
-  var comercio = document.getElementById('services-comercio');
-  var veiculos = document.getElementById('services-veiculos');
-  var tabComercio = document.getElementById('tab-comercio');
-  var tabVeiculos = document.getElementById('tab-veiculos');
-  if (seg === 'veiculos') {
-    comercio.classList.add('is-hidden');
-    veiculos.classList.remove('is-hidden');
-    tabVeiculos.classList.add('active');
-    tabComercio.classList.remove('active');
-  } else {
-    veiculos.classList.add('is-hidden');
-    comercio.classList.remove('is-hidden');
-    tabComercio.classList.add('active');
-    tabVeiculos.classList.remove('active');
-  }
+  SEGMENTOS.forEach(function (s) {
+    var grid = document.getElementById('services-' + s);
+    var tab = document.getElementById('tab-' + s);
+    if (s === seg) {
+      grid.classList.remove('is-hidden');
+      tab.classList.add('active');
+    } else {
+      grid.classList.add('is-hidden');
+      tab.classList.remove('active');
+    }
+  });
 }
 
 function preencherServico(btn) {
@@ -578,6 +696,7 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
   var tipo = document.getElementById('tipo').value;
   var servico = document.getElementById('servico').value;
   var whats = document.getElementById('whats').value.trim();
+  var addon = document.getElementById('addon').checked;
   var msg = document.getElementById('msg').value.trim();
 
   var valid = true;
@@ -597,7 +716,7 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
 
   var lead = {
     nome: nome, negocio: negocio, tipo: tipo, servico: servico,
-    whats: whats, msg: msg, criadoEm: new Date().toISOString()
+    whats: whats, addon: addon, msg: msg, criadoEm: new Date().toISOString()
   };
 
   try {
@@ -609,7 +728,9 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
   } catch (err) {}
 
   var texto = 'Oi! Meu nome é ' + nome + ', do ' + negocio + ' (' + tipo + '). ' +
-    'Tenho interesse em: ' + servico + '.' + (msg ? ' Detalhes: ' + msg : '') +
+    'Tenho interesse em: ' + servico + '.' +
+    (addon ? ' Também quero saber sobre automação como complemento.' : '') +
+    (msg ? ' Detalhes: ' + msg : '') +
     ' Meu WhatsApp: ' + whats;
   var url = 'https://wa.me/5513988811950?text=' + encodeURIComponent(texto);
 
