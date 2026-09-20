@@ -651,6 +651,7 @@
 </footer>
 
 <script>
+var LEADS_WEBHOOK = 'https://hook.us2.make.com/gcxh8igyhuymqoavmjmml4rnxv6yy9rz';
 var SEGMENTOS = ['comercio', 'veiculos', 'prestadores'];
 function mostrarSegmento(seg) {
   SEGMENTOS.forEach(function (s) {
@@ -714,17 +715,18 @@ document.getElementById('leadForm').addEventListener('submit', async function (e
   submitBtn.disabled = true;
   submitBtn.textContent = 'Enviando...';
 
-  var lead = {
-    nome: nome, negocio: negocio, tipo: tipo, servico: servico,
-    whats: whats, addon: addon, msg: msg, criadoEm: new Date().toISOString()
-  };
-
   try {
-    var db = await window.claude.use('db');
-    if (db) {
-      var id = 'lead_' + Date.now();
-      await db.doc('leads/' + id).set(lead);
-    }
+    var dados = new URLSearchParams({
+      nome: nome,
+      negocio: negocio,
+      tipo: tipo,
+      servico: servico,
+      whats: whats,
+      addon: addon ? 'Sim' : 'Nao',
+      msg: msg,
+      origem: window.location.hostname || 'synex-local'
+    });
+    await fetch(LEADS_WEBHOOK, { method: 'POST', mode: 'no-cors', body: dados, keepalive: true });
   } catch (err) {}
 
   var texto = 'Oi! Meu nome é ' + nome + ', do ' + negocio + ' (' + tipo + '). ' +
