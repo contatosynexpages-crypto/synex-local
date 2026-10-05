@@ -577,8 +577,12 @@
   .pf-phone { background: #050506; border: 1px solid var(--line-2); border-radius: 26px; padding: 8px; box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .95); transition: transform .3s ease, border-color .3s; }
   .pf-card:hover .pf-phone { transform: translateY(-6px); border-color: color-mix(in srgb, var(--c) 60%, transparent); }
   .pf-screen { position: relative; height: 330px; border-radius: 19px; overflow: hidden; background: #F7F5F2; }
-  .pf-page { color: #1A1718; padding: 12px 12px 16px; transition: transform 3.4s cubic-bezier(.45, 0, .2, 1); will-change: transform; }
-  .pf-card:hover .pf-page, .pf-card.play .pf-page { transform: translateY(-210px); }
+  .pf-page { color: #1A1718; padding: 12px 12px 16px; will-change: transform; animation: pfScroll 9s cubic-bezier(.45, 0, .2, 1) infinite; animation-play-state: paused; }
+  .pf-card:nth-child(2) .pf-page { animation-delay: -2.2s; }
+  .pf-card:nth-child(3) .pf-page { animation-delay: -4.4s; }
+  .pf-card:nth-child(4) .pf-page { animation-delay: -6.6s; }
+  .pf-card.play .pf-page { animation-play-state: running; }
+  @keyframes pfScroll { 0%, 14% { transform: translateY(0); } 44%, 62% { transform: translateY(-210px); } 92%, 100% { transform: translateY(0); } }
   .pf-nav { display: flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 800; font-size: 12px; }
   .pf-nav i { width: 16px; height: 16px; border-radius: 5px; background: var(--c); }
   .pf-hero { margin-top: 10px; border-radius: 10px; padding: 14px 12px; background: linear-gradient(140deg, color-mix(in srgb, var(--c) 24%, #fff), #fff 72%); border: 1px solid rgba(0, 0, 0, .06); }
@@ -1436,8 +1440,8 @@ function synexInit() {
   } catch (e) {}
 
   // exemplos: no celular (sem hover) a página desce sozinha quando aparece na tela
-  if (!reduce && window.matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
-    var pio = new IntersectionObserver(function (en) { en.forEach(function (x) { x.target.classList.toggle('play', x.isIntersecting); }); }, { threshold: 0.6 });
+  if (!reduce && 'IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (en) { en.forEach(function (x) { x.target.classList.toggle('play', x.isIntersecting); }); }, { threshold: 0.2 });
     $$('.pf-card').forEach(function (c) { pio.observe(c); });
   }
   var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
@@ -1538,7 +1542,7 @@ function synexInit() {
   if (!reduce) {
     onVisible($('.builder-wrap'), function (vis) {
       heroVisible = vis;
-      if (vis && !running && !document.hidden) startHero(firstStart ? 7000 : 1500); firstStart = false;
+      if (vis && !running && !document.hidden) startHero(firstStart ? 900 : 300); firstStart = false;
       if (!vis && running) stopHero();
     }, { threshold: 0.2 });
     document.addEventListener('visibilitychange', function () {
@@ -1556,7 +1560,7 @@ function synexInit() {
     { you: 'Seu Salão · Itanhaém', ds: 'Serviços, preços e agendamento pelo WhatsApp.', url: 'seusalao.com.br', ig: '@seusalao', guide: 'Salões em Itanhaém: lista', comp: 'Salão do Concorrente' },
     { you: 'Seu Nome Elétrica · Mongaguá', ds: 'Orçamento rápido, bairros atendidos e fotos de trabalhos.', url: 'suaeletrica.com.br', ig: '@suaeletrica', guide: 'Eletricistas em Mongaguá', comp: 'Elétrica do Concorrente' }
   ];
-  var qi = 0, mode = 0, sTimers = [], sRunning = false, userTouched = false;
+  var qi = 0, mode = 0, sTimers = [], sRunning = false, sVisible = false;
   function sLater(fn, ms) { sTimers.push(setTimeout(fn, ms)); }
   function renderResults(m, animate) {
     var n = NAMES[qi];
@@ -1591,14 +1595,16 @@ function synexInit() {
   }
   modeBtns.forEach(function (b) {
     b.addEventListener('click', function () {
-      userTouched = true; sRunning = false; sTimers.forEach(clearTimeout); sTimers = [];
+      sTimers.forEach(clearTimeout); sTimers = [];
       qText.textContent = QUERIES[qi];
       mode = +b.getAttribute('data-mode'); renderResults(mode, mode === 1 && !reduce);
+      if (!reduce && sVisible) { sRunning = true; sLater(function () { qi = (qi + 1) % QUERIES.length; searchCycle(); }, 6000); }
     });
   });
   if (!reduce) {
     onVisible(searchSim, function (vis) {
-      if (vis && !sRunning && !userTouched) { sRunning = true; sLater(function () { mode = 1; renderResults(1, true); }, 1400); sLater(function () { qi = 1; searchCycle(); }, 5200); }
+      sVisible = vis;
+      if (vis && !sRunning) { sRunning = true; sLater(function () { mode = 1; renderResults(1, true); }, 1400); sLater(function () { qi = 1; searchCycle(); }, 5200); }
       if (!vis && sRunning) { sRunning = false; sTimers.forEach(clearTimeout); sTimers = []; }
     }, { threshold: 0.4 });
   }
@@ -1650,7 +1656,7 @@ function synexInit() {
   if (val && !reduce) {
     var counted = false;
     onVisible(val, function (vis) {
-      if (!vis || counted) return; counted = true;
+      if (!vis) { counted = false; return; } if (counted) return; counted = true;
       var end = +val.getAttribute('data-count'), t0 = performance.now();
       (function tick() { var p = Math.min(1, (performance.now() - t0) / 1100); val.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); })();
     }, { threshold: 0.6 });
@@ -1659,7 +1665,7 @@ function synexInit() {
   /* ---------- WhatsApp chat ---------- */
   var chat = $('#chat');
   var CHAT = $$('.msg', chat).map(function (m) { return m.outerHTML; });
-  var chatPlayed = false;
+  var chatPlayed = false, chatVisible = false;
   function playChat() {
     chat.innerHTML = '';
     var t = 300;
@@ -1675,17 +1681,23 @@ function synexInit() {
         t += 1300;
       }
     });
-    setTimeout(function () { chatPlayed = false; }, t + 5000);
+    setTimeout(function () { chatPlayed = false; if (chatVisible) { chatPlayed = true; playChat(); } }, t + 3500);
   }
   if (!reduce) {
-    onVisible($('#phone'), function (vis) { if (vis && !chatPlayed) { chatPlayed = true; playChat(); } }, { threshold: 0.5 });
+    onVisible($('#phone'), function (vis) { chatVisible = vis; if (vis && !chatPlayed) { chatPlayed = true; playChat(); } }, { threshold: 0.3 });
   }
 
   /* ---------- Steps line ---------- */
   var steps = $('#steps');
-  if (steps && !reduce && steps.getBoundingClientRect().top > window.innerHeight * 0.85) {
-    steps.classList.add('pre');
-    onVisible(steps, function (vis) { if (vis) steps.classList.remove('pre'); }, { threshold: 0.35 });
+  if (steps && !reduce) {
+    var stTimer = null;
+    if (steps.getBoundingClientRect().top > window.innerHeight * 0.85) steps.classList.add('pre');
+    onVisible(steps, function (vis) {
+      clearInterval(stTimer); stTimer = null;
+      if (!vis) return;
+      steps.classList.remove('pre');
+      stTimer = setInterval(function () { steps.classList.add('pre'); setTimeout(function () { steps.classList.remove('pre'); }, 1700); }, 6500);
+    }, { threshold: 0.35 });
   }
 
   /* ---------- Form ---------- */
