@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /demo/
+Disallow: /social/
 
 Sitemap: https://synexpages.net/sitemap.xml
