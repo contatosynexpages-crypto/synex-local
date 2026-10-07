@@ -1,0 +1,26 @@
+{
+  "titulo": "Salão de beleza: a cliente chega sabendo o preço",
+  "voz": "pm_alex",
+  "velocidade": 1.0,
+  "arquivo_final": "synex-salao-de-beleza.mp4",
+  "cenas": [
+    {"id": "s1", "texto": "Sábado, oito da manhã. A Carla abre o salão em Itanhaém... e o celular não para.",
+     "legendas": ["Sábado, oito da manhã. A Carla abre o salão em Itanhaém...", "...e o celular *não para*."]},
+    {"id": "s2", "texto": "Quanto é a escova? Tem horário hoje? Faz unha em gel? Ela está com a tesoura na mão, e as mensagens vão ficando sem resposta.",
+     "legendas": ["Quanto é a escova? Tem horário hoje?", "Faz unha em gel?", "Ela está com a tesoura na mão,", "e as mensagens vão ficando *sem resposta*."]},
+    {"id": "s3", "texto": "Do outro lado da cidade, a Júlia procura um salão no Google. Acha um perfil sem preço, sem horário... e marca com o primeiro que explica tudo direitinho.",
+     "legendas": ["Do outro lado da cidade, a Júlia procura um salão no Google.", "Acha um perfil *sem preço, sem horário*...", "...e marca com o primeiro que explica tudo direitinho."]},
+    {"id": "s4", "texto": "Na semana seguinte, a Carla ganha uma página própria: serviços, preços, fotos dos trabalhos, horários, e um botão direto pro WhatsApp.",
+     "legendas": ["Na semana seguinte, a Carla ganha uma *página própria*:", "serviços, preços, fotos dos trabalhos, horários,", "e um *botão direto pro WhatsApp*."]},
+    {"id": "s5", "texto": "A Júlia pesquisa de novo. Agora o Studio Carla aparece. Ela vê o preço da escova, as fotos... e toca no botão.",
+     "legendas": ["A Júlia pesquisa de novo. Agora o *Studio Carla* aparece.", "Ela vê o preço da escova, as fotos... e *toca no botão*."]},
+    {"id": "s6", "texto": "A mensagem já chega pronta: Oi! Vi a página. Quero a escova, sábado às dez.",
+     "legendas": ["A mensagem já chega pronta:", "“Oi! Vi a página. Quero a escova, sábado às dez.”"]},
+    {"id": "s7", "texto": "A Carla só confirma. E volta para a cliente que está na cadeira.",
+     "legendas": ["A Carla *só confirma*.", "E volta para a cliente que está na cadeira."]}
+  ],
+  "efeitos": [
+    ["s1", 3.0, "pop"], ["s2", 0.05, "pop"], ["s2", 1.0, "pop"], ["s2", 2.0, "pop"], ["s2", 3.6, "pop"], ["s2", 4.6, "pop"],
+    ["s3", 7.1, "toque"], ["s5", 2.85, "toque"], ["s5", 5.7, "toque"], ["s6", 1.45, "mensagem"], ["s7", 0.3, "enviada"], ["s7", 2.8, "pop"]
+  ]
+}

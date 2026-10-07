@@ -44,7 +44,7 @@ Pilares, alternados para não repetir o mesmo dois posts seguidos:
   - cabeçalho com "SYNEX LOCAL", coordenadas e numeração; rodapé com o logo e @synex_pages;
   - margens de 90 px, nada sobreposto, texto curto.
 - **Carrossel** (3 a 6 telas no mesmo estilo) para passo a passo e dicas. No Metricool são várias imagens em `media`.
-- **Reels:** só quando o PC do Gustavo estiver ligado à sessão (a voz Kokoro roda lá) ou quando ele mandar um vídeo. Vídeo com voz sintética vai com `isAiGenerated: true`.
+- **Reels narrados:** **todo vídeo da Synex tem narração completa com a voz Alex**, legendas e áudio tratado. Use o motor de `instagram/video/`, que roda aqui na nuvem, e siga `instagram/video/GUIA-VIDEO.md`. Meta: **1 Reels por semana**, com segmento novo a cada vez (pizzaria, barbearia, oficina, açaí, pet shop, revenda de carros, eletricista…). Parta do modelo `salao-de-beleza` e crie as cenas do segmento. Vídeo com voz sintética vai com `isAiGenerated: true`. Vídeo enviado pelo Gustavo sem narração: pergunte antes se deve ganhar narração.
 
 ### Como gerar as artes
 
@@ -66,6 +66,7 @@ Pilares, alternados para não repetir o mesmo dois posts seguidos:
 
 1. `getScheduledPosts` dos próximos 10 dias e o `historico.json`.
 2. Se em algum trecho dos próximos 7 dias houver mais de 3 dias sem post agendado, crie posts para cobrir, pensando nos dias úteis às 10h. Se já estiver coberto, não crie nada.
+   - Se não houver Reels narrado publicado ou agendado nos últimos 7 dias nem nos próximos 7, produza um (segmento ainda não usado no `historico.json`) e agende para terça, quarta ou quinta às 18h00. O Reels conta como post para a regra dos 3 dias.
 3. Gere as artes, revise, publique a mídia no site, crie os posts no Metricool (`createScheduledPost`, `autoPublish: true`, `draft: false`, `instagramData.type` POST ou REEL) e atualize o `historico.json` (commit e push).
 4. Se houver dados, olhe o desempenho dos últimos posts (`getAnalyticsDataByMetrics`) e prefira os pilares e formatos que tiveram mais alcance e salvamentos.
 5. Termine com um resumo curto para o Gustavo: o que foi agendado (data, tema), o que publicou e qualquer problema.
