@@ -80,12 +80,12 @@
    "status": "agendado"
   },
   {
-   "data": "2026-10-07",
+   "data": "2026-10-08 18:00",
    "tipo": "REEL",
    "tema": "Pizzaria em Peruíbe: pedido chega pronto no WhatsApp (narrado, voz Alex)",
    "segmento": "pizzaria",
-   "midia": "instagram/video/modelos/pizzaria (gerado na nuvem)",
-   "status": "teste aprovado? aguardando o Gustavo; não publicado"
+   "midia": "social/2026-10-08-pizzaria.mp4",
+   "status": "agendado"
   }
  ]
 }
