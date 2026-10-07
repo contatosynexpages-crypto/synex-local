@@ -1,0 +1,3 @@
+As fontes desta pasta são livres (SIL Open Font License 1.1) e podem ser usadas em vídeos comerciais:
+Big Shoulders, Instrument Sans, Instrument Serif e Geist Mono.
+Os textos completos das licenças estão nos arquivos *-OFL.txt (Instrument Serif segue a mesma licença OFL da Instrument Sans).

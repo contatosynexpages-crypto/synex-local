@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /demo/
 Disallow: /social/
+Disallow: /instagram/
 
 Sitemap: https://synexpages.net/sitemap.xml

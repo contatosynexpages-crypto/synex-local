@@ -1,0 +1,16 @@
+{
+  "conta": "@synex_pages (Instagram) · Metricool blogId 7026216 · fuso America/Sao_Paulo",
+  "posts": [
+    {"data": "2026-10-06 18:00", "tipo": "REEL", "tema": "Salão de beleza: cliente chega sabendo o preço (narrado, voz Alex)", "midia": "social/synex-beleza-reels.mp4", "status": "publicado", "url": "https://www.instagram.com/reel/DeKtC3HiqLp/"},
+    {"data": "2026-10-06 19:10", "tipo": "REEL", "tema": "Seu cliente procurou você (vídeo enviado pelo Gustavo)", "midia": "social/synex-reels-voce.mp4", "status": "agendado"},
+    {"data": "2026-10-07 10:00", "tipo": "POST", "tema": "Série Sinal Costeiro 01: Seu comércio, encontrado", "midia": "social/01-encontrado.png", "status": "agendado"},
+    {"data": "2026-10-09 10:00", "tipo": "POST", "tema": "02: Procuraram por você, acharam o concorrente", "midia": "social/02-procuraram.png", "status": "agendado"},
+    {"data": "2026-10-13 10:00", "tipo": "POST", "tema": "03: O caminho até o seu WhatsApp", "midia": "social/03-caminho.png", "status": "agendado"},
+    {"data": "2026-10-15 10:00", "tipo": "POST", "tema": "04: Três passos", "midia": "social/04-tres-passos.png", "status": "agendado"},
+    {"data": "2026-10-19 10:00", "tipo": "POST", "tema": "05: R$297 pagamento único", "midia": "social/05-preco.png", "status": "agendado"},
+    {"data": "2026-10-21 10:00", "tipo": "POST", "tema": "06: Uma página para cada ofício", "midia": "social/06-oficios.png", "status": "agendado"},
+    {"data": "2026-10-23 10:00", "tipo": "POST", "tema": "07: Daqui, pra quem é daqui (mapa)", "midia": "social/07-daqui.png", "status": "agendado"},
+    {"data": "2026-10-27 10:00", "tipo": "POST", "tema": "08: O bot responde (relógio 24h)", "midia": "social/08-bot.png", "status": "agendado"},
+    {"data": "2026-10-29 10:00", "tipo": "POST", "tema": "09: Diagnóstico grátis", "midia": "social/09-diagnostico.png", "status": "agendado"}
+  ]
+}
