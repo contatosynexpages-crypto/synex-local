@@ -1,0 +1,130 @@
+{
+ "titulo": "Pizzaria: o pedido chega pronto no WhatsApp",
+ "voz": "pm_alex",
+ "velocidade": 1.0,
+ "arquivo_final": "synex-pizzaria.mp4",
+ "cenas": [
+  {
+   "id": "s1",
+   "texto": "Sexta, sete da noite. Na pizzaria do Rafa, em Peruíbe, o forno está a mil... e o WhatsApp também.",
+   "legendas": [
+    "Sexta, sete da noite. Na pizzaria do Rafa, em Peruíbe, o forno está a mil...",
+    "...e o *WhatsApp também*."
+   ]
+  },
+  {
+   "id": "s2",
+   "texto": "Tem calabresa? Quanto é a grande? Entrega no Guaraú? Ele está com a mão na massa, e os pedidos vão esfriando na conversa.",
+   "legendas": [
+    "Tem calabresa? Quanto é a grande?",
+    "Entrega no Guaraú?",
+    "Ele está com a mão na massa,",
+    "e os pedidos vão *esfriando na conversa*."
+   ]
+  },
+  {
+   "id": "s3",
+   "texto": "Do outro lado da cidade, o Diego está com fome e procura uma pizzaria no Google. Acha um perfil sem cardápio, sem preço... e pede no primeiro que mostra tudo.",
+   "legendas": [
+    "Do outro lado da cidade, o Diego está com fome e procura uma pizzaria no Google.",
+    "Acha um perfil *sem cardápio, sem preço*...",
+    "...e pede no primeiro que mostra tudo."
+   ]
+  },
+  {
+   "id": "s4",
+   "texto": "Na semana seguinte, a pizzaria ganha uma página própria: cardápio com preços, fotos, taxa de entrega por bairro, horário, e um botão de pedido pelo WhatsApp.",
+   "legendas": [
+    "Na semana seguinte, a pizzaria ganha uma *página própria*:",
+    "cardápio com preços, fotos, taxa de entrega por bairro, horário,",
+    "e um *botão de pedido pelo WhatsApp*."
+   ]
+  },
+  {
+   "id": "s5",
+   "texto": "Sexta de novo. O Diego pesquisa, e agora a Pizzaria do Rafa aparece. Ele escolhe o sabor, vê o preço... e toca no botão.",
+   "legendas": [
+    "Sexta de novo. O Diego pesquisa, e agora a *Pizzaria do Rafa* aparece.",
+    "Ele escolhe o sabor, vê o preço... e *toca no botão*."
+   ]
+  },
+  {
+   "id": "s6",
+   "texto": "O pedido já chega pronto: uma grande de calabresa, entrega no Centro, pagamento no Pix.",
+   "legendas": [
+    "O pedido já chega pronto:",
+    "“Uma grande de calabresa, entrega no Centro, pagamento no Pix.”"
+   ]
+  },
+  {
+   "id": "s7",
+   "texto": "O Rafa só confirma. E a próxima pizza já vai pro forno.",
+   "legendas": [
+    "O Rafa *só confirma*.",
+    "E a próxima pizza já vai pro forno."
+   ]
+  }
+ ],
+ "efeitos": [
+  [
+   "s1",
+   4.4,
+   "pop"
+  ],
+  [
+   "s2",
+   0.05,
+   "pop"
+  ],
+  [
+   "s2",
+   0.9,
+   "pop"
+  ],
+  [
+   "s2",
+   1.9,
+   "pop"
+  ],
+  [
+   "s2",
+   3.6,
+   "pop"
+  ],
+  [
+   "s2",
+   4.6,
+   "pop"
+  ],
+  [
+   "s3",
+   8.2,
+   "toque"
+  ],
+  [
+   "s5",
+   3.3,
+   "toque"
+  ],
+  [
+   "s5",
+   6.2,
+   "toque"
+  ],
+  [
+   "s6",
+   1.6,
+   "mensagem"
+  ],
+  [
+   "s7",
+   0.3,
+   "enviada"
+  ],
+  [
+   "s7",
+   2.8,
+   "pop"
+  ]
+ ]
+}
