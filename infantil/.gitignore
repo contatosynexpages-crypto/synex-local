@@ -1,0 +1,11 @@
+modelos/*/voz/
+modelos/*/audio.wav
+modelos/*/musica.wav
+modelos/*/marks.js
+modelos/*/timeline.js
+modelos/*/prev/
+modelos/*/chk/
+modelos/*/*.png
+modelos/*/*.mp4
+modelo/
+__pycache__/

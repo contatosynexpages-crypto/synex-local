@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Outfit;font-weight:700;src:url('../../fontes/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#7fd0ff}
+body{position:relative;font-family:Outfit;font-weight:700}
+svg#mundo{position:absolute;inset:0;width:1080px;height:1920px}
+.t{position:absolute;left:0;width:1080px;text-align:center;white-space:nowrap}
+#titulo{top:330px;font-size:118px;color:#fff;-webkit-text-stroke:10px #2b2f6b;paint-order:stroke fill;letter-spacing:.01em}
+#titulo span{display:inline-block}
+#numero{top:470px;font-size:450px;line-height:1;color:#FFD23F;-webkit-text-stroke:22px #2b2f6b;paint-order:stroke fill;text-shadow:0 18px 0 rgba(43,47,107,.25)}
+#cap{position:absolute;left:90px;width:900px;top:1600px;height:180px;display:flex;align-items:center;justify-content:center}
+#cap div{background:#fff;border:6px solid #2b2f6b;border-radius:48px;padding:22px 40px;font-size:54px;line-height:1.15;color:#2b2f6b;text-align:center;box-shadow:0 10px 0 rgba(43,47,107,.25);text-wrap:balance}
+#cap em{font-style:normal;color:#FF5A36}
+</style></head>
+<body>
+<svg id="mundo" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc2ff"/><stop offset=".6" stop-color="#b7e6ff"/><stop offset="1" stop-color="#e6f7ff"/></linearGradient>
+    <radialGradient id="brilho"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#ceu)"/>
+  <g id="sol" transform="translate(900 210)">
+    <g id="raios"></g>
+    <circle r="92" fill="#FFD23F" stroke="#F7A400" stroke-width="8"/>
+    <ellipse cx="-30" cy="-12" rx="9" ry="12" fill="#2b2f6b"/><ellipse cx="30" cy="-12" rx="9" ry="12" fill="#2b2f6b"/>
+    <path d="M-34 22 Q0 52 34 22" stroke="#2b2f6b" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-52" cy="16" rx="14" ry="9" fill="#ff8a7a" opacity=".7"/><ellipse cx="52" cy="16" rx="14" ry="9" fill="#ff8a7a" opacity=".7"/>
+  </g>
+  <g id="nuvens"></g>
+  <path d="M0 1240 Q270 1120 560 1230 T1080 1200 V1920 H0Z" fill="#8edc6e"/>
+  <path d="M0 1330 Q300 1250 620 1330 T1080 1310 V1920 H0Z" fill="#6cc84f"/>
+  <path d="M0 1460 H1080 V1920 H0Z" fill="#5ab33f"/>
+  <g id="flores"></g>
+  <g id="palco"></g>
+  <g id="confete"></g>
+</svg>
+<div id="titulo" class="t"></div>
+<div id="numero" class="t"></div>
+<div id="cap"><div id="capin"></div></div>
+<script src="timeline.js"></script>
+<script src="marks.js"></script>
+<script src="anim.js"></script>
+</body></html>

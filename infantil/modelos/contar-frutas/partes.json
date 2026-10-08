@@ -1,0 +1,7 @@
+{"s1": [["Oi, amiguinho!", 0.45], ["Hoje a gente vai contar até cinco com as frutinhas.", 0.5], ["Vamos lá?", 0]],
+ "s2": [["Uma maçã!", 0.6], ["Um!", 0]],
+ "s3": [["Duas bananas!", 0.55], ["Um!", 0.42], ["Dois!", 0]],
+ "s4": [["Três laranjas!", 0.55], ["Um!", 0.42], ["Dois!", 0.42], ["Três!", 0]],
+ "s5": [["Quatro uvinhas!", 0.55], ["Um!", 0.42], ["Dois!", 0.42], ["Três!", 0.42], ["Quatro!", 0]],
+ "s6": [["Cinco morangos!", 0.55], ["Um!", 0.42], ["Dois!", 0.42], ["Três!", 0.42], ["Quatro!", 0.42], ["Cinco!", 0]],
+ "s7": [["Muito bem!", 0.45], ["Você contou até cinco!", 0.5], ["Tchau, tchau!", 0]]}
