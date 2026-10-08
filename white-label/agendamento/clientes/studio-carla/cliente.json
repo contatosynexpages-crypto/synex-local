@@ -1,0 +1,28 @@
+{
+  "nome": "Studio Carla",
+  "email": "contato@studiocarla.test",
+  "site": "https://studiocarla.test",
+  "endereco": "Av. Padre Anchieta, 1000, Centro, Peruíbe/SP",
+  "cor": "#5B2A4C",
+  "logo": "logo-marca.png",
+  "horario": {
+    "tuesday": ["09:00", "19:00", [["12:30", "13:30"]]],
+    "wednesday": ["09:00", "19:00", [["12:30", "13:30"]]],
+    "thursday": ["09:00", "19:00", [["12:30", "13:30"]]],
+    "friday": ["09:00", "19:00", [["12:30", "13:30"]]],
+    "saturday": ["08:00", "17:00"]
+  },
+  "servicos": [
+    {"nome": "Corte feminino", "minutos": 60, "preco": 80, "categoria": "Cabelo", "cor": "#5B2A4C", "descricao": "Lavagem, corte e finalização."},
+    {"nome": "Escova", "minutos": 45, "preco": 50, "categoria": "Cabelo", "cor": "#7A3D66", "descricao": "Escova modelada com finalização."},
+    {"nome": "Coloração", "minutos": 120, "preco": 180, "categoria": "Cabelo", "cor": "#9C5A84", "descricao": "Cor global com tonalizante. Valor a partir de."},
+    {"nome": "Manicure", "minutos": 45, "preco": 35, "categoria": "Unhas", "cor": "#C9A46A", "descricao": "Cutilagem e esmaltação."},
+    {"nome": "Pedicure", "minutos": 45, "preco": 40, "categoria": "Unhas", "cor": "#B88F55", "descricao": "Cutilagem, lixa e esmaltação."},
+    {"nome": "Design de sobrancelha", "minutos": 30, "preco": 40, "categoria": "Sobrancelha", "cor": "#8C6A57", "descricao": "Design com pinça e linha."}
+  ],
+  "profissionais": [
+    {"nome": "Carla", "sobrenome": "Mendes", "email": "carla@studiocarla.test", "usuario": "carla.studio", "servicos": ["Corte feminino", "Escova", "Coloração"]},
+    {"nome": "Juliana", "sobrenome": "Rocha", "email": "juliana@studiocarla.test", "usuario": "juliana.studio", "servicos": ["Manicure", "Pedicure"]},
+    {"nome": "Bianca", "sobrenome": "Lima", "email": "bianca@studiocarla.test", "usuario": "bianca.studio", "servicos": ["Design de sobrancelha", "Escova"]}
+  ]
+}

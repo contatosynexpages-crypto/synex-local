@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="200" viewBox="0 0 640 200">
+  <circle cx="100" cy="100" r="78" fill="#5B2A4C"/>
+  <circle cx="100" cy="100" r="66" fill="none" stroke="#C9A46A" stroke-width="2"/>
+  <text x="100" y="128" text-anchor="middle" font-family="DejaVu Serif" font-style="italic" font-size="82" fill="#F6E7E1">C</text>
+  <text x="200" y="98" font-family="DejaVu Serif" font-size="58" fill="#5B2A4C" letter-spacing="2">Studio Carla</text>
+  <text x="203" y="140" font-family="DejaVu Sans" font-size="22" fill="#8C6A57" letter-spacing="6">BELEZA · CUIDADO</text>
+</svg>
