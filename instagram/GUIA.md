@@ -44,7 +44,7 @@ Pilares, alternados para não repetir o mesmo dois posts seguidos:
   - cabeçalho com "SYNEX LOCAL", coordenadas e numeração; rodapé com o logo e @synex_pages;
   - margens de 90 px, nada sobreposto, texto curto.
 - **Carrossel** (3 a 6 telas no mesmo estilo) para passo a passo e dicas. No Metricool são várias imagens em `media`.
-- **Reels narrados:** **todo vídeo da Synex tem narração completa com a voz Alex**, legendas e áudio tratado. Use o motor de `instagram/video/`, que roda aqui na nuvem, e siga `instagram/video/GUIA-VIDEO.md`. Meta: **1 Reels por semana**, com segmento novo a cada vez (pizzaria, barbearia, oficina, açaí, pet shop, revenda de carros, eletricista…). Parta do modelo `salao-de-beleza` e crie as cenas do segmento. Vídeo com voz sintética vai com `isAiGenerated: true`. Vídeo enviado pelo Gustavo sem narração: pergunte antes se deve ganhar narração.
+- **Reels narrados:** **todo vídeo da Synex tem narração completa com a voz Alex**, legendas e áudio tratado. Use **só** o motor de `instagram/video/`, que roda aqui na nuvem, e siga `instagram/video/GUIA-VIDEO.md`. O OpenMontage fica instalado, mas não é usado para a Synex por enquanto. Meta: **1 Reels por semana**, com segmento novo a cada vez (pizzaria, barbearia, oficina, açaí, pet shop, revenda de carros, eletricista…). Parta do modelo `salao-de-beleza` e crie as cenas do segmento. Vídeo com voz sintética vai com `isAiGenerated: true`. Vídeo enviado pelo Gustavo sem narração: pergunte antes se deve ganhar narração.
 
 ### Como gerar as artes
 

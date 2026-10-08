@@ -1,0 +1,262 @@
+diff --git a/remotion-composer/src/CinematicRenderer.tsx b/remotion-composer/src/CinematicRenderer.tsx
+index 926c59c..663b5c6 100644
+--- a/remotion-composer/src/CinematicRenderer.tsx
++++ b/remotion-composer/src/CinematicRenderer.tsx
+@@ -1,5 +1,5 @@
+ import React from "react";
+-import { loadFont } from "@remotion/google-fonts/SpaceGrotesk";
++import { loadSpaceGrotesk as loadFont } from "./fonts/local";
+ import {
+   AbsoluteFill,
+   Audio,
+diff --git a/remotion-composer/src/CollageBurst.tsx b/remotion-composer/src/CollageBurst.tsx
+index 77cf0c7..c0c4fd7 100644
+--- a/remotion-composer/src/CollageBurst.tsx
++++ b/remotion-composer/src/CollageBurst.tsx
+@@ -10,7 +10,7 @@ import {
+   useVideoConfig,
+ } from "remotion";
+ import React from "react";
+-import { loadFont as loadPlayfair } from "@remotion/google-fonts/PlayfairDisplay";
++import { loadPlayfair } from "./fonts/local";
+ import { resolveAsset } from "./lib/resolveAsset";
+ 
+ const { fontFamily: playfairFamily } = loadPlayfair("normal", {
+diff --git a/remotion-composer/src/Explainer.tsx b/remotion-composer/src/Explainer.tsx
+index 99dd637..ee074ce 100644
+--- a/remotion-composer/src/Explainer.tsx
++++ b/remotion-composer/src/Explainer.tsx
+@@ -9,7 +9,7 @@ import {
+   useCurrentFrame,
+   useVideoConfig,
+ } from "remotion";
+-import { loadFont } from "@remotion/google-fonts/SpaceGrotesk";
++import { loadSpaceGrotesk as loadFont } from "./fonts/local";
+ import { TextCard } from "./components/TextCard";
+ import { StatCard } from "./components/StatCard";
+ import { CalloutBox } from "./components/CalloutBox";
+@@ -208,6 +208,10 @@ interface Cut {
+   rightLabel?: string;
+   leftValue?: string;
+   rightValue?: string;
++  leftColor?: string;
++  // Per-cut layout scale for vertical renders (overrides sceneScale).
++  scale?: number;
++  rightColor?: string;
+   // Chart props
+   chartData?: any[];
+   chartSeries?: any[];
+@@ -615,6 +619,7 @@ const SceneRenderer: React.FC<{ cut: Cut; theme: ThemeConfig }> = ({ cut, theme
+       <ComparisonCard
+         leftLabel={cut.leftLabel} rightLabel={cut.rightLabel}
+         leftValue={cut.leftValue} rightValue={cut.rightValue}
++        leftColor={cut.leftColor || theme.mutedTextColor} rightColor={cut.rightColor || accent}
+         title={cut.title} backgroundColor={bgColor} textColor={textColor}
+         cardBackgroundColor={cut.cardBackgroundColor || theme.surfaceColor}
+       />
+@@ -836,7 +841,17 @@ const OverlayRenderer: React.FC<{ overlay: Overlay; theme: ThemeConfig }> = ({
+ 
+ export const Explainer: React.FC<ExplainerProps> = (props) => {
+   const { cuts, overlays, captions, audio } = props;
+-  const { fps, durationInFrames } = useVideoConfig();
++  const { fps, durationInFrames, width, height } = useVideoConfig();
++  const vertical = height > width;
++  // Scenes are laid out for a 1920x1080 canvas; on vertical renders lay them
++  // out on a smaller logical canvas and scale up so text stays legible.
++  const sceneScale = (props.sceneScale as number | undefined) ?? (vertical ? 1.8 : 1);
++  const scaledBy = (k: number): React.CSSProperties => ({
++    position: "absolute", left: 0, top: 0,
++    width: width / k, height: height / k,
++    transform: `scale(${k})`, transformOrigin: "0 0",
++  });
++  const scaled = scaledBy(sceneScale);
+ 
+   // Resolve theme from props — playbook name, theme name, or custom themeConfig
+   const theme = resolveTheme(props as Record<string, unknown>);
+@@ -847,18 +862,24 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
+       <AnimatedBackground theme={theme} />
+ 
+       {/* Layer 1: Visual scenes */}
++      <div>
+       {cuts.map((cut) => {
+         const from = Math.round(cut.in_seconds * fps);
+         const duration = Math.round((cut.out_seconds - cut.in_seconds) * fps);
+ 
+         return (
+           <Sequence key={cut.id} from={from} durationInFrames={duration}>
+-            <SceneRenderer cut={cut} theme={theme} />
++            <div style={scaledBy(cut.scale ?? sceneScale)}>
++              <SceneRenderer cut={cut} theme={theme} />
++            </div>
+           </Sequence>
+         );
+       })}
+ 
++      </div>
++
+       {/* Layer 2: Overlays (section titles, stat reveals, hero titles) */}
++      <div style={scaled}>
+       {overlays?.map((overlay, i) => {
+         const from = Math.round(overlay.in_seconds * fps);
+         const duration = Math.round(
+@@ -872,12 +893,15 @@ export const Explainer: React.FC<ExplainerProps> = (props) => {
+         );
+       })}
+ 
++      </div>
++
+       {/* Layer 3: Captions (word-by-word highlight) */}
+       {captions && captions.length > 0 && (
+         <CaptionOverlay
+           words={captions}
+-          wordsPerPage={6}
+-          fontSize={42}
++          wordsPerPage={vertical ? 4 : 6}
++          fontSize={vertical ? 64 : 42}
++          bottomOffset={vertical ? 380 : 80}
+           color={theme.textColor}
+           highlightColor={theme.captionHighlightColor}
+           backgroundColor={theme.captionBackgroundColor}
+diff --git a/remotion-composer/src/LyricOverlay.tsx b/remotion-composer/src/LyricOverlay.tsx
+index 287110f..71bc9e9 100644
+--- a/remotion-composer/src/LyricOverlay.tsx
++++ b/remotion-composer/src/LyricOverlay.tsx
+@@ -7,7 +7,7 @@ import {
+   useVideoConfig,
+ } from "remotion";
+ import React from "react";
+-import { loadFont as loadPlayfair } from "@remotion/google-fonts/PlayfairDisplay";
++import { loadPlayfair } from "./fonts/local";
+ import { resolveAsset } from "./lib/resolveAsset";
+ 
+ const { fontFamily: playfairItalic } = loadPlayfair("italic", {
+diff --git a/remotion-composer/src/TitledVideo.tsx b/remotion-composer/src/TitledVideo.tsx
+index 0f710ca..a8bcf70 100644
+--- a/remotion-composer/src/TitledVideo.tsx
++++ b/remotion-composer/src/TitledVideo.tsx
+@@ -9,7 +9,7 @@ import {
+   useVideoConfig,
+ } from "remotion";
+ import { getVideoMetadata } from "@remotion/media-utils";
+-import { loadFont } from "@remotion/google-fonts/PlayfairDisplay";
++import { loadPlayfair as loadFont } from "./fonts/local";
+ import { resolveAsset } from "./lib/resolveAsset";
+ 
+ // Editorial serif for the tagline — Playfair Display at its boldest weight.
+diff --git a/remotion-composer/src/components/CaptionOverlay.tsx b/remotion-composer/src/components/CaptionOverlay.tsx
+index 0142d68..4f5ebe6 100644
+--- a/remotion-composer/src/components/CaptionOverlay.tsx
++++ b/remotion-composer/src/components/CaptionOverlay.tsx
+@@ -1,3 +1,4 @@
++import React from "react";
+ import {
+   AbsoluteFill,
+   Sequence,
+@@ -21,6 +22,8 @@ type CaptionOverlayProps = {
+   words: WordCaption[];
+   // How many words to show at once in a "page"
+   wordsPerPage?: number;
++  // Distance from the bottom edge (keep clear of Reels/Shorts UI on vertical).
++  bottomOffset?: number;
+   fontSize?: number;
+   color?: string;
+   highlightColor?: string;
+@@ -65,7 +68,8 @@ const PageRenderer: React.FC<{
+   backgroundColor: string;
+   fontFamily: string;
+   wordSeparator: string;
+-}> = ({ page, fontSize, color, highlightColor, backgroundColor, fontFamily, wordSeparator }) => {
++  bottomOffset: number;
++}> = ({ page, fontSize, color, highlightColor, backgroundColor, fontFamily, wordSeparator, bottomOffset }) => {
+   const frame = useCurrentFrame();
+   const { fps } = useVideoConfig();
+ 
+@@ -83,7 +87,7 @@ const PageRenderer: React.FC<{
+       style={{
+         justifyContent: "flex-end",
+         alignItems: "center",
+-        paddingBottom: 80,
++        paddingBottom: bottomOffset,
+       }}
+     >
+       <div
+@@ -110,8 +114,8 @@ const PageRenderer: React.FC<{
+             const isActive = w.startMs <= currentMs && w.endMs > currentMs;
+             const isPast = w.endMs <= currentMs;
+             return (
++              <React.Fragment key={`${w.startMs}-${i}`}>
+               <span
+-                key={`${w.startMs}-${i}`}
+                 style={{
+                   // Keep each word unbroken so lines wrap only at word
+                   // boundaries. For space-delimited text this matches the
+@@ -125,8 +129,10 @@ const PageRenderer: React.FC<{
+                     : "0 2px 4px rgba(0,0,0,0.5)",
+                 }}
+               >
+-                {w.word}{i < page.words.length - 1 ? wordSeparator : ""}
++                {w.word}
+               </span>
++              {i < page.words.length - 1 ? wordSeparator : ""}
++              </React.Fragment>
+             );
+           })}
+         </span>
+@@ -144,6 +150,7 @@ export const CaptionOverlay: React.FC<CaptionOverlayProps> = ({
+   backgroundColor = "rgba(15, 23, 42, 0.75)",
+   fontFamily = "Space Grotesk, Inter, system-ui, sans-serif",
+   wordSeparator = " ",
++  bottomOffset = 80,
+ }) => {
+   const { fps } = useVideoConfig();
+   const pages = buildPages(words, wordsPerPage);
+@@ -168,6 +175,7 @@ export const CaptionOverlay: React.FC<CaptionOverlayProps> = ({
+               backgroundColor={backgroundColor}
+               fontFamily={fontFamily}
+               wordSeparator={wordSeparator}
++              bottomOffset={bottomOffset}
+             />
+           </Sequence>
+         );
+diff --git a/remotion-composer/src/index.tsx b/remotion-composer/src/index.tsx
+index e78af8b..7afc6d6 100644
+--- a/remotion-composer/src/index.tsx
++++ b/remotion-composer/src/index.tsx
+@@ -1,3 +1,4 @@
++import "./fonts/local";
+ import { registerRoot } from "remotion";
+ import { Root } from "./Root";
+ 
+diff --git a/remotion-composer/src/fonts/local.ts b/remotion-composer/src/fonts/local.ts
+new file mode 100644
+index 0000000..8bff45f
+--- /dev/null
++++ b/remotion-composer/src/fonts/local.ts
+@@ -0,0 +1,27 @@
++// Local font loader with the same call shape as @remotion/google-fonts loadFont.
++// Serves the fonts from public/fonts via @font-face (for environments where
++// Google Fonts is unreachable). Declared once, at bundle load.
++import { staticFile } from "remotion";
++
++const FONTS: [string, string, string[]][] = [
++  ["Space Grotesk", "space-grotesk", ["300", "400", "500", "600", "700"]],
++  ["Playfair Display", "playfair-display", ["400", "500", "600", "700", "800", "900"]],
++];
++
++if (typeof document !== "undefined" && !document.getElementById("local-fonts")) {
++  const css = FONTS.flatMap(([family, slug, weights]) =>
++    weights.map(
++      (w) =>
++        `@font-face{font-family:'${family}';font-weight:${w};font-style:normal;font-display:block;` +
++        `src:url('${staticFile(`fonts/${slug}-latin-${w}-normal.woff2`)}') format('woff2');}`,
++    ),
++  ).join("\n");
++  const el = document.createElement("style");
++  el.id = "local-fonts";
++  el.textContent = css;
++  document.head.appendChild(el);
++}
++
++const make = (family: string) => (_style?: string, _opts?: unknown) => ({ fontFamily: family });
++export const loadSpaceGrotesk = make("Space Grotesk");
++export const loadPlayfair = make("Playfair Display");

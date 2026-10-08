@@ -2,6 +2,8 @@
 
 **Regra da Synex: todo vídeo tem narração completa** (voz Alex do começo ao fim), legendas sincronizadas, imagem 1080x1920 limpa e áudio tratado. Vídeo sem narração não sai.
 
+**Vídeos da Synex saem só deste motor.** O OpenMontage está instalado (`instagram/openmontage/`), mas por decisão do Gustavo não é usado para a Synex por enquanto.
+
 Este motor roda na nuvem e no PC. Na nuvem: `cd instagram/video && python3 gerar.py modelos/<nome>` (o modelo de voz, ~350 MB, é baixado sozinho do GitHub do kokoro-onnx na primeira vez; precisa de `pip install --break-system-packages kokoro-onnx soundfile` e Playwright/Chromium, que já existem no ambiente).
 
 ## O que é a Synex Local
