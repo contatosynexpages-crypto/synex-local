@@ -14,14 +14,16 @@
    "tipo": "REEL",
    "tema": "Seu cliente procurou você (vídeo enviado pelo Gustavo)",
    "midia": "social/synex-reels-voce.mp4",
-   "status": "agendado"
+   "status": "publicado",
+   "url": "https://www.instagram.com/reel/DeK00QXAUVN/"
   },
   {
    "data": "2026-10-07 10:00",
    "tipo": "POST",
    "tema": "Série Sinal Costeiro 01: Seu comércio, encontrado",
    "midia": "social/01-encontrado.png",
-   "status": "agendado"
+   "status": "publicado",
+   "url": "https://www.instagram.com/p/DeMa-vJiBfc/"
   },
   {
    "data": "2026-10-09 10:00",
