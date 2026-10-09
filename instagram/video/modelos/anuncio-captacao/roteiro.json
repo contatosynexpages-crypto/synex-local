@@ -1,0 +1,151 @@
+{
+ "titulo": "Anúncio de captação: quem não tem página não aparece",
+ "voz": "pm_alex",
+ "velocidade": 1.0,
+ "arquivo_final": "synex-anuncio-captacao.mp4",
+ "cenas": [
+  {
+   "id": "s1",
+   "texto": "Você tem comércio ou presta serviço no litoral, e ainda não tem uma página na internet? Presta atenção.",
+   "legendas": [
+    "Você tem comércio ou presta serviço no litoral,",
+    "e ainda *não tem uma página* na internet?",
+    "Presta atenção."
+   ]
+  },
+  {
+   "id": "s2",
+   "texto": "Agora mesmo, alguém em Itanhaém está procurando no celular exatamente o que você faz.",
+   "legendas": [
+    "Agora mesmo, alguém em Itanhaém está procurando no celular",
+    "*exatamente o que você faz*."
+   ]
+  },
+  {
+   "id": "s3",
+   "texto": "Aparecem três opções. Nenhuma é você. Ele toca na que mostra o preço e o WhatsApp... e fecha com ela.",
+   "legendas": [
+    "Aparecem três opções.",
+    "*Nenhuma é você*.",
+    "Ele toca na que mostra o preço e o WhatsApp...",
+    "...e fecha com ela."
+   ]
+  },
+  {
+   "id": "s4",
+   "texto": "E você nem fica sabendo que perdeu esse cliente.",
+   "legendas": [
+    "E você *nem fica sabendo* que perdeu esse cliente."
+   ]
+  },
+  {
+   "id": "s5",
+   "texto": "Com uma página de vendas da Synex Local, o seu negócio aparece com serviços, preços, fotos, endereço e horário.",
+   "legendas": [
+    "Com uma *página de vendas* da Synex Local,",
+    "o seu negócio aparece com serviços, preços, fotos, endereço e horário."
+   ]
+  },
+  {
+   "id": "s6",
+   "texto": "E um botão que leva o cliente direto pro seu WhatsApp. Pagamento único de duzentos e noventa e sete reais.",
+   "legendas": [
+    "E um *botão direto pro seu WhatsApp*.",
+    "Pagamento único de *R$ 297*."
+   ]
+  },
+  {
+   "id": "s7",
+   "texto": "Na próxima busca, quem aparece é você. E a mensagem já chega pronta.",
+   "legendas": [
+    "Na próxima busca, *quem aparece é você*.",
+    "E a mensagem já chega pronta."
+   ]
+  },
+  {
+   "id": "s8",
+   "texto": "Você só responde... e marca o serviço.",
+   "legendas": [
+    "Você *só responde*...",
+    "e marca o serviço."
+   ]
+  }
+ ],
+ "efeitos": [
+  [
+   "s1",
+   0.3,
+   "pop"
+  ],
+  [
+   "s3",
+   0.1,
+   "pop"
+  ],
+  [
+   "s3",
+   0.35,
+   "pop"
+  ],
+  [
+   "s3",
+   0.6,
+   "pop"
+  ],
+  [
+   "s3",
+   1.2,
+   "pop"
+  ],
+  [
+   "s3",
+   3.2,
+   "toque"
+  ],
+  [
+   "s5",
+   2.7,
+   "pop"
+  ],
+  [
+   "s5",
+   3.9,
+   "pop"
+  ],
+  [
+   "s5",
+   4.9,
+   "pop"
+  ],
+  [
+   "s6",
+   0.3,
+   "pop"
+  ],
+  [
+   "s6",
+   3.2,
+   "pop"
+  ],
+  [
+   "s7",
+   2.0,
+   "toque"
+  ],
+  [
+   "s7",
+   3.05,
+   "mensagem"
+  ],
+  [
+   "s8",
+   0.2,
+   "enviada"
+  ],
+  [
+   "s8",
+   2.35,
+   "pop"
+  ]
+ ]
+}
