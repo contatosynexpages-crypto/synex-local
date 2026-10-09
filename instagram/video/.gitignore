@@ -4,3 +4,4 @@ modelo/
 **/timeline.js
 **/audio.wav
 **/*.mp4
+__pycache__/
