@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Shoulders;src:url('../../../fontes/BigShoulders-Bold.ttf')}
+@font-face{font-family:ISerif;font-style:italic;src:url('../../../fontes/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;src:url('../../../fontes/GeistMono-Regular.ttf')}
+@font-face{font-family:ISans;src:url('../../../fontes/InstrumentSans-Regular.ttf')}
+@font-face{font-family:ISans;font-weight:700;src:url('../../../fontes/InstrumentSans-Bold.ttf')}
+:root{--bg:#0B0B0C;--ink:#F3F1EE;--red:#E8283A;--hot:#FF4D5E;--wa:#25D366}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{position:relative;color:var(--ink);font-family:ISans;-webkit-font-smoothing:antialiased;
+ background-image:linear-gradient(rgba(243,241,238,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(243,241,238,.03) 1px,transparent 1px);background-size:60px 60px}
+.abs{position:absolute}
+#glow{left:-300px;top:-200px;width:1700px;height:1300px;background:radial-gradient(closest-side,rgba(232,40,58,.13),transparent);pointer-events:none}
+#stamp{top:118px;left:0;width:1080px;text-align:center;font-family:Mono;font-size:26px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,241,238,.62)}
+#stamp b{color:var(--red);font-weight:400}
+#who{top:200px;left:0;width:1080px;text-align:center;font-family:ISerif;font-style:italic;font-size:46px;color:rgba(243,241,238,.85)}
+svg#art{left:0;top:0;width:1080px;height:1920px}
+#cap{left:80px;width:920px;top:1590px;height:230px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:ISans;font-weight:700;font-size:56px;line-height:1.18;letter-spacing:-.01em;text-wrap:balance}
+#cap em{font-style:normal;color:var(--hot)}
+/* gancho */
+#hook{left:0;top:470px;width:1080px;text-align:center}
+#hook h1{font-family:Shoulders;font-weight:700;font-size:178px;line-height:.86;text-transform:uppercase;letter-spacing:-.005em}
+#hook h1 em{font-style:normal;color:var(--red)}
+#hook small{display:block;margin-top:34px;font-family:Mono;font-size:30px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,241,238,.6)}
+/* telefone */
+#phone{left:240px;top:300px;width:600px;height:1220px;border-radius:72px;background:#151517;border:2px solid rgba(243,241,238,.16);padding:16px;transform-origin:50% 50%;box-shadow:0 60px 120px -40px rgba(0,0,0,.9)}
+#scr{position:relative;width:100%;height:100%;border-radius:58px;overflow:hidden;background:#000}
+.layer{position:absolute;inset:0;opacity:0}
+.notch{position:absolute;top:18px;left:50%;width:150px;height:38px;margin-left:-75px;border-radius:20px;background:#000;z-index:9}
+/* google */
+.light{background:#F7F6F4;color:#1d1b1a}
+.gbar{position:absolute;left:28px;right:28px;top:140px;height:78px;border-radius:40px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.12);display:flex;align-items:center;padding:0 28px;font-size:28px;color:#1d1b1a}
+.gbar s{display:inline-block;width:26px;height:26px;border:3px solid #8a8a8a;border-radius:50%;margin-right:18px}
+.gbar u{display:inline-block;width:3px;height:32px;background:#1a73e8;margin-left:3px}
+.glogo{position:absolute;top:78px;width:100%;text-align:center;font-weight:700;font-size:36px;letter-spacing:-.02em;color:#5f6368}
+.res{position:absolute;left:28px;right:28px;border-radius:24px;background:#fff;padding:22px 26px;box-shadow:0 1px 4px rgba(0,0,0,.08);opacity:0}
+.res small{display:block;font-size:20px;color:#5f6368}
+.res b{display:block;font-size:30px;color:#1a0dab;margin-top:6px;font-weight:700;letter-spacing:-.01em}
+.res span{display:block;font-size:22px;color:#3c4043;margin-top:8px;line-height:1.3}
+.res .tag{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:20px;font-size:19px;font-weight:700}
+.ghost{background:transparent;border:3px dashed var(--red);box-shadow:none;text-align:center;padding:30px 26px}
+.ghost b{color:var(--red);font-size:28px}
+.ghost small{color:#b3192b}
+.done{position:absolute;right:22px;top:22px;font-size:19px;font-weight:700;color:#137a3a;opacity:0}
+.tap{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;background:rgba(40,40,40,.25);border:3px solid rgba(40,40,40,.45);opacity:0}
+/* tela de bloqueio */
+#lock{background:linear-gradient(170deg,#24181b 0%,#121012 55%,#0b0b0c 100%)}
+#lock .hora{position:absolute;top:110px;width:100%;text-align:center;font-size:132px;letter-spacing:-.03em}
+#lock .data{position:absolute;top:92px;width:100%;text-align:center;font-size:26px;color:rgba(255,255,255,.75)}
+#lock .vazio{position:absolute;top:560px;width:100%;text-align:center;font-size:28px;color:rgba(255,255,255,.42)}
+#lock .vazio i{display:block;margin:0 auto 22px;width:64px;height:64px;border-radius:50%;border:3px solid rgba(255,255,255,.28)}
+/* página */
+#pg{background:#FAF7F6;color:#1f1a1b}
+.pgin{position:absolute;left:0;top:0;width:100%}
+.pg-top{height:150px;padding:74px 30px 0;display:flex;align-items:center;gap:14px;font-weight:700;font-size:28px}
+.pg-top i{width:40px;height:40px;border-radius:12px;background:#F2B705}
+.pg-hero{margin:0 24px;border-radius:30px;padding:34px 30px;background:linear-gradient(150deg,#fff1c2,#fff 70%);border:1px solid rgba(0,0,0,.05)}
+.pg-hero small{font-family:Mono;font-size:18px;letter-spacing:.12em;text-transform:uppercase;color:#9a6a00}
+.pg-hero h3{font-weight:700;font-size:44px;line-height:1.05;margin-top:10px;letter-spacing:-.02em}
+.blk{margin:22px 24px 0;opacity:0}
+.blk h4{font-size:22px;font-family:Mono;letter-spacing:.14em;text-transform:uppercase;color:#7f7067;margin-bottom:12px;font-weight:400}
+.svc{display:flex;justify-content:space-between;background:#fff;border-radius:18px;padding:18px 22px;font-size:27px;margin-bottom:10px;border:1px solid rgba(0,0,0,.05)}
+.svc b{color:#9a6a00;display:inline-block}
+.fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fotos div{height:150px;border-radius:16px}
+.hor{background:#fff;border-radius:18px;padding:18px 22px;font-size:25px;border:1px solid rgba(0,0,0,.05);line-height:1.35}
+.wabtn{margin:24px 24px 0;height:96px;border-radius:24px;background:var(--wa);color:#fff;font-weight:700;font-size:32px;display:flex;align-items:center;justify-content:center;gap:14px;opacity:0;position:relative}
+.wabtn:before{content:"";width:34px;height:34px;border-radius:50%;border:4px solid #fff}
+/* preço */
+#price{left:140px;top:640px;width:800px;padding:56px 50px 50px;border-radius:40px;background:#151517;border:2px solid rgba(232,40,58,.55);text-align:center;opacity:0;box-shadow:0 40px 120px -30px rgba(232,40,58,.45)}
+#price small{display:block;font-family:Mono;font-size:26px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,241,238,.6)}
+#price h2{font-family:Shoulders;font-weight:700;font-size:250px;line-height:.9;margin-top:14px}
+#price h2 em{font-style:normal;color:var(--red);font-size:120px;vertical-align:58%;margin-right:8px}
+#price p{font-size:40px;font-weight:700;margin-top:10px}
+/* conversa */
+#chat{background:#0B141A}
+.chead{position:absolute;top:0;left:0;right:0;height:170px;background:#1F2C34;padding:84px 28px 0 112px;font-size:30px;font-weight:700}
+.chead:before{content:"";position:absolute;left:28px;top:76px;width:66px;height:66px;border-radius:50%;background:#4a6b7b}
+.chead span{display:block;font-size:20px;font-weight:400;color:#8696a0;margin-top:2px}
+.bub{position:absolute;max-width:470px;padding:20px 24px 36px;border-radius:22px;font-size:32px;line-height:1.3;opacity:0}
+.bub.in{left:26px;background:#202C33;border-top-left-radius:6px}
+.bub.out{right:26px;background:#005C4B;border-top-right-radius:6px}
+.bub i{position:absolute;right:16px;bottom:8px;font-style:normal;font-size:18px;color:rgba(255,255,255,.55)}
+.bub i b{color:#53bdeb;font-weight:400}
+.typing{position:absolute;left:26px;width:120px;height:62px;border-radius:22px;background:#202C33;opacity:0}
+.typing span{position:absolute;top:26px;width:12px;height:12px;border-radius:50%;background:#8696a0}
+/* chamada final */
+#cta{left:0;top:560px;width:1080px;text-align:center;opacity:0}
+#cta small{display:block;font-family:Mono;font-size:28px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,241,238,.6)}
+#cta h2{font-family:Shoulders;font-weight:700;font-size:158px;line-height:.86;text-transform:uppercase;margin-top:22px}
+#cta h2 em{font-style:normal;color:var(--red)}
+#cta .btn{display:inline-flex;align-items:center;gap:18px;margin-top:70px;padding:30px 54px;border-radius:999px;background:#F3F1EE;color:#0B0B0C;font-weight:700;font-size:44px}
+#cta .btn i{width:30px;height:30px;border-radius:50%;border:4px solid #0B0B0C}
+#cta p{margin-top:36px;font-size:34px;color:rgba(243,241,238,.7)}
+/* agenda final */
+#agenda{left:150px;top:420px;width:780px;opacity:0;border:2px solid rgba(243,241,238,.16);border-radius:36px;background:rgba(21,21,23,.94);padding:40px 44px}
+#agenda h2{font-family:Shoulders;font-weight:700;font-size:96px;line-height:.9;text-transform:uppercase}
+#agenda h2 em{font-style:normal;color:var(--red)}
+#agenda small{display:block;margin-bottom:14px;font-family:Mono;font-size:22px;letter-spacing:.18em;color:rgba(243,241,238,.55);text-transform:uppercase}
+.slot{display:flex;gap:26px;align-items:center;padding:22px 0;border-top:1px solid rgba(243,241,238,.1);font-size:32px}
+.slot b{font-family:Mono;font-weight:400;font-size:28px;width:110px;color:rgba(243,241,238,.6)}
+.slot.novo{color:#fff}
+.slot.novo b{color:var(--hot)}
+.slot .chk{margin-left:auto;font-family:Mono;font-size:22px;color:var(--wa);opacity:0}
+</style></head>
+<body>
+<div id="glow" class="abs"></div>
+<svg id="art" class="abs" viewBox="0 0 1080 1920" fill="none"></svg>
+<div id="stamp" class="abs"></div>
+<div id="who" class="abs"></div>
+
+<div id="hook" class="abs"><h1>Sem página<br>na internet<em>?</em></h1><small>Itanhaém · Peruíbe · Mongaguá</small></div>
+
+<div id="phone" class="abs"><div id="scr">
+  <div class="notch"></div>
+  <!-- busca do cliente -->
+  <div id="g1" class="layer light">
+    <div class="glogo">Google</div>
+    <div class="gbar"><s></s><span id="q1"></span><u></u></div>
+    <div class="res" id="r1" style="top:262px"><small>voltlitoral.com.br</small><b>Volt Litoral · Itanhaém</b><span>Instalação, tomadas e chuveiro. Preços no site.</span><span class="tag" style="background:#e6f7ec;color:#137a3a">chamar no WhatsApp</span><em class="done" id="dn1">conversa iniciada ✓</em></div>
+    <div class="res" id="r2" style="top:538px"><small>facebook.com › eletrica24h</small><b>Elétrica 24h · Mongaguá</b><span>Atendimento em todo o litoral.</span></div>
+    <div class="res" id="r3" style="top:760px"><small>guialocal.com › eletricistas</small><b>Eletricistas em Itanhaém</b><span>Lista de telefones.</span></div>
+    <div class="res ghost" id="r4" style="top:960px"><small>o seu negócio</small><b>não apareceu</b></div>
+    <div class="tap" id="tap1"></div>
+  </div>
+  <!-- o seu celular, quieto -->
+  <div id="lock" class="layer">
+    <div class="data">quinta, 9 de outubro</div>
+    <div class="hora">10:14</div>
+    <div class="vazio"><i></i>Nenhuma notificação</div>
+  </div>
+  <!-- página de exemplo -->
+  <div id="pg" class="layer"><div class="pgin">
+    <div class="pg-top"><i></i>Marcos Rocha Elétrica</div>
+    <div class="pg-hero"><small>Itanhaém · Eletricista</small><h3>Elétrica residencial sem dor de cabeça</h3></div>
+    <div class="blk" id="b1"><h4>Serviços e preços</h4>
+      <div class="svc" id="svA"><span>Instalação de chuveiro</span><b id="p1">R$ 120</b></div>
+      <div class="svc"><span>Troca de disjuntor</span><b id="p2">R$ 90</b></div>
+      <div class="svc"><span>Tomada nova</span><b id="p3">R$ 60</b></div></div>
+    <div class="blk" id="b2"><h4>Fotos</h4><div class="fotos">
+      <div style="background:linear-gradient(160deg,#2c2c30,#5a5a62),radial-gradient(circle,#ffd34d 0 20%,transparent 21%)"></div>
+      <div style="background:repeating-linear-gradient(90deg,#d8d3cc 0 18px,#c9c2b9 18px 20px),linear-gradient(#eee,#ddd)"></div>
+      <div style="background:linear-gradient(160deg,#1e3d4f,#3d7a96)"></div></div></div>
+    <div class="blk" id="b3"><h4>Endereço e horário</h4><div class="hor">Atende Itanhaém e região<br>seg a sáb, 8h às 18h</div></div>
+    <div class="wabtn" id="wab">Chamar no WhatsApp</div>
+  </div><div class="tap" id="tap2"></div></div>
+  <!-- busca de novo -->
+  <div id="g2" class="layer light">
+    <div class="glogo">Google</div>
+    <div class="gbar"><s></s><span id="q2"></span><u></u></div>
+    <div class="res" id="s1r" style="top:262px;outline:4px solid var(--hot)"><small>marcosrochaeletrica.com.br</small><b>Marcos Rocha Elétrica · Itanhaém</b><span>Chuveiro R$ 120 · Disjuntor R$ 90 · Tomada R$ 60. Chame no WhatsApp.</span><span class="tag" style="background:#e6f7ec;color:#137a3a">chamar no WhatsApp</span></div>
+    <div class="res" id="s2r" style="top:596px"><small>facebook.com › eletrica24h</small><b>Elétrica 24h · Mongaguá</b><span>Atendimento em todo o litoral.</span></div>
+    <div class="tap" id="tap3"></div>
+  </div>
+  <!-- conversa -->
+  <div id="chat" class="layer">
+    <div class="chead">Renata<span>online</span></div>
+    <div class="typing" id="typ" style="top:220px"><span style="left:28px"></span><span style="left:54px"></span><span style="left:80px"></span></div>
+    <div class="bub in" id="m1" style="top:220px">Oi! Vi sua página. Instala chuveiro hoje? Sou do Centro.<i>10:21</i></div>
+    <div class="bub out" id="m2" style="top:440px">Instalo sim! Passo aí às 16h.<i>10:22 <b>✓✓</b></i></div>
+  </div>
+</div></div>
+
+<div id="price" class="abs"><small>Página de vendas</small><h2><em>R$</em>297</h2><p>pagamento único</p></div>
+
+<div id="agenda" class="abs">
+  <small>Serviços de hoje · Marcos</small>
+  <h2>Quinta<em>.</em></h2>
+  <div style="margin-top:26px">
+    <div class="slot"><b>09:00</b>Troca de disjuntor · Suarão</div>
+    <div class="slot"><b>13:30</b>Tomada nova · Belas Artes</div>
+    <div class="slot novo" id="snew"><b>16:00</b>Chuveiro · Centro<span class="chk">confirmado</span></div>
+  </div>
+</div>
+<div id="cta" class="abs"><small>Para comércios do litoral sul</small><h2>Diagnóstico<br>grátis<em>.</em></h2>
+  <div class="btn" id="ctabtn"><i></i>Enviar mensagem</div><p>Toque no botão do anúncio</p></div>
+<div id="cap" class="abs"></div>
+<script src="timeline.js"></script>
+<script src="anim.js"></script>
+</body></html>

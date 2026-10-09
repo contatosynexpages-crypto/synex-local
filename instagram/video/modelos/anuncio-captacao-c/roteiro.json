@@ -1,0 +1,19 @@
+{
+ "titulo": "Anúncio de captação C: curto, ângulo de oferta, segmento salão",
+ "voz": "pm_alex",
+ "velocidade": 1.0,
+ "arquivo_final": "synex-anuncio-captacao-c.mp4",
+ "cenas": [
+  {"id": "s1", "texto": "Sua cliente procura um salão em Peruíbe no celular... e o seu não aparece.",
+   "legendas": ["Sua cliente procura um salão em Peruíbe no celular...", "...e o seu *não aparece*."]},
+  {"id": "s2", "texto": "Com uma página da Synex Local, ela acha você. E vê tudo:",
+   "legendas": ["Com uma página da Synex Local, *ela acha você*.", "E vê tudo:"]},
+  {"id": "s3", "texto": "serviços e preços, fotos dos trabalhos, endereço e horário.",
+   "legendas": ["serviços e preços, fotos dos trabalhos, endereço e horário."]},
+  {"id": "s4", "texto": "E toca num botão que já abre o seu WhatsApp.",
+   "legendas": ["E toca num botão que já abre *o seu WhatsApp*."]},
+  {"id": "s5", "texto": "Duzentos e noventa e sete reais, pagamento único. E o diagnóstico é grátis.",
+   "legendas": ["*R$ 297*, pagamento único.", "E o *diagnóstico é grátis*."]}
+ ],
+ "efeitos": [["s1", 2.6, "pop"], ["s2", 0.2, "pop"], ["s3", 0.1, "pop"], ["s3", 1.3, "pop"], ["s3", 2.6, "pop"], ["s4", 1.6, "toque"], ["s4", 2.3, "mensagem"], ["s5", 0.2, "pop"]]
+}
