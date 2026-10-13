@@ -88,6 +88,24 @@
       "segmento": "pizzaria",
       "midia": "social/2026-10-08-pizzaria.mp4",
       "status": "publicado"
+    },
+    {
+      "data": "2026-10-14 18:00",
+      "tipo": "REEL",
+      "tema": "Salão sem página? (Peruíbe, 23 s, voz Alex)",
+      "segmento": "salao",
+      "midia": "social/2026-10-09-anuncio-c.mp4",
+      "status": "agendado",
+      "via": "Meta Business Suite"
+    },
+    {
+      "data": "2026-10-20 18:00",
+      "tipo": "REEL",
+      "tema": "Comércio no litoral sem página na internet (47 s, voz Alex)",
+      "segmento": "geral",
+      "midia": "social/2026-10-09-anuncio-a.mp4",
+      "status": "agendado",
+      "via": "Meta Business Suite"
     }
   ]
 }
