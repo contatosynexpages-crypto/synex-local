@@ -48,7 +48,7 @@ def frame(n, coord):
 <div class="t mono i3" style="left:540px;top:70px;transform:translateX(-50%)">{coord}</div>
 <div class="t mono" style="right:{W-R}px;top:70px">Nº {n:02d}<span class="i3"> / {TOTAL:02d}</span></div>
 <svg class="t" style="left:{L}px;top:1268px" width="168" height="26" viewBox="0 0 644.89 100"><use href="#i-logo"/></svg>
-<div class="t mono" style="right:{W-R}px;top:1276px">@synex_pages</div>'''
+<div class="t mono" style="right:{W-R}px;top:1276px">@synexpages</div>'''
     return svg, html
 
 def page(n, coord, svg, html):

@@ -1,6 +1,6 @@
 # Instagram da Synex: guia de gestão
 
-O Claude cuida do Instagram **@synex_pages** por delegação do Gustavo (dono da Synex): cria as peças e agenda no Metricool, com **pelo menos 1 post a cada 3 dias**. Este guia é a referência de cada rodada.
+O Claude cuida do Instagram **@synexpages** por delegação do Gustavo (dono da Synex): cria as peças e agenda no Metricool, com **pelo menos 1 post a cada 3 dias**. Este guia é a referência de cada rodada.
 
 ## Conta e ferramentas
 
@@ -41,7 +41,7 @@ Pilares, alternados para não repetir o mesmo dois posts seguidos:
 - **Post estático 1080x1350** no estilo da série "Sinal Costeiro" (ver `filosofia-sinal-costeiro.md`):
   - fundo preto com grade fina e vermelho `#E8283A` só no essencial;
   - fontes Big Shoulders (títulos), Instrument Serif itálico (frase de apoio), Geist Mono (rótulos) e Instrument Sans;
-  - cabeçalho com "SYNEX LOCAL", coordenadas e numeração; rodapé com o logo e @synex_pages;
+  - cabeçalho com "SYNEX LOCAL", coordenadas e numeração; rodapé com o logo e @synexpages;
   - margens de 90 px, nada sobreposto, texto curto.
 - **Carrossel** (3 a 6 telas no mesmo estilo) para passo a passo e dicas. No Metricool são várias imagens em `media`.
 - **Reels narrados:** **todo vídeo da Synex tem narração completa com a voz Alex**, legendas e áudio tratado. Use **só** o motor de `instagram/video/`, que roda aqui na nuvem, e siga `instagram/video/GUIA-VIDEO.md`. O OpenMontage fica instalado, mas não é usado para a Synex por enquanto. Meta: **1 Reels por semana**, com segmento novo a cada vez (pizzaria, barbearia, oficina, açaí, pet shop, revenda de carros, eletricista…). Parta do modelo `salao-de-beleza` e crie as cenas do segmento. Vídeo com voz sintética vai com `isAiGenerated: true`. Vídeo enviado pelo Gustavo sem narração: pergunte antes se deve ganhar narração.
