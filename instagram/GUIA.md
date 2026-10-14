@@ -70,3 +70,7 @@ Pilares, alternados para não repetir o mesmo dois posts seguidos:
 3. Gere as artes, revise, publique a mídia no site, crie os posts no Metricool (`createScheduledPost`, `autoPublish: true`, `draft: false`, `instagramData.type` POST ou REEL) e atualize o `historico.json` (commit e push).
 4. Se houver dados, olhe o desempenho dos últimos posts (`getAnalyticsDataByMetrics`) e prefira os pilares e formatos que tiveram mais alcance e salvamentos.
 5. Termine com um resumo curto para o Gustavo: o que foi agendado (data, tema), o que publicou e qualquer problema.
+
+## Fila de posts prontos
+
+`instagram/fila/fila.json` guarda posts já desenhados e revisados, com mídia em `social/`, legenda e texto alternativo. Ao cobrir um buraco no calendário, use primeiro o item mais antigo da fila (respeitando o campo `quando`), crie o post no Metricool com as imagens na ordem e mude o `status` para agendado aqui e no `historico.json`.

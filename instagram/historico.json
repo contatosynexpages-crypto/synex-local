@@ -106,6 +106,13 @@
       "midia": "social/2026-10-09-anuncio-a.mp4",
       "status": "agendado",
       "via": "Meta Business Suite"
+    },
+    {
+      "data": "2026-10-30 10:00",
+      "tipo": "POST",
+      "tema": "Carrossel: 3 sinais de que seu cliente está indo pro concorrente",
+      "status": "pronto (fila, não agendado)",
+      "midia": "social/2026-10-30-3-sinais-1.png … -5.png"
     }
   ]
 }
