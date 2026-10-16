@@ -2,182 +2,792 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recanto da Tapioca · Tapioca feita na hora em Mongaguá</title>
+<meta name="description" content="Recanto da Tapioca, na Av. Nossa Sra. de Fátima, 1708, em Mongaguá. Tapioca feita na hora, salgada ou doce, todos os dias a partir das 11h. Nota 4,8 no Google. Peça pelo WhatsApp.">
+<!-- prévia de demonstração: tirar o noindex quando virar o site oficial -->
 <meta name="robots" content="noindex, nofollow">
-<title>Recanto Da Tapioca · Mongaguá</title>
-<meta name="description" content="Recanto Da Tapioca em Mongaguá. Restaurante de comida natural. Nota 4,7 no Google.">
+<meta name="theme-color" content="#1E1915">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Recanto da Tapioca · Mongaguá">
+<meta property="og:description" content="Tapioca feita na hora, do jeito que Mongaguá aprova. Monte a sua e peça pelo WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 34a26 26 0 0 0 52 0z' fill='%23E7C48A' stroke='%23B7782F' stroke-width='3'/%3E%3Cpath d='M10 34h44' stroke='%23F2C94C' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Karla:wght@400;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Recanto da Tapioca",
+  "servesCuisine": ["Tapioca", "Comida brasileira"],
+  "telephone": "+55 13 98860-9174",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Nossa Sra. de Fátima, 1708 - Balneário Triesse",
+    "addressLocality": "Mongaguá",
+    "addressRegion": "SP",
+    "postalCode": "11730-000",
+    "addressCountry": "BR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -24.1208955, "longitude": -46.700109 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Friday", "Saturday", "Sunday"], "opens": "11:00", "closes": "23:00" }
+  ]
+}
+</script>
 <style>
-/* Layout: faixa de demo, hero com arte animada do segmento, serviços, passos, avaliação, endereço, CTA fixo no celular */
-:root{
-  --bg:#1C1512; --ink:#F6EBDD; --muted:#BFAE9B; --accent:#E2412B; --accent-ink:#FFF6EE;
-  --deep:#2A5D3A; --deep-ink:#F2F7EF; --card:#261C18; --line:#3A2C25;
-  --display:'Yeseva One', Georgia, serif; --text:'Karla', system-ui, sans-serif;
-  color-scheme: dark;
+:root {
+  --goma: #FBF6EC;
+  --goma-2: #F4EBDA;
+  --casca: #E7C48A;
+  --tostado: #B7782F;
+  --ferro: #1E1915;
+  --ferro-2: #2E2721;
+  --texto: #2A231E;
+  --suave: #5E5248;
+  --urucum: #B83A12;
+  --urucum-escuro: #962E0C;
+  --folha: #2E5B3B;
+  --linha: rgba(30, 25, 21, .12);
+  --raio: 22px;
+  --sombra: 0 1px 0 rgba(30,25,21,.06), 0 18px 40px -22px rgba(30,25,21,.35);
+  --entrada: cubic-bezier(.2, .8, .2, 1);
+  --titulo: "Calistoga", "Georgia", serif;
+  --corpo: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--text);padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
-a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
-h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
-.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.4em;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem;transition:transform .2s ease, box-shadow .2s ease}
-.btn:hover{transform:translateY(-2px)}
-.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.btn-main{background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px -12px var(--accent)}
-.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-.btn svg{width:1.2em;height:1.2em}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--goma); color: var(--texto); font: 400 17px/1.6 var(--corpo); overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--urucum); outline-offset: 3px; border-radius: 8px; }
+.envolve { width: min(1160px, 100% - 32px); margin-inline: auto; }
+.visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.demo-bar{background:var(--deep);color:var(--deep-ink);font-size:.82rem;padding-block:.55rem;padding-top:calc(.55rem + env(safe-area-inset-top,0px))}
-.demo-bar .wrap{display:flex;gap:.75rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.demo-bar b{font-weight:700}
-.demo-bar a{font-weight:700;text-underline-offset:3px}
+/* faixa da prévia */
+.previa { background: var(--ferro); color: #F4EBDA; font-size: 14px; }
+.previa .envolve { display: flex; align-items: center; justify-content: center; gap: 6px 14px; flex-wrap: wrap; padding: 9px 0; text-align: center; }
+.previa a { color: var(--casca); font-weight: 600; text-underline-offset: 3px; }
 
-.hero{position:relative;overflow:hidden;padding-block:56px 64px}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
-.hero-copy{min-width:0;display:grid;gap:18px;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;letter-spacing:-.01em}
-.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34ch;margin:0}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.rating{display:inline-flex;gap:.6em;align-items:center;font-weight:700;font-variant-numeric:tabular-nums}
-.stars{position:relative;display:inline-block;font-size:1.15rem;letter-spacing:2px;line-height:1}
-.stars::before{content:"★★★★★";color:var(--line)}
-.stars i{position:absolute;inset:0 auto 0 0;overflow:hidden;white-space:nowrap;width:var(--pct);color:var(--accent);font-style:normal}
-.stars i::before{content:"★★★★★"}
-.rating small{color:var(--muted);font-weight:600}
+/* topo */
+.topo { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--goma) 88%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid transparent; transition: border-color .3s; }
+.topo.rolou { border-bottom-color: var(--linha); }
+.topo .envolve { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.marca svg { width: 38px; height: 38px; }
+.marca strong { font: 400 21px/1 var(--titulo); letter-spacing: -.01em; }
+.marca small { display: block; font-size: 12px; color: var(--suave); letter-spacing: .06em; text-transform: uppercase; margin-top: 3px; }
+.topo nav { display: flex; align-items: center; gap: 22px; }
+.topo nav a.link { text-decoration: none; font-weight: 500; color: var(--suave); transition: color .2s; }
+.topo nav a.link:hover { color: var(--texto); }
 
-section.block{padding-block:56px}
-.block-head{display:grid;gap:8px;margin-bottom:28px}
-.block-head h2{font-size:clamp(1.8rem,4.5vw,2.6rem)}
-.note{font-size:.8rem;color:var(--muted)}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:6px;transition:transform .25s ease,border-color .25s ease;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 90ms + 200ms)}
-.svc:hover{transform:translateY(-4px);border-color:var(--accent)}
-.svc h3{font-size:1.35rem}
-.svc p{margin:0;color:var(--muted);font-size:.98rem}
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: var(--folha); }
+.status::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 0 currentColor; animation: pulso 2.2s infinite; }
+.status.fechado { color: var(--suave); }
+.status.fechado::before { animation: none; }
+@keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(46,91,59,.45); } 70% { box-shadow: 0 0 0 9px rgba(46,91,59,0); } 100% { box-shadow: 0 0 0 0 rgba(46,91,59,0); } }
 
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
-.steps li{counter-increment:s;display:grid;gap:10px;padding-top:18px;border-top:2px solid var(--line)}
-.steps li::before{content:counter(s);font-family:var(--display);font-size:2.2rem;color:var(--accent);line-height:1}
-.steps li span{font-weight:700;font-size:1.05rem}
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 2px solid transparent; font-weight: 700; font-size: 16px; text-decoration: none; cursor: pointer; transition: transform .2s var(--entrada), background-color .2s, box-shadow .2s, border-color .2s; }
+.botao svg { width: 20px; height: 20px; flex: none; }
+.botao--pedir { background: var(--urucum); color: #fff; box-shadow: 0 10px 24px -12px rgba(184,58,18,.8); }
+.botao--pedir:hover { background: var(--urucum-escuro); transform: translateY(-2px); }
+.botao--linha { border-color: var(--ferro); color: var(--ferro); background: transparent; }
+.botao--linha:hover { background: var(--ferro); color: var(--goma); }
+.botao--pequeno { min-height: 44px; padding: 0 18px; font-size: 15px; }
+.botao:active { transform: translateY(0) scale(.98); }
 
-.proof{background:var(--deep);color:var(--deep-ink);border-radius:28px;padding:40px clamp(20px,5vw,56px);display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
-.proof .big{font-family:var(--display);font-size:clamp(4rem,14vw,7.5rem);line-height:.9;font-variant-numeric:tabular-nums}
-.proof p{margin:0;max-width:40ch;opacity:.88}
-.proof a{font-weight:700}
+/* hero */
+.hero { position: relative; padding: clamp(36px, 6vw, 80px) 0 clamp(48px, 7vw, 96px); overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: auto -10% -45% 35%; height: 90%; background: radial-gradient(closest-side, rgba(231,196,138,.55), transparent); pointer-events: none; }
+.hero .envolve { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(24px, 4vw, 56px); }
+.selo { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border-radius: 999px; background: #fff; border: 1px solid var(--linha); font-size: 14px; font-weight: 600; text-decoration: none; box-shadow: var(--sombra); }
+.selo .estrelas { color: #E4A11B; display: flex; gap: 1px; }
+.selo .estrelas svg { width: 15px; height: 15px; }
+.hero h1 { font: 400 clamp(42px, 6.4vw, 78px)/1.02 var(--titulo); letter-spacing: -.02em; margin: 22px 0 18px; text-wrap: balance; }
+.hero h1 em { font-style: normal; color: var(--urucum); position: relative; white-space: nowrap; }
+.hero h1 em svg { position: absolute; left: -2%; bottom: -.12em; width: 104%; height: .32em; overflow: visible; }
+.hero h1 em path { stroke: var(--tostado); stroke-width: 6; fill: none; stroke-linecap: round; stroke-dasharray: 340; stroke-dashoffset: 340; animation: tracar 1s .9s var(--entrada) forwards; }
+@keyframes tracar { to { stroke-dashoffset: 0; } }
+.hero .lead { font-size: clamp(18px, 1.6vw, 20px); color: var(--suave); max-width: 33ch; margin: 0 0 30px; }
+.hero .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .rodape-hero { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 28px; font-size: 15px; color: var(--suave); }
+.hero .rodape-hero span { display: inline-flex; align-items: center; gap: 8px; }
+.hero .rodape-hero svg { width: 18px; height: 18px; color: var(--tostado); }
 
-.where{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-top:1px solid var(--line);padding-top:28px}
-.where address{font-style:normal;font-size:1.1rem;min-width:0}
-.where .sub{color:var(--muted);font-size:.95rem}
+/* frigideira */
+.palco { position: relative; display: grid; place-items: center; }
+.palco button { all: unset; cursor: pointer; display: block; width: min(100%, 520px); border-radius: 50%; }
+.palco button:focus-visible { outline: 3px solid var(--urucum); outline-offset: 6px; }
+.palco .dica { position: absolute; bottom: 4%; left: 50%; transform: translateX(-50%); font-size: 13px; color: var(--suave); background: rgba(251,246,236,.9); padding: 4px 12px; border-radius: 999px; opacity: 0; transition: opacity .4s; pointer-events: none; white-space: nowrap; }
+.palco.pronto .dica { opacity: 1; }
+#frigideira .grao { transform-box: fill-box; transform-origin: center; opacity: 0; }
+#frigideira.anda .grao { animation: cair .7s var(--entrada) forwards, sumir .5s 1.25s ease forwards; animation-delay: var(--d), calc(1.25s + var(--d) * .3); }
+@keyframes cair { from { opacity: 0; transform: translateY(-60px) scale(.6); } to { opacity: 1; transform: none; } }
+@keyframes sumir { to { opacity: 0; } }
+#frigideira .disco { transform-box: fill-box; transform-origin: center; opacity: 0; }
+#frigideira.anda .disco { animation: formar .6s 1.05s var(--entrada) forwards; }
+@keyframes formar { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: none; } }
+#frigideira .pinta { opacity: 0; }
+#frigideira.anda .pinta { animation: tostar .5s forwards; animation-delay: calc(1.6s + var(--d)); }
+@keyframes tostar { to { opacity: var(--o, .5); } }
+#frigideira .recheio { opacity: 0; transform-box: fill-box; transform-origin: center; }
+#frigideira.anda .recheio { animation: formar .45s 2.05s var(--entrada) forwards; }
+#frigideira .dobra { transform-box: view-box; transform-origin: 200px 200px; }
+#frigideira.anda .dobra { animation: dobrar .85s 2.6s cubic-bezier(.6, 0, .3, 1) forwards; }
+@keyframes dobrar { from { transform: scaleY(1); } to { transform: scaleY(-1); } }
+#frigideira .verso { opacity: 0; }
+#frigideira.anda .verso { animation: virar .85s 2.6s steps(1, end) forwards; }
+@keyframes virar { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 1; } }
+#frigideira .frente { opacity: 1; }
+#frigideira.anda .frente { animation: esconder .85s 2.6s steps(1, end) forwards; }
+@keyframes esconder { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 0; } }
+#frigideira .escorre { opacity: 0; transform-box: fill-box; transform-origin: 50% 0; }
+#frigideira.anda .escorre { animation: escorrer .5s 3.35s var(--entrada) forwards; }
+@keyframes escorrer { from { opacity: 0; transform: scaleY(.3); } to { opacity: 1; transform: none; } }
+#frigideira .vapor path { fill: none; stroke: rgba(94,82,72,.35); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 18 120; stroke-dashoffset: 138; opacity: 0; }
+#frigideira.pronto.visivel .vapor path { animation: subir 2.8s linear infinite; opacity: 1; }
+#frigideira .vapor path:nth-child(2) { animation-delay: .9s !important; }
+#frigideira .vapor path:nth-child(3) { animation-delay: 1.8s !important; }
+@keyframes subir { to { stroke-dashoffset: 0; } }
 
-.synex{padding-block:40px 24px;color:var(--muted);font-size:.9rem}
-.synex .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px dashed var(--line);padding-top:20px}
-.synex a{font-weight:700;color:var(--ink)}
+/* seções */
+section { scroll-margin-top: 80px; }
+.secao { padding: clamp(64px, 9vw, 120px) 0; }
+.etiqueta { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--tostado); margin-bottom: 12px; }
+.secao h2 { font: 400 clamp(32px, 4.4vw, 54px)/1.06 var(--titulo); letter-spacing: -.015em; margin: 0 0 16px; text-wrap: balance; }
+.secao .intro { color: var(--suave); max-width: 52ch; margin: 0; }
+.aviso { display: inline-flex; gap: 8px; align-items: flex-start; font-size: 14px; color: var(--suave); background: var(--goma-2); border-radius: 12px; padding: 10px 14px; margin-top: 18px; }
+.aviso svg { width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--tostado); }
 
-.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:none;z-index:5}
-.sticky .btn{width:100%;justify-content:center}
+/* monte a sua */
+.monte { background: var(--ferro); color: #F4EBDA; border-radius: clamp(28px, 4vw, 48px); margin-inline: 12px; }
+.monte .etiqueta { color: var(--casca); }
+.monte .intro { color: #CFC3B2; }
+.monte .grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: 44px; }
+.disco-montar { position: relative; aspect-ratio: 1; width: min(100%, 460px); margin-inline: auto; }
+.disco-montar svg { width: 100%; height: 100%; }
+.disco-montar .item { transform-box: fill-box; transform-origin: center; animation: cair-recheio .45s var(--entrada) both; animation-delay: var(--d, 0s); }
+@keyframes cair-recheio { from { opacity: 0; transform: translateY(-26px) scale(.4) rotate(-20deg); } to { opacity: 1; transform: none; } }
+.escolha .abas { display: inline-flex; padding: 5px; background: var(--ferro-2); border-radius: 999px; gap: 4px; margin-bottom: 22px; }
+.escolha .abas button { border: 0; background: transparent; padding: 10px 20px; min-height: 44px; border-radius: 999px; color: #CFC3B2; font-weight: 600; cursor: pointer; transition: background-color .25s, color .25s; }
+.escolha .abas button[aria-selected="true"] { background: var(--goma); color: var(--ferro); }
+.escolha h3 { font: 600 15px/1.4 var(--corpo); margin: 0 0 12px; color: #CFC3B2; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.chip { display: inline-flex; align-items: center; gap: 9px; min-height: 46px; padding: 0 16px 0 10px; border-radius: 999px; border: 1.5px solid #4A4038; background: transparent; color: #F4EBDA; font-weight: 600; cursor: pointer; transition: border-color .2s, background-color .2s, transform .2s var(--entrada); }
+.chip:hover { border-color: #8C7D6E; }
+.chip .bolinha { width: 22px; height: 22px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 2px rgba(0,0,0,.15); flex: none; }
+.chip[aria-pressed="true"] { background: var(--goma); color: var(--ferro); border-color: var(--goma); }
+.chip:disabled { opacity: .38; cursor: not-allowed; }
+.chip:active:not(:disabled) { transform: scale(.96); }
+.resumo { margin: 26px 0 20px; min-height: 3.3em; font: 400 clamp(22px, 2.4vw, 28px)/1.25 var(--titulo); color: #FBF6EC; }
+.resumo small { display: block; font: 500 14px/1.5 var(--corpo); color: #CFC3B2; margin-top: 6px; }
+.monte .botao--linha { border-color: #F4EBDA; color: #F4EBDA; }
+.monte .botao--linha:hover { background: #F4EBDA; color: var(--ferro); }
+.monte .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.monte .aviso { background: var(--ferro-2); color: #CFC3B2; }
 
-/* ---- arte: pet */
-.art{position:relative;min-height:260px}
-.art-paws{color:var(--accent)}
-.art-paws .paw{position:absolute;width:54px;height:54px;opacity:0;animation:pawstep 4.8s ease-in-out infinite;animation-delay:calc(var(--i) * .55s)}
-.art-paws .paw:nth-child(odd){transform:rotate(-18deg)}
-.art-paws .paw:nth-child(even){transform:rotate(12deg)}
-.art-paws .paw:nth-child(1){left:6%;bottom:6%}.art-paws .paw:nth-child(2){left:30%;bottom:22%}
-.art-paws .paw:nth-child(3){left:14%;bottom:42%}.art-paws .paw:nth-child(4){left:40%;bottom:58%}
-.art-paws .paw:nth-child(5){left:24%;bottom:76%}.art-paws .paw:nth-child(6){left:52%;bottom:88%}
-.art-paws::after{content:"";position:absolute;right:0;top:10%;width:62%;aspect-ratio:1;max-width:100%;border-radius:50%;background:var(--deep);opacity:.12;animation:breathe 6s ease-in-out infinite}
-@keyframes pawstep{0%{opacity:0}15%,55%{opacity:.9}80%,100%{opacity:0}}
-/* ---- arte: comida */
-.art-steam{display:flex;justify-content:center;align-items:flex-end;gap:22px}
-.art-steam::before{content:"";position:absolute;bottom:0;left:50%;translate:-50% 0;width:min(260px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#F3C27A 0 52%,#D9832F 53% 60%,#8C3B1C 61% 64%,transparent 65%);box-shadow:0 30px 60px -20px #000;animation:spin 40s linear infinite}
-.art-steam span{position:relative;z-index:1;width:14px;height:120px;margin-bottom:170px;border-radius:50%;background:linear-gradient(to top,transparent,rgba(246,235,221,.55),transparent);filter:blur(4px);animation:steam 3.6s ease-in-out infinite}
-.art-steam span:nth-child(2){animation-delay:1.1s;height:150px}.art-steam span:nth-child(3){animation-delay:2.2s}
-@keyframes steam{0%{transform:translateY(20px) scaleX(1);opacity:0}40%{opacity:.9}100%{transform:translateY(-60px) scaleX(2.2);opacity:0}}
-@keyframes spin{to{transform:rotate(360deg)}}
-/* ---- arte: barbearia */
-.art-pole{display:grid;justify-items:center;align-content:center;gap:0}
-.pole-cap{width:74px;height:22px;border-radius:12px;background:linear-gradient(90deg,#6F5A30,var(--accent),#6F5A30)}
-.pole-glass{width:56px;height:230px;border-radius:6px;overflow:hidden;box-shadow:inset 0 0 18px rgba(0,0,0,.6),0 0 60px -10px var(--accent)}
-.pole-stripes{height:200%;background:repeating-linear-gradient(-45deg,#B3261E 0 18px,#EDE7DC 18px 36px,#1D3E8A 36px 54px,#EDE7DC 54px 72px);animation:pole 3s linear infinite}
-@keyframes pole{to{transform:translateY(-50%)}}
-@keyframes breathe{50%{transform:scale(1.06)}}
-@keyframes rise{from{transform:translateY(18px)}to{transform:none}}
+/* cardápio */
+.cardapio .cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.colunas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; }
+.coluna { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 26px 24px 14px; box-shadow: var(--sombra); }
+.coluna h3 { display: flex; align-items: center; gap: 12px; font: 400 26px/1.1 var(--titulo); margin: 0 0 8px; }
+.coluna h3 svg { width: 34px; height: 34px; flex: none; }
+.coluna ul { list-style: none; padding: 0; margin: 0; }
+.coluna li { padding: 14px 0; border-top: 1px dashed rgba(30,25,21,.18); }
+.coluna li:first-child { border-top: 0; }
+.coluna li strong { display: block; font-weight: 700; }
+.coluna li span { font-size: 15px; color: var(--suave); }
 
-@media (max-width:760px){
-  .hero{padding-block:32px 40px}
-  .hero .wrap{grid-template-columns:1fr}
-  .art{min-height:180px;order:-1}
-  .art-steam::before{width:180px}
-  .art-steam span{margin-bottom:110px;height:90px}
-  .pole-glass{height:150px}
-  .steps{grid-template-columns:1fr}
-  .proof{grid-template-columns:1fr;gap:12px}
-  .where{grid-template-columns:1fr}
-  .sticky{display:block}
-  .hero-actions .btn-main{display:none}
+/* prova */
+.prova .grade { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.nota { position: relative; background: var(--urucum); color: #fff; border-radius: clamp(28px, 4vw, 44px); padding: clamp(32px, 4vw, 52px); overflow: hidden; }
+.nota::after { content: ""; position: absolute; right: -80px; top: -80px; width: 260px; height: 260px; border-radius: 50%; border: 36px solid rgba(255,255,255,.08); }
+.nota .numero { font: 400 clamp(84px, 11vw, 140px)/.9 var(--titulo); letter-spacing: -.03em; }
+.nota .estrelas-grandes { position: relative; width: 190px; height: 34px; margin: 18px 0 14px; }
+.nota .estrelas-grandes svg { position: absolute; inset: 0; width: 190px; height: 34px; }
+.nota .estrelas-grandes .cheias { clip-path: inset(0 4% 0 0); }
+.nota p { margin: 0 0 22px; font-size: 18px; color: #FFE9DF; max-width: 30ch; }
+.nota a { color: #fff; font-weight: 700; text-underline-offset: 4px; }
+.fatos { display: grid; gap: 14px; list-style: none; padding: 0; margin: 28px 0 0; }
+.fatos li { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; background: #fff; border: 1px solid var(--linha); border-radius: 18px; }
+.fatos svg { width: 26px; height: 26px; flex: none; color: var(--urucum); margin-top: 2px; }
+.fatos strong { display: block; }
+.fatos span { color: var(--suave); font-size: 15px; }
+
+/* onde */
+.onde .grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; margin-top: 40px; }
+.mapa { position: relative; min-height: 340px; border-radius: var(--raio); overflow: hidden; background: #EFE4CF; border: 1px solid var(--linha); }
+.mapa > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mapa .pino { transform-box: fill-box; transform-origin: 50% 100%; animation: quicar 2.4s var(--entrada) infinite; }
+@keyframes quicar { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-10px); } }
+.mapa .cartao-end { position: absolute; left: 16px; right: 16px; bottom: 16px; background: #fff; border-radius: 16px; padding: 16px 18px; box-shadow: var(--sombra); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.mapa .cartao-end p { margin: 0; font-size: 15px; }
+.mapa .cartao-end strong { display: block; font-size: 16px; }
+.horarios { background: #fff; border: 1px solid var(--linha); border-radius: var(--raio); padding: 26px 24px; }
+.horarios h3 { font: 400 26px/1.1 var(--titulo); margin: 0 0 6px; }
+.horarios .status { margin-bottom: 14px; }
+.horarios ol { list-style: none; padding: 0; margin: 0; }
+.horarios li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 12px; border-radius: 12px; }
+.horarios li + li { border-top: 1px solid rgba(30,25,21,.07); }
+.horarios li.hoje { background: var(--goma-2); font-weight: 700; border-top-color: transparent; }
+.horarios li.hoje + li { border-top-color: transparent; }
+.horarios small { display: block; margin-top: 14px; color: var(--suave); font-size: 13px; }
+
+/* final */
+.final { text-align: center; padding-bottom: clamp(96px, 12vw, 150px); }
+.final h2 { max-width: 16ch; margin-inline: auto; }
+.final .intro { margin: 0 auto 30px; }
+.final .acoes { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.meia-lua { width: 120px; margin: 0 auto 22px; }
+
+footer { border-top: 1px solid var(--linha); padding: 30px 0 110px; font-size: 14px; color: var(--suave); }
+footer .envolve { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { font-weight: 600; }
+
+/* barra fixa no celular */
+.barra-movel { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 30; display: none; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 18px; background: var(--ferro); color: #F4EBDA; border-radius: 999px; box-shadow: 0 16px 40px -12px rgba(0,0,0,.55); transform: translateY(140%); transition: transform .4s var(--entrada); }
+.barra-movel.mostrar { transform: none; }
+.barra-movel .status { color: #8FD3A0; font-size: 13px; }
+.barra-movel .status.fechado { color: #CFC3B2; }
+
+/* revelar ao rolar */
+.revelar { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--entrada), transform .7s var(--entrada); transition-delay: var(--atraso, 0s); }
+.revelar.visivel { opacity: 1; transform: none; }
+
+@media (max-width: 960px) {
+  .hero .envolve, .monte .grade, .prova .grade, .onde .grade { grid-template-columns: 1fr; }
+  .palco { order: -1; }
+  .palco button { width: min(100%, 400px); }
+  .colunas { grid-template-columns: 1fr; }
+  .topo nav a.link { display: none; }
 }
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.art-paws .paw{opacity:.8}}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .topo nav .botao, .topo nav .status { display: none; }
+  .marca strong { font-size: 19px; white-space: nowrap; }
+  .previa { font-size: 13px; }
+  .so-grande { display: none; }
+  .barra-movel { display: flex; }
+  .hero { padding-top: 14px; }
+  .palco button { width: min(100%, 270px); }
+  .palco .dica { bottom: -2px; }
+  .hero h1 { margin-top: 16px; }
+  .hero .acoes .botao { flex: 1 1 100%; }
+  .monte { margin-inline: 8px; }
+  .mapa { min-height: 380px; }
+  .mapa .cartao-end .botao { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
+  html { scroll-behavior: auto; }
+  .revelar { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
-<div class="demo-bar"><div class="wrap">
-  <span><b>Página de demonstração</b> feita pela Synex Local para Recanto Da Tapioca.</span>
-  <a href="https://wa.me/5513988811950?text=Oi%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20da%20p%C3%A1gina%20da%20Recanto%20Da%20Tapioca%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Quero esta página</a>
-</div></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-pino" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-chama" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22c4 0 7-2.8 7-6.8 0-3.6-2.4-5.6-3.6-8.2-.6 2-1.6 3-2.8 3.4C12.8 7 11 4.4 8.6 2.5 9 6.6 5 9.4 5 15.2 5 19.2 8 22 12 22Z"/></symbol>
+    <symbol id="i-estrela" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.6 2.9 6 6.5.9-4.7 4.6 1.1 6.5L12 17.5l-5.8 3.1 1.1-6.5L2.6 9.5l6.5-.9L12 2.6Z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">Restaurante de comida natural · Balneario Triesse, Mongaguá</span>
-      <h1>Recanto Da Tapioca</h1>
-      <span class="rating"><span class="stars" style="--pct:94%"><i></i></span>4,7 <small>· 182 avaliações no Google</small></span>
-      <p class="lead">A comida que a cidade já conhece e aprova, agora a um toque de distância. Peça pelo WhatsApp.</p>
-      <div class="hero-actions">
-        <a class="btn btn-main" href="https://wa.me/5513988609174?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Recanto%20Da%20Tapioca." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2l-.4-.2z"/></svg> Fazer pedido</a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps/place/Recanto+Da+Tapioca+-+Mongagu%C3%A1/data=!4m7!3m6!1s0x94ce2848c1b33dab:0xe0afb7c7640ae52a!8m2!3d-24.1208955!4d-46.700109!16s%2Fg%2F11fx7n642h!19sChIJqz2zwUgozpQRKuUKZMe3r-A?authuser=0&amp;hl=pt-BR&amp;g_ep=EgoyMDI2MDkyNy4xIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener">Como chegar</a>
-      </div>
-    </div>
-    <div class="art art-steam" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="previa">
+  <div class="envolve">
+    <span>Prévia feita pela <strong>Synex Local</strong><span class="so-grande"> para o Recanto da Tapioca</span>.</span>
+    <a href="https://wa.me/5513988811950?text=Oi!%20Vi%20a%20pr%C3%A9via%20da%20p%C3%A1gina%20do%20Recanto%20da%20Tapioca%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Quero esta página</a>
+  </div>
+</div>
+
+<header class="topo" id="topo">
+  <div class="envolve">
+    <a class="marca" href="#inicio" aria-label="Recanto da Tapioca, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#1E1915"/><path d="M12 30a20 20 0 0 0 40 0z" fill="#E7C48A"/><path d="M14 30h36" stroke="#F2C94C" stroke-width="5" stroke-linecap="round"/><circle cx="24" cy="38" r="2" fill="#B7782F" opacity=".7"/><circle cx="36" cy="42" r="1.6" fill="#B7782F" opacity=".6"/></svg>
+      <span><strong>Recanto da Tapioca</strong><small>Mongaguá · SP</small></span>
+    </a>
+    <nav aria-label="Seções">
+      <a class="link" href="#monte">Monte a sua</a>
+      <a class="link" href="#cardapio">Cardápio</a>
+      <a class="link" href="#onde">Onde estamos</a>
+      <span class="status" data-status>Conferindo horário…</span>
+      <a class="botao botao--pedir botao--pequeno" href="https://wa.me/5513988609174?text=Oi!%20Vim%20pela%20p%C3%A1gina%20do%20Recanto%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir</a>
+    </nav>
   </div>
 </header>
 
-<main>
-  <section class="block"><div class="wrap">
-    <div class="block-head">
-      <span class="eyebrow">O que você encontra aqui</span>
-      <h2>Do cardápio para a sua mesa</h2>
-      <span class="note">Conteúdo ilustrativo. Na versão final, cada item é ajustado com vocês.</span>
-    </div>
-    <div class="services"><article class="svc" style="--i:0"><h3>Almoço</h3><p>Comida feita na hora, com o tempero da casa.</p></article><article class="svc" style="--i:1"><h3>Porções</h3><p>Para dividir com a mesa inteira.</p></article><article class="svc" style="--i:2"><h3>Bebidas</h3><p>Geladas, do suco ao chope.</p></article><article class="svc" style="--i:3"><h3>Delivery</h3><p>Peça pelo WhatsApp e receba em casa.</p></article></div>
-  </div></section>
-
-  <section class="block"><div class="wrap">
-    <div class="block-head"><span class="eyebrow">Simples assim</span><h2>Pediu, chegou</h2></div>
-    <ol class="steps"><li><span>Chame no WhatsApp</span></li><li><span>Monte o seu pedido</span></li><li><span>Receba em casa ou retire no balcão</span></li></ol>
-  </div></section>
-
-  <section class="block"><div class="wrap"><div class="proof"><div class="big">4,7</div><div><h2>Nota que o bairro deu.</h2><p>182 clientes avaliaram a Recanto Da Tapioca no Google. Essa confiança agora aparece em primeiro lugar para quem ainda não conhece vocês. <a href="https://www.google.com/maps/place/Recanto+Da+Tapioca+-+Mongagu%C3%A1/data=!4m7!3m6!1s0x94ce2848c1b33dab:0xe0afb7c7640ae52a!8m2!3d-24.1208955!4d-46.700109!16s%2Fg%2F11fx7n642h!19sChIJqz2zwUgozpQRKuUKZMe3r-A?authuser=0&amp;hl=pt-BR&amp;g_ep=EgoyMDI2MDkyNy4xIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener">Ver avaliações</a></p></div></div></div></section>
-
-  <section class="block"><div class="wrap">
-    <div class="where">
-      <div><span class="eyebrow">Onde estamos</span>
-        <address>Av. Nossa Sra. de Fátima, 1708, Balneario Triesse, Mongaguá - SP</address>
-        <div class="sub">WhatsApp (13) 98860-9174</div>
+<main id="inicio">
+  <section class="hero">
+    <div class="envolve">
+      <div>
+        <a class="selo" href="https://www.google.com/maps/place/?q=place_id:ChIJqz2zwUgozpQRKuUKZMe3r-A" target="_blank" rel="noopener">
+          <span class="estrelas" aria-hidden="true"><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg></span>
+          4,8 no Google · quase 200 avaliações
+        </a>
+        <h1>Tapioca feita na hora, do jeito que <em>Mongaguá<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14C60 4 120 4 168 10s96 6 128-4"/></svg></em> aprova.</h1>
+        <p class="lead">Massa fininha saindo da frigideira, recheio generoso e aquele cheirinho que chega antes de você. Salgada ou doce, todos os dias.</p>
+        <div class="acoes">
+          <a class="botao botao--pedir" href="https://wa.me/5513988609174?text=Oi!%20Vim%20pela%20p%C3%A1gina%20do%20Recanto%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir no WhatsApp</a>
+          <a class="botao botao--linha" href="#monte">Monte a sua tapioca<svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+        <div class="rodape-hero">
+          <span><svg aria-hidden="true"><use href="#i-relogio"/></svg>Todo dia a partir das 11h</span>
+          <span><svg aria-hidden="true"><use href="#i-pino"/></svg>Av. Nossa Sra. de Fátima, 1708</span>
+        </div>
       </div>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/place/Recanto+Da+Tapioca+-+Mongagu%C3%A1/data=!4m7!3m6!1s0x94ce2848c1b33dab:0xe0afb7c7640ae52a!8m2!3d-24.1208955!4d-46.700109!16s%2Fg%2F11fx7n642h!19sChIJqz2zwUgozpQRKuUKZMe3r-A?authuser=0&amp;hl=pt-BR&amp;g_ep=EgoyMDI2MDkyNy4xIJJjKgBIAVAD&amp;rclk=1" target="_blank" rel="noopener">Abrir no Google Maps</a>
+
+      <div class="palco" id="palco">
+        <button type="button" id="refazer" aria-label="Ver a tapioca sendo feita de novo">
+          <svg id="frigideira" viewBox="0 0 520 420" role="img" aria-label="Tapioca sendo feita na frigideira: a goma cai, vira massa, ganha recheio e é dobrada ao meio">
+            <defs>
+              <radialGradient id="g-ferro" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#3A322B"/><stop offset=".7" stop-color="#211B17"/><stop offset="1" stop-color="#141110"/></radialGradient>
+              <radialGradient id="g-massa" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#FFFBF3"/><stop offset=".8" stop-color="#F6EAD3"/><stop offset="1" stop-color="#E7C48A"/></radialGradient>
+              <radialGradient id="g-verso" cx="50%" cy="60%" r="70%"><stop offset="0" stop-color="#F3DDB0"/><stop offset=".75" stop-color="#E2B670"/><stop offset="1" stop-color="#C98F45"/></radialGradient>
+              <clipPath id="c-cima"><rect x="0" y="0" width="400" height="200.8"/></clipPath>
+              <clipPath id="c-baixo"><rect x="0" y="200" width="400" height="220"/></clipPath>
+              <radialGradient id="g-sombra"><stop offset=".6" stop-color="#1E1915" stop-opacity=".35"/><stop offset="1" stop-color="#1E1915" stop-opacity="0"/></radialGradient>
+            </defs>
+            <ellipse cx="206" cy="222" rx="206" ry="200" fill="url(#g-sombra)"/>
+            <g>
+              <rect x="372" y="186" width="140" height="28" rx="14" fill="#2B241F"/>
+              <rect x="452" y="190" width="56" height="20" rx="10" fill="#7A4A26"/>
+              <circle cx="200" cy="200" r="184" fill="url(#g-ferro)"/>
+            </g>
+            <circle cx="200" cy="200" r="166" fill="#1A1613" stroke="#3E352E" stroke-width="3"/>
+            <g id="graos"></g>
+            <g class="vapor" transform="translate(150 20)"><path d="M10 120c-14-20 14-30 0-50s14-30 0-50"/><path d="M50 120c-14-20 14-30 0-50s14-30 0-50"/><path d="M90 120c-14-20 14-30 0-50s14-30 0-50"/></g>
+            <g class="disco">
+              <!-- metade de baixo (fica parada) -->
+              <g clip-path="url(#c-baixo)">
+                <circle cx="200" cy="200" r="140" fill="url(#g-massa)"/>
+                <g class="pintas-baixo"></g>
+              </g>
+              <g class="recheio">
+                <path d="M78 206c22 14 52-2 74 8s50 10 76-2 50-4 94-6" fill="none" stroke="#F2C94C" stroke-width="16" stroke-linecap="round"/>
+                <path d="M92 212c18 6 34-2 52 4M214 214c18-4 40 2 60-2" fill="none" stroke="#7A3E1D" stroke-width="7" stroke-linecap="round"/>
+              </g>
+              <!-- metade de cima (dobra) -->
+              <g class="dobra">
+                <g clip-path="url(#c-cima)">
+                  <g class="frente"><circle cx="200" cy="200" r="140" fill="url(#g-massa)"/><g class="pintas-cima"></g></g>
+                  <g class="verso"><circle cx="200" cy="200" r="140" fill="url(#g-verso)"/><circle cx="160" cy="120" r="9" fill="#B7782F" opacity=".45"/><circle cx="238" cy="96" r="6" fill="#B7782F" opacity=".4"/><circle cx="276" cy="150" r="11" fill="#B7782F" opacity=".35"/><circle cx="120" cy="164" r="5" fill="#B7782F" opacity=".5"/></g>
+                </g>
+              </g>
+            </g>
+            <g class="escorre">
+              <path d="M118 302c6 10 2 20 8 24s10-6 8-16" fill="#F2C94C"/>
+              <path d="M196 336c2 8-2 16 4 18s8-8 4-18" fill="#F2C94C"/>
+              <path d="M262 316c4 8 0 16 6 18s8-6 6-14" fill="#F2C94C"/>
+              <path d="M150 326c3 5 9 6 12 2" stroke="#7A3E1D" stroke-width="5" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+        </button>
+        <span class="dica" aria-hidden="true">Toque na frigideira para fazer outra</span>
+      </div>
     </div>
-  </div></section>
+  </section>
+
+  <section class="secao monte" id="monte" aria-labelledby="t-monte">
+    <div class="envolve">
+      <div class="revelar">
+        <span class="etiqueta">Monte a sua</span>
+        <h2 id="t-monte">Escolha o recheio e mande o pedido pronto.</h2>
+        <p class="intro">Toque nos sabores para colocar na tapioca. Quando estiver do seu jeito, é só enviar: a mensagem chega no nosso WhatsApp já escrita.</p>
+      </div>
+      <div class="grade">
+        <div class="disco-montar revelar">
+          <svg viewBox="0 0 300 300" id="montar" role="img" aria-label="Tapioca aberta com os recheios escolhidos">
+            <defs>
+              <radialGradient id="g-massa2" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#FFFBF3"/><stop offset=".8" stop-color="#F6EAD3"/><stop offset="1" stop-color="#E7C48A"/></radialGradient>
+              <clipPath id="c-meia"><path d="M22 152a128 128 0 0 0 256 0Z"/></clipPath>
+            </defs>
+            <circle cx="150" cy="150" r="146" fill="#2E2721"/>
+            <circle cx="150" cy="150" r="128" fill="url(#g-massa2)"/>
+            <circle cx="110" cy="96" r="5" fill="#B7782F" opacity=".35"/><circle cx="190" cy="80" r="4" fill="#B7782F" opacity=".3"/><circle cx="214" cy="118" r="6" fill="#B7782F" opacity=".25"/><circle cx="84" cy="200" r="4" fill="#B7782F" opacity=".3"/>
+            <path d="M26 150h248" stroke="#C9A36A" stroke-width="2" stroke-dasharray="6 7"/>
+            <g id="recheios" clip-path="url(#c-meia)"></g>
+          </svg>
+        </div>
+        <div class="escolha revelar" style="--atraso:.1s">
+          <div class="abas" role="tablist" aria-label="Tipo de tapioca">
+            <button type="button" role="tab" id="aba-salgada" aria-selected="true" aria-controls="lista-sabores">Salgada</button>
+            <button type="button" role="tab" id="aba-doce" aria-selected="false" aria-controls="lista-sabores">Doce</button>
+          </div>
+          <h3 id="t-sabores">Até 4 sabores</h3>
+          <ul class="chips" id="lista-sabores" role="tabpanel" aria-labelledby="t-sabores"></ul>
+          <p class="resumo" id="resumo" aria-live="polite">Sua tapioca está esperando o recheio.<small>Escolha pelo menos um sabor.</small></p>
+          <div class="acoes">
+            <a class="botao botao--pedir" id="pedir-montada" href="https://wa.me/5513988609174" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir essa no WhatsApp</a>
+            <button type="button" class="botao botao--linha" id="limpar">Limpar</button>
+          </div>
+          <p class="aviso"><svg aria-hidden="true"><use href="#i-info"/></svg>Sabores de exemplo para a prévia. Na versão final entra o cardápio de vocês, com preços.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao cardapio" id="cardapio" aria-labelledby="t-cardapio">
+    <div class="envolve">
+      <div class="cab revelar">
+        <div>
+          <span class="etiqueta">Cardápio</span>
+          <h2 id="t-cardapio">Do salgado ao docinho de sobremesa.</h2>
+          <p class="intro">Massa de goma feita na frigideira, na hora do pedido.</p>
+        </div>
+        <a class="botao botao--linha" href="https://wa.me/5513988609174?text=Oi!%20Pode%20me%20mandar%20o%20card%C3%A1pio%20completo%3F" target="_blank" rel="noopener">Pedir o cardápio completo</a>
+      </div>
+      <div class="colunas">
+        <article class="coluna revelar">
+          <h3><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 20a16 16 0 0 0 32 0z" fill="#E7C48A"/><path d="M6 20h28" stroke="#F2C94C" stroke-width="4" stroke-linecap="round"/><path d="M10 22h6M22 22h8" stroke="#7A3E1D" stroke-width="3" stroke-linecap="round"/></svg>Salgadas</h3>
+          <ul>
+            <li><strong>Carne-seca com catupiry</strong><span>A mais pedida da casa em toda tapiocaria.</span></li>
+            <li><strong>Queijo coalho com orégano</strong><span>Simples, derretido e sem erro.</span></li>
+            <li><strong>Frango com requeijão</strong><span>Desfiado, temperado e cremoso.</span></li>
+            <li><strong>Calabresa com queijo</strong><span>Para quem chega com fome.</span></li>
+          </ul>
+        </article>
+        <article class="coluna revelar" style="--atraso:.08s">
+          <h3><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 20a16 16 0 0 0 32 0z" fill="#E7C48A"/><path d="M6 20h28" stroke="#F6E7C4" stroke-width="4" stroke-linecap="round"/><path d="M9 22c4 3 7-2 11 1s7-2 11 0" fill="none" stroke="#4A2A1A" stroke-width="2.6" stroke-linecap="round"/></svg>Doces</h3>
+          <ul>
+            <li><strong>Coco com leite condensado</strong><span>O clássico que vira sobremesa.</span></li>
+            <li><strong>Banana com canela</strong><span>Quentinha, com açúcar e canela.</span></li>
+            <li><strong>Chocolate com morango</strong><span>A preferida da criançada.</span></li>
+            <li><strong>Romeu e Julieta</strong><span>Goiabada com queijo derretendo.</span></li>
+          </ul>
+        </article>
+        <article class="coluna revelar" style="--atraso:.16s">
+          <h3><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 10h16l-2 24H14z" fill="#F6D86B" stroke="#B7782F" stroke-width="2" stroke-linejoin="round"/><path d="M20 10l4-6" stroke="#2E5B3B" stroke-width="2.4" stroke-linecap="round"/></svg>Para acompanhar</h3>
+          <ul>
+            <li><strong>Sucos naturais</strong><span>Da fruta, geladinhos.</span></li>
+            <li><strong>Café passado</strong><span>Combina com tapioca de queijo.</span></li>
+            <li><strong>Refrigerantes</strong><span>Lata e garrafa.</span></li>
+            <li><strong>Água de coco</strong><span>Para o calor de Mongaguá.</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="aviso revelar"><svg aria-hidden="true"><use href="#i-info"/></svg>Itens ilustrativos da prévia. A versão final usa o cardápio e as fotos reais do Recanto.</p>
+    </div>
+  </section>
+
+  <section class="secao prova" aria-labelledby="t-prova">
+    <div class="envolve grade">
+      <div class="nota revelar">
+        <div class="numero" aria-hidden="true">4,8</div>
+        <div class="estrelas-grandes" aria-hidden="true">
+          <svg viewBox="0 0 190 34"><g fill="rgba(255,255,255,.28)"><use href="#i-estrela" width="34" height="34"/><use href="#i-estrela" x="39" width="34" height="34"/><use href="#i-estrela" x="78" width="34" height="34"/><use href="#i-estrela" x="117" width="34" height="34"/><use href="#i-estrela" x="156" width="34" height="34"/></g></svg>
+          <svg viewBox="0 0 190 34" class="cheias"><g fill="#FFD166" color="#FFD166"><use href="#i-estrela" width="34" height="34"/><use href="#i-estrela" x="39" width="34" height="34"/><use href="#i-estrela" x="78" width="34" height="34"/><use href="#i-estrela" x="117" width="34" height="34"/><use href="#i-estrela" x="156" width="34" height="34"/></g></svg>
+        </div>
+        <p><span class="visualmente-oculto">Nota 4,8 de 5 no Google. </span>Quase 200 pessoas já avaliaram o Recanto no Google.</p>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJqz2zwUgozpQRKuUKZMe3r-A" target="_blank" rel="noopener">Ler as avaliações</a>
+      </div>
+      <div class="revelar" style="--atraso:.1s">
+        <span class="etiqueta">Quem prova, volta</span>
+        <h2 id="t-prova">A nota que a cidade deu, em primeiro lugar.</h2>
+        <p class="intro">Quem procura tapioca em Mongaguá encontra o Recanto com a avaliação na frente, o horário certo e o pedido a um toque.</p>
+        <ul class="fatos">
+          <li><svg aria-hidden="true"><use href="#i-relogio"/></svg><div><strong>Aberto todos os dias</strong><span>A partir das 11h, até 22h ou 23h conforme o dia.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-chama"/></svg><div><strong>Feita na hora</strong><span>A massa vai para a frigideira quando o pedido chega.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-zap"/></svg><div><strong>Pedido pelo WhatsApp</strong><span>Sem aplicativo e sem taxa de plataforma.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao onde" id="onde" aria-labelledby="t-onde">
+    <div class="envolve">
+      <div class="revelar">
+        <span class="etiqueta">Onde estamos</span>
+        <h2 id="t-onde">No Balneário Triesse, na avenida.</h2>
+      </div>
+      <div class="grade">
+        <div class="mapa revelar">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="600" height="400" fill="#EFE4CF"/>
+            <g stroke="#E2D3B7" stroke-width="14" fill="none"><path d="M-20 70h640M-20 260h640M120-20v440M330-20v440M520-20v440"/></g>
+            <path d="M-20 168C140 150 300 186 620 160" stroke="#fff" stroke-width="30" fill="none"/>
+            <path d="M-20 168C140 150 300 186 620 160" stroke="#E7C48A" stroke-width="2" stroke-dasharray="14 12" fill="none"/>
+            <text x="168" y="214" font-family="Figtree, sans-serif" font-size="14" font-weight="600" fill="#8C7D6E">Av. Nossa Sra. de Fátima</text>
+            <ellipse cx="300" cy="172" rx="16" ry="5" fill="rgba(30,25,21,.18)"/>
+            <g class="pino"><path d="M300 170c0 0-30-28-30-50a30 30 0 0 1 60 0c0 22-30 50-30 50Z" fill="#B83A12"/><circle cx="300" cy="120" r="11" fill="#FBF6EC"/></g>
+          </svg>
+          <div class="cartao-end">
+            <p><strong>Av. Nossa Sra. de Fátima, 1708</strong>Balneário Triesse, Mongaguá · SP</p>
+            <a class="botao botao--linha botao--pequeno" href="https://www.google.com/maps/dir/?api=1&amp;destination=-24.1208955,-46.700109&amp;destination_place_id=ChIJqz2zwUgozpQRKuUKZMe3r-A" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pino"/></svg>Como chegar</a>
+          </div>
+        </div>
+        <div class="horarios revelar" style="--atraso:.1s">
+          <h3>Horários</h3>
+          <span class="status" data-status>Conferindo horário…</span>
+          <ol id="horarios"></ol>
+          <small>Horários do perfil no Google. Em feriados, confirme pelo WhatsApp.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao final" aria-labelledby="t-final">
+    <div class="envolve revelar">
+      <svg class="meia-lua" viewBox="0 0 120 64" aria-hidden="true"><path d="M6 8a54 54 0 0 0 108 0z" fill="#E7C48A" stroke="#B7782F" stroke-width="3"/><path d="M10 8h100" stroke="#F2C94C" stroke-width="8" stroke-linecap="round"/><circle cx="40" cy="30" r="4" fill="#B7782F" opacity=".5"/><circle cx="74" cy="40" r="3" fill="#B7782F" opacity=".45"/></svg>
+      <h2 id="t-final">Bateu a vontade? A frigideira já está quente.</h2>
+      <p class="intro">Mande o pedido pelo WhatsApp e retire quentinha no Recanto.</p>
+      <div class="acoes">
+        <a class="botao botao--pedir" href="https://wa.me/5513988609174?text=Oi!%20Vim%20pela%20p%C3%A1gina%20do%20Recanto%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir no WhatsApp</a>
+        <a class="botao botao--linha" href="tel:+5513988609174">Ligar (13) 98860-9174</a>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="synex"><div class="wrap">
-  <span>Demonstração criada pela <a href="https://synexpages.net" target="_blank" rel="noopener">Synex Local</a> · Itanhaém, Peruíbe e Mongaguá</span>
-  <span>Quer a sua? <a href="https://wa.me/5513988811950?text=Oi%21%20Vi%20a%20demonstra%C3%A7%C3%A3o%20da%20p%C3%A1gina%20da%20Recanto%20Da%20Tapioca%20e%20quero%20saber%20mais." target="_blank" rel="noopener">(13) 98881-1950</a></span>
-</div></footer>
+<footer>
+  <div class="envolve">
+    <span>Recanto da Tapioca · Av. Nossa Sra. de Fátima, 1708, Mongaguá - SP</span>
+    <span>Prévia criada pela <a href="https://synexpages.net" target="_blank" rel="noopener">Synex Local</a></span>
+  </div>
+</footer>
 
-<div class="sticky"><a class="btn btn-main" href="https://wa.me/5513988609174?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Recanto%20Da%20Tapioca." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2l-.4-.2z"/></svg> Fazer pedido</a></div>
+<div class="barra-movel" id="barra-movel">
+  <span class="status" data-status>Conferindo horário…</span>
+  <a class="botao botao--pedir botao--pequeno" href="https://wa.me/5513988609174?text=Oi!%20Vim%20pela%20p%C3%A1gina%20do%20Recanto%20e%20quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir agora</a>
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ZAP = '5513988609174';
+
+  // gerador pseudoaleatório estável (o desenho fica igual a cada visita)
+  const semente = (s) => () => ((s = Math.imul(s ^ (s >>> 15), 1 | s) + 0x6D2B79F5 | 0) >>> 0) / 4294967296;
+  const el = (tag, at) => { const n = document.createElementNS(NS, tag); for (const k in at) n.setAttribute(k, at[k]); return n; };
+
+  /* ---------- horário de funcionamento (horário de Brasília) ---------- */
+  const HORAS = { 0: [11, 23], 1: [11, 22], 2: [11, 23], 3: [11, 22], 4: [11, 22], 5: [11, 23], 6: [11, 23] };
+  const DIAS = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+  function agoraSP() {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+    return { dia: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday), h: Number(p.hour) + Number(p.minute) / 60 };
+  }
+  function atualizarStatus() {
+    const { dia, h } = agoraSP();
+    const [abre, fecha] = HORAS[dia];
+    let texto, aberto = false;
+    if (h >= abre && h < fecha) { aberto = true; texto = `Aberto agora · até ${fecha}h`; }
+    else if (h < abre) texto = `Fechado · abre hoje às ${abre}h`;
+    else texto = `Fechado · abre amanhã às ${HORAS[(dia + 1) % 7][0]}h`;
+    $$('[data-status]').forEach((s) => { s.textContent = texto; s.classList.toggle('fechado', !aberto); });
+    const lista = $('#horarios');
+    lista.innerHTML = '';
+    [1, 2, 3, 4, 5, 6, 0].forEach((d) => {
+      const li = document.createElement('li');
+      if (d === dia) { li.className = 'hoje'; li.setAttribute('aria-current', 'date'); }
+      li.innerHTML = `<span>${DIAS[d]}${d === dia ? ' (hoje)' : ''}</span><span>${HORAS[d][0]}h às ${HORAS[d][1]}h</span>`;
+      lista.append(li);
+    });
+  }
+  atualizarStatus();
+  setInterval(atualizarStatus, 60000);
+
+  /* ---------- frigideira do topo ---------- */
+  const frig = $('#frigideira');
+  const palco = $('#palco');
+  (function montarFrigideira() {
+    const r = semente(7);
+    const graos = $('#graos');
+    for (let i = 0; i < 70; i++) {
+      const a = r() * Math.PI * 2, d = Math.sqrt(r()) * 130;
+      const c = el('circle', { class: 'grao', cx: (200 + Math.cos(a) * d).toFixed(1), cy: (200 + Math.sin(a) * d).toFixed(1), r: (3 + r() * 4).toFixed(1), fill: r() > .3 ? '#FFFDF8' : '#F1E6D0' });
+      c.style.setProperty('--d', (r() * .7).toFixed(2) + 's');
+      graos.append(c);
+    }
+    const pinta = (alvo, yMin, yMax) => {
+      for (let i = 0; i < 9; i++) {
+        const x = 90 + r() * 220, y = yMin + r() * (yMax - yMin);
+        if (Math.hypot(x - 200, y - 200) > 125) continue;
+        const c = el('ellipse', { class: 'pinta', cx: x.toFixed(1), cy: y.toFixed(1), rx: (4 + r() * 9).toFixed(1), ry: (3 + r() * 6).toFixed(1), fill: '#C98F45' });
+        c.style.setProperty('--d', (r() * .4).toFixed(2) + 's');
+        c.style.setProperty('--o', (.25 + r() * .35).toFixed(2));
+        alvo.append(c);
+      }
+    };
+    pinta($('.pintas-cima', frig), 80, 195);
+    pinta($('.pintas-baixo', frig), 205, 320);
+  })();
+
+  let fimAnimacao;
+  function fazer() {
+    clearTimeout(fimAnimacao);
+    palco.classList.remove('pronto');
+    frig.classList.remove('anda', 'pronto');
+    void frig.getBoundingClientRect();
+    frig.classList.add('anda');
+    fimAnimacao = setTimeout(() => { frig.classList.add('pronto'); palco.classList.add('pronto'); }, reduzir ? 0 : 3600);
+  }
+  $('#refazer').addEventListener('click', fazer);
+  fazer();
+  // vapor só anima com a frigideira na tela
+  new IntersectionObserver(([e]) => frig.classList.toggle('visivel', e.isIntersecting)).observe(frig);
+
+  /* ---------- monte a sua ---------- */
+  const SABORES = {
+    salgada: [
+      { id: 'coalho', nome: 'Queijo coalho', cor: '#F2C94C', forma: 'cubo' },
+      { id: 'carne', nome: 'Carne-seca', cor: '#7A3E1D', forma: 'fio' },
+      { id: 'frango', nome: 'Frango', cor: '#DDB37A', forma: 'fio' },
+      { id: 'catupiry', nome: 'Catupiry', cor: '#FFFDF7', forma: 'nuvem' },
+      { id: 'calabresa', nome: 'Calabresa', cor: '#A8322A', forma: 'rodela' },
+      { id: 'tomate', nome: 'Tomate', cor: '#D2452B', forma: 'bolinha' },
+      { id: 'oregano', nome: 'Orégano', cor: '#4F7A3A', forma: 'pitada' },
+    ],
+    doce: [
+      { id: 'coco', nome: 'Coco', cor: '#FFFFFF', forma: 'lasca' },
+      { id: 'leite', nome: 'Leite condensado', cor: '#E6C27E', forma: 'calda' },
+      { id: 'banana', nome: 'Banana', cor: '#F6D86B', forma: 'rodela' },
+      { id: 'canela', nome: 'Canela', cor: '#8B4A22', forma: 'pitada' },
+      { id: 'chocolate', nome: 'Chocolate', cor: '#4A2A1A', forma: 'calda' },
+      { id: 'morango', nome: 'Morango', cor: '#D7263D', forma: 'bolinha' },
+      { id: 'goiabada', nome: 'Goiabada', cor: '#9E1B32', forma: 'cubo' },
+    ],
+  };
+  const LIMITE = 4;
+  let tipo = 'salgada';
+  const escolhidos = new Map();
+  const grupo = $('#recheios');
+  const lista = $('#lista-sabores');
+
+  // desenha um recheio espalhado na metade de baixo da tapioca (a que fica dentro quando dobra)
+  function desenhar(s, ordem) {
+    const r = semente(s.id.length * 977 + s.nome.charCodeAt(0));
+    const g = el('g', { 'data-id': s.id });
+    const ponto = () => { let x, y; do { x = 30 + r() * 240; y = 158 + r() * 116; } while (Math.hypot(x - 150, y - 150) > 120); return [x, y]; };
+    const borda = 'rgba(30,25,21,.18)';
+    const qtd = { cubo: 11, fio: 12, nuvem: 7, rodela: 8, bolinha: 10, pitada: 34, lasca: 18, calda: 3 }[s.forma];
+    for (let i = 0; i < qtd; i++) {
+      const [x, y] = ponto();
+      let n;
+      if (s.forma === 'cubo') n = el('rect', { x: x - 6, y: y - 6, width: 12, height: 12, rx: 2.5, fill: s.cor, stroke: borda, transform: `rotate(${(r() * 90).toFixed(0)} ${x} ${y})` });
+      else if (s.forma === 'fio') n = el('path', { d: `M${x} ${y}q${(6 + r() * 6).toFixed(1)} ${(-6 + r() * 12).toFixed(1)} ${(14 + r() * 8).toFixed(1)} ${(-4 + r() * 8).toFixed(1)}`, stroke: s.cor, 'stroke-width': 4.5, 'stroke-linecap': 'round', fill: 'none' });
+      else if (s.forma === 'nuvem') n = el('path', { d: `M${x - 12} ${y}a7 7 0 0 1 8-7a8 8 0 0 1 14 2a6 6 0 0 1 2 11h-20a6 6 0 0 1-4-6z`, fill: s.cor, stroke: '#E5D6BA' });
+      else if (s.forma === 'rodela') { n = el('g', {}); n.append(el('circle', { cx: x, cy: y, r: 9, fill: s.cor, stroke: borda }), el('circle', { cx: x + 2, cy: y - 2, r: 2.2, fill: 'rgba(30,25,21,.25)' })); }
+      else if (s.forma === 'bolinha') n = el('circle', { cx: x, cy: y, r: 5.5, fill: s.cor, stroke: borda });
+      else if (s.forma === 'pitada') n = el('circle', { cx: x, cy: y, r: 1.6, fill: s.cor });
+      else if (s.forma === 'lasca') n = el('path', { d: `M${x} ${y}l${(6 + r() * 4).toFixed(1)} ${(-2 + r() * 4).toFixed(1)}`, stroke: '#FFFFFF', 'stroke-width': 3, 'stroke-linecap': 'round' });
+      else if (s.forma === 'calda') {
+        const y0 = 176 + i * 30;
+        let d = `M40 ${y0}`;
+        for (let k = 0; k < 7; k++) d += ` q 15 ${k % 2 ? 14 : -14} 31 0`;
+        n = el('path', { d, stroke: s.cor, 'stroke-width': 6, 'stroke-linecap': 'round', fill: 'none', opacity: .9 });
+      }
+      n.setAttribute('class', 'item');
+      n.style.setProperty('--d', (ordem * .05 + i * .025).toFixed(3) + 's');
+      g.append(n);
+    }
+    return g;
+  }
+
+  function listaNatural(nomes) {
+    const n = nomes.map((x) => x.toLowerCase());
+    return n.length < 2 ? n.join('') : n.slice(0, -1).join(', ') + ' e ' + n.at(-1);
+  }
+
+  function atualizar() {
+    const nomes = [...escolhidos.values()].map((s) => s.nome);
+    const resumo = $('#resumo');
+    const btn = $('#pedir-montada');
+    if (!nomes.length) {
+      resumo.innerHTML = 'Sua tapioca está esperando o recheio.<small>Escolha pelo menos um sabor.</small>';
+      btn.setAttribute('aria-disabled', 'true');
+      btn.href = `https://wa.me/${ZAP}`;
+    } else {
+      const frase = `Tapioca ${tipo} de ${listaNatural(nomes)}`;
+      resumo.innerHTML = `${frase}.<small>${nomes.length} de ${LIMITE} sabores${nomes.length === LIMITE ? ' · limite atingido' : ''}</small>`;
+      btn.removeAttribute('aria-disabled');
+      btn.href = `https://wa.me/${ZAP}?text=${encodeURIComponent(`Oi! Vim pela página do Recanto e quero uma tapioca ${tipo} de ${listaNatural(nomes)}.`)}`;
+    }
+    const cheio = escolhidos.size >= LIMITE;
+    $$('.chip', lista).forEach((c) => { c.disabled = cheio && c.getAttribute('aria-pressed') !== 'true'; });
+  }
+
+  function trocar(s, chip) {
+    if (escolhidos.has(s.id)) {
+      escolhidos.delete(s.id);
+      grupo.querySelector(`[data-id="${s.id}"]`)?.remove();
+      chip.setAttribute('aria-pressed', 'false');
+    } else {
+      if (escolhidos.size >= LIMITE) return;
+      escolhidos.set(s.id, s);
+      grupo.append(desenhar(s, 0));
+      chip.setAttribute('aria-pressed', 'true');
+    }
+    atualizar();
+  }
+
+  function montarChips() {
+    lista.innerHTML = '';
+    for (const s of SABORES[tipo]) {
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip';
+      b.setAttribute('aria-pressed', 'false');
+      b.style.setProperty('--c', s.cor);
+      b.innerHTML = `<span class="bolinha" aria-hidden="true"></span>${s.nome}`;
+      b.addEventListener('click', () => trocar(s, b));
+      li.append(b);
+      lista.append(li);
+    }
+  }
+
+  function limpar() { escolhidos.clear(); grupo.replaceChildren(); $$('.chip', lista).forEach((c) => c.setAttribute('aria-pressed', 'false')); atualizar(); }
+
+  function escolherTipo(novo) {
+    if (novo === tipo) return;
+    tipo = novo;
+    $$('.abas [role="tab"]').forEach((t) => t.setAttribute('aria-selected', String(t.id === `aba-${novo}`)));
+    escolhidos.clear(); grupo.replaceChildren();
+    montarChips(); atualizar();
+  }
+  $('#aba-salgada').addEventListener('click', () => escolherTipo('salgada'));
+  $('#aba-doce').addEventListener('click', () => escolherTipo('doce'));
+  $('.abas').addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const novo = tipo === 'salgada' ? 'doce' : 'salgada';
+    escolherTipo(novo); $(`#aba-${novo}`).focus();
+  });
+  $('#limpar').addEventListener('click', limpar);
+  $('#pedir-montada').addEventListener('click', (e) => {
+    if (e.currentTarget.getAttribute('aria-disabled') === 'true') { e.preventDefault(); lista.querySelector('.chip')?.focus(); }
+  });
+  montarChips();
+  // começa com uma sugestão montada para a pessoa ver como funciona
+  ['carne', 'catupiry'].forEach((id, i) => { const s = SABORES.salgada.find((x) => x.id === id); escolhidos.set(id, s); grupo.append(desenhar(s, i)); });
+  $$('.chip', lista).forEach((c, i) => { if (['carne', 'catupiry'].includes(SABORES.salgada[i].id)) c.setAttribute('aria-pressed', 'true'); });
+  atualizar();
+
+  /* ---------- rolagem: topo, barra do celular e entradas ---------- */
+  const topo = $('#topo');
+  const barra = $('#barra-movel');
+  const hero = $('.hero');
+  addEventListener('scroll', () => {
+    topo.classList.toggle('rolou', scrollY > 8);
+    barra.classList.toggle('mostrar', hero.getBoundingClientRect().bottom < 40);
+  }, { passive: true });
+  if ('IntersectionObserver' in window && !reduzir) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visivel'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    $$('.revelar').forEach((x) => io.observe(x));
+  } else $$('.revelar').forEach((x) => x.classList.add('visivel'));
+})();
+</script>
 </body>
 </html>
