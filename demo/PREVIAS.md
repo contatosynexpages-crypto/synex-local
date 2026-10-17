@@ -16,3 +16,8 @@ Cada prévia nova precisa ser diferente das anteriores. Antes de criar uma, leia
 - Faixa da Synex no topo da página.
 - Animação de abertura em autoplay ao lado do título.
 - Função no formato "escolha opções → mensagem pronta no WhatsApp" (usada 2 vezes seguidas).
+
+## Conferência técnica antes de entregar
+
+- Todo `<button>` precisa de `background` definido no CSS (o navegador põe fundo cinza claro por padrão, e texto claro some em cima dele).
+- Medir o contraste de todos os botões e links com cara de botão (mínimo 4,5:1), no computador e no celular.
