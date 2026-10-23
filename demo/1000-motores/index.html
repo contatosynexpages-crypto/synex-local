@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1000 Motores · Oficina especializada em Peruíbe</title>
+<meta name="description" content="1000 Motores, oficina especializada no Jardim Guaraú, em Peruíbe. Acendeu uma luz no painel? Descubra o que ela significa e chame a oficina pelo WhatsApp. Nota 4,8 no Google.">
+<!-- prévia de demonstração: tirar o noindex quando virar o site oficial -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0D10">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="1000 Motores · Peruíbe">
+<meta property="og:description" content="Acendeu uma luz no painel? Toque nela e veja o que fazer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0D10'/%3E%3Cpath d='M12 44a22 22 0 1 1 40 0' fill='none' stroke='%23FFB020' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M32 40 46 22' stroke='%23E5483B' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "1000 Motores Oficina Especializada",
+  "telephone": "+55 13 99691-3460",
+  "address": { "@type": "PostalAddress", "streetAddress": "R. Prof. Italo Bianchini - Jardim Guaraú", "addressLocality": "Peruíbe", "addressRegion": "SP", "postalCode": "11750-000", "addressCountry": "BR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": -24.3326559, "longitude": -47.0051539 },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" }]
+}
+</script>
+<style>
+:root {
+  --grafite: #0B0D10;
+  --grafite-2: #13171C;
+  --grafite-3: #1C2229;
+  --aco: #2A323C;
+  --texto: #ECEFF3;
+  --suave: #A7B0BC;
+  --ambar: #FFB020;
+  --ambar-escuro: #C98200;
+  --vermelho: #E5483B;
+  --verde: #3BD17A;
+  --linha: rgba(236, 239, 243, .12);
+  --entrada: cubic-bezier(.2, .8, .2, 1);
+  --painel: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --corpo: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--grafite); color: var(--texto); font: 400 17px/1.6 var(--corpo); }
+svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: transparent; border: 0; -webkit-appearance: none; appearance: none; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; border-radius: 8px; }
+.envolve { width: min(1120px, 100% - 32px); margin-inline: auto; }
+.visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 12px; border: 2px solid transparent; font: 700 15px/1 var(--painel); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: transform .2s var(--entrada), background-color .2s, color .2s, border-color .2s, box-shadow .2s; }
+.botao svg { width: 20px; height: 20px; flex: none; }
+.botao--ambar { background: var(--ambar); color: #14100A; box-shadow: 0 0 0 0 rgba(255,176,32,.0), 0 10px 26px -14px rgba(255,176,32,.9); }
+.botao--ambar:hover { background: #FFC24D; transform: translateY(-2px); }
+.botao--linha { border-color: var(--aco); color: var(--texto); background: var(--grafite-2); }
+.botao--linha:hover { border-color: var(--ambar); }
+.botao:active { transform: scale(.97); }
+
+/* topo */
+.topo { position: sticky; top: 0; z-index: 20; background: rgba(11,13,16,.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--linha); }
+.topo .envolve { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.marca svg { width: 36px; height: 36px; }
+.marca strong { font: 700 20px/1 var(--painel); letter-spacing: .04em; text-transform: uppercase; }
+.marca strong span { color: var(--ambar); }
+.marca small { display: block; font: 500 11px/1 var(--corpo); letter-spacing: .18em; text-transform: uppercase; color: var(--suave); margin-top: 4px; }
+
+/* painel de instrumentos */
+.painel { padding: clamp(28px, 5vw, 64px) 0 clamp(40px, 6vw, 80px); position: relative; }
+.painel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(70% 60% at 50% 30%, rgba(255,176,32,.08), transparent 70%); pointer-events: none; }
+.cluster { position: relative; display: grid; grid-template-columns: 1fr minmax(260px, 340px) 1fr; align-items: center; gap: clamp(12px, 3vw, 40px); padding: clamp(18px, 3vw, 34px); border-radius: 40px; background: linear-gradient(180deg, #151A20, #0E1115); border: 1px solid var(--linha); box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 40px 80px -40px rgba(0,0,0,.9); }
+.mostrador { position: relative; aspect-ratio: 1; width: 100%; max-width: 330px; justify-self: center; }
+.mostrador svg { width: 100%; height: 100%; }
+.mostrador .rotulo { position: absolute; left: 0; right: 0; bottom: 18%; text-align: center; font: 600 12px/1.2 var(--painel); letter-spacing: .2em; color: var(--suave); text-transform: uppercase; }
+.agulha { transform-origin: 150px 150px; transform: rotate(-120deg); transition: transform .9s cubic-bezier(.5, 0, .2, 1); }
+.agulha-rpm.ligado { animation: marcha-lenta 1.2s ease-in-out infinite alternate; }
+@keyframes marcha-lenta { from { transform: rotate(-86deg); } to { transform: rotate(-82deg); } }
+.centro { text-align: center; display: grid; gap: 14px; justify-items: center; }
+.centro h1 { margin: 0; font: 700 clamp(34px, 4.6vw, 54px)/.95 var(--painel); text-transform: uppercase; letter-spacing: .02em; }
+.centro h1 span { display: block; color: var(--ambar); font-size: .6em; letter-spacing: .06em; margin-top: 6px; }
+.centro p { margin: 0; color: var(--suave); max-width: 30ch; }
+.lcd { font: 600 14px/1.3 var(--painel); letter-spacing: .08em; color: var(--ambar); background: #0A0C0E; border: 1px solid var(--aco); border-radius: 10px; padding: 8px 14px; min-width: 220px; box-shadow: inset 0 0 18px rgba(255,176,32,.06); }
+.lcd b { color: var(--texto); font-weight: 700; }
+.partida { width: 112px; height: 112px; border-radius: 50%; display: grid; place-items: center; gap: 0; background: radial-gradient(circle at 50% 35%, #2B323B, #12161A 70%); border: 3px solid #39424D; box-shadow: 0 0 0 6px #0C0F12, 0 0 0 8px #262D35, 0 18px 30px -10px rgba(0,0,0,.8); cursor: pointer; text-align: center; transition: transform .15s, box-shadow .3s; }
+.partida span { font: 700 13px/1.1 var(--painel); letter-spacing: .14em; }
+.partida small { display: block; font: 600 10px/1 var(--painel); letter-spacing: .2em; color: var(--suave); margin-top: 4px; }
+.partida:not(.ligado) { animation: chamar 2.4s ease-in-out infinite; }
+@keyframes chamar { 0%, 100% { box-shadow: 0 0 0 6px #0C0F12, 0 0 0 8px #262D35, 0 0 0 8px rgba(255,176,32,0); } 50% { box-shadow: 0 0 0 6px #0C0F12, 0 0 0 8px #262D35, 0 0 22px 10px rgba(255,176,32,.25); } }
+.partida.ligado { border-color: var(--ambar); }
+.partida:active { transform: scale(.95); }
+.luzes-teste { display: flex; gap: 10px; justify-content: center; min-height: 26px; }
+.luzes-teste svg { width: 24px; height: 24px; opacity: .12; transition: opacity .15s; }
+.teste .luzes-teste svg { opacity: 1; }
+.chama { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 26px; }
+.tremer { animation: tremer .45s linear 1; }
+@keyframes tremer { 20% { transform: translate(1px, -1px); } 40% { transform: translate(-1px, 1px); } 60% { transform: translate(1px, 1px); } 80% { transform: translate(-1px, 0); } }
+
+/* diagnóstico pelas luzes */
+.secao { padding: clamp(64px, 9vw, 110px) 0; }
+.etiqueta { display: inline-block; font: 600 13px/1 var(--painel); letter-spacing: .22em; text-transform: uppercase; color: var(--ambar); margin-bottom: 12px; }
+.secao h2 { font: 700 clamp(30px, 4.4vw, 52px)/1 var(--painel); text-transform: uppercase; margin: 0 0 14px; }
+.secao .intro { color: var(--suave); max-width: 54ch; margin: 0; }
+.diag { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 48px); margin-top: 36px; align-items: start; }
+.luzes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.luz { display: grid; justify-items: center; gap: 10px; padding: 18px 10px; min-height: 120px; border-radius: 18px; background: var(--grafite-2); border: 1px solid var(--linha); cursor: pointer; transition: border-color .2s, background-color .2s, transform .15s; }
+.luz svg { width: 44px; height: 44px; color: #4A5360; transition: color .2s, filter .2s; }
+.luz span { font: 600 13px/1.2 var(--painel); letter-spacing: .04em; text-align: center; color: var(--suave); }
+.luz:hover { border-color: var(--aco); }
+.luz[aria-pressed="true"] { border-color: currentColor; background: var(--grafite-3); }
+.luz[data-cor="vermelho"][aria-pressed="true"] { color: var(--vermelho); }
+.luz[data-cor="ambar"][aria-pressed="true"] { color: var(--ambar); }
+.luz[aria-pressed="true"] svg { color: currentColor; filter: drop-shadow(0 0 10px currentColor); }
+.luz[aria-pressed="true"] span { color: var(--texto); }
+.luz:active { transform: scale(.97); }
+.laudo { position: relative; border-radius: 22px; background: #F1EEE6; color: #16181B; padding: 26px 24px 22px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.9); min-height: 100%; }
+.laudo::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; border-radius: 22px 22px 0 0; background: repeating-linear-gradient(90deg, #16181B 0 12px, transparent 12px 20px); opacity: .12; }
+.laudo .os { font: 600 12px/1 var(--painel); letter-spacing: .2em; color: #6B6F75; text-transform: uppercase; }
+.laudo h3 { font: 700 28px/1.05 var(--painel); text-transform: uppercase; margin: 10px 0 12px; }
+.urgencia { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font: 700 13px/1 var(--painel); letter-spacing: .08em; text-transform: uppercase; }
+.urgencia::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
+.urgencia.pare { background: #FBE1DE; color: #A8261B; }
+.urgencia.logo { background: #FFF0D1; color: #8A5700; }
+.urgencia.agende { background: #DDF3E6; color: #1E7A45; }
+.laudo p { margin: 14px 0 0; }
+.laudo ul { margin: 12px 0 0; padding-left: 20px; }
+.laudo li + li { margin-top: 4px; }
+.laudo .acoes { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+.laudo .aviso { font-size: 13px; color: #5C6066; margin-top: 16px; border-top: 1px dashed rgba(22,24,27,.25); padding-top: 12px; }
+.laudo-vazio { display: grid; place-items: center; text-align: center; color: #5C6066; min-height: 320px; }
+.laudo-vazio svg { width: 56px; height: 56px; margin: 0 auto 12px; color: #9AA0A7; }
+.laudo .entra { animation: entrar .45s var(--entrada) both; }
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* serviços como fita de ordem de serviço */
+.servicos { border-top: 1px solid var(--linha); }
+.fita { margin-top: 30px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--linha); border-radius: 22px; overflow: hidden; }
+.fita div { padding: 24px 20px; background: var(--grafite-2); }
+.fita div + div { border-left: 1px solid var(--linha); }
+.fita b { display: block; font: 700 20px/1.1 var(--painel); text-transform: uppercase; margin: 10px 0 6px; }
+.fita span { color: var(--suave); font-size: 15px; }
+.fita svg { width: 30px; height: 30px; color: var(--ambar); }
+.nota-aviso { margin-top: 14px; font-size: 14px; color: var(--suave); }
+
+/* computador de bordo: nota, endereço e horário */
+.bordo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
+.tela { background: #07090B; border: 1px solid var(--aco); border-radius: 18px; padding: 20px; box-shadow: inset 0 0 30px rgba(255,176,32,.05); }
+.tela .titulo { font: 600 12px/1 var(--painel); letter-spacing: .22em; text-transform: uppercase; color: var(--suave); }
+.tela .grande { font: 700 clamp(40px, 5vw, 58px)/1 var(--painel); color: var(--ambar); margin: 12px 0 6px; }
+.tela .grande small { font-size: .42em; color: var(--texto); letter-spacing: .04em; }
+.tela p { margin: 0; color: var(--suave); font-size: 15px; }
+.tela a { color: var(--texto); font-weight: 600; text-underline-offset: 3px; }
+.tela .status { font: 700 15px/1.3 var(--painel); letter-spacing: .06em; text-transform: uppercase; margin: 12px 0 6px; color: var(--verde); }
+.tela .status.fechado { color: var(--vermelho); }
+
+.final { text-align: center; padding-bottom: clamp(110px, 12vw, 150px); }
+.final h2 { max-width: 18ch; margin-inline: auto; }
+.final .intro { margin: 0 auto 26px; }
+.final .chama { margin-top: 0; }
+footer { border-top: 1px solid var(--linha); padding: 26px 0 120px; font-size: 14px; color: var(--suave); }
+footer .envolve { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+
+/* adesivo de troca de óleo = destaque da prévia */
+.adesivo { position: fixed; right: 14px; bottom: 14px; z-index: 30; width: 150px; padding: 10px 12px 12px; border-radius: 10px; background: #FFFDF5; color: #16181B; text-decoration: none; box-shadow: 0 14px 30px -10px rgba(0,0,0,.7); transform: rotate(-3deg); transition: transform .2s var(--entrada); border-top: 8px solid var(--vermelho); }
+.adesivo:hover { transform: rotate(0deg) translateY(-2px); }
+.adesivo small { display: block; font: 700 9px/1.1 var(--painel); letter-spacing: .18em; text-transform: uppercase; color: #6B6F75; }
+.adesivo b { display: block; font: 700 15px/1.1 var(--painel); margin: 4px 0; text-transform: uppercase; }
+.adesivo span { display: block; font: 600 11px/1.3 var(--corpo); color: #A8261B; }
+
+@media (max-width: 900px) {
+  .cluster { grid-template-columns: 1fr 1fr; border-radius: 28px; }
+  .centro { grid-column: 1 / -1; order: -1; }
+  .diag { grid-template-columns: 1fr; }
+  .fita { grid-template-columns: 1fr 1fr; }
+  .fita div:nth-child(3) { border-left: 0; }
+  .fita div:nth-child(n+3) { border-top: 1px solid var(--linha); }
+  .bordo { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .cluster { padding: 16px 12px; gap: 6px 4px; }
+  .mostrador .rotulo { bottom: 14%; font-size: 10px; }
+  .luzes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fita { grid-template-columns: 1fr; }
+  .fita div + div { border-left: 0; border-top: 1px solid var(--linha); }
+  .chama .botao { flex: 1 1 100%; }
+  .topo .botao { display: none; }
+  .adesivo { width: 128px; right: 10px; bottom: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .001ms !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <!-- luzes do painel (desenhos próprios) -->
+    <symbol id="l-motor" viewBox="0 0 48 48"><path d="M8 20h4v-4h6v-3h12v3h4l3 4h3v-3h3v14h-3v-3h-3l-3 5H16l-4-4H8z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></symbol>
+    <symbol id="l-oleo" viewBox="0 0 48 48"><path d="M6 22h8l4 4h14l10-8-4 12H18l-4-4H6z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M41 30c0 2-1.5 3.5-2.5 3.5S36 32 36 30c0-1.5 2.5-4.5 2.5-4.5S41 28.5 41 30Z" fill="currentColor"/><path d="M14 20v-4h-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="l-temp" viewBox="0 0 48 48"><path d="M24 6v20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="30" r="5" fill="currentColor"/><path d="M27 12h6M27 18h6M27 24h4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M6 40c3-3 6 3 9 0s6 3 9 0 6 3 9 0 6 3 9 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="l-bateria" viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 14v-4h6v4M30 14v-4h6v4M12 26h6M33 23v6M30 26h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="l-freio" viewBox="0 0 48 48"><circle cx="24" cy="24" r="11" fill="none" stroke="currentColor" stroke-width="3"/><path d="M11 13a17 17 0 0 0 0 22M37 13a17 17 0 0 1 0 22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M24 17v9M24 30v1" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></symbol>
+    <symbol id="l-abs" viewBox="0 0 48 48"><circle cx="24" cy="24" r="13" fill="none" stroke="currentColor" stroke-width="3"/><path d="M9 12a18 18 0 0 0 0 24M39 12a18 18 0 0 1 0 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><text x="24" y="28.5" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="11" font-weight="700" fill="currentColor">ABS</text></symbol>
+    <symbol id="i-chave" viewBox="0 0 32 32"><path d="M20 4a8 8 0 0 0-7.4 11L4 23.6V28h4.4l1-1v-3h3v-3h3l1.6-1.6A8 8 0 1 0 20 4Zm2 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lupa" viewBox="0 0 32 32"><circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m20 20 7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gota" viewBox="0 0 32 32"><path d="M16 4s-9 10-9 16a9 9 0 0 0 18 0C25 14 16 4 16 4Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-raio" viewBox="0 0 32 32"><path d="M18 3 7 18h8l-2 11 12-16h-8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="topo">
+  <div class="envolve">
+    <a class="marca" href="#inicio" aria-label="1000 Motores, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1C2229"/><path d="M14 44a20 20 0 1 1 36 0" fill="none" stroke="#FFB020" stroke-width="5" stroke-linecap="round"/><path d="M32 40 44 24" stroke="#E5483B" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="40" r="4" fill="#ECEFF3"/></svg>
+      <span><strong>1000 <span>Motores</span></strong><small>Oficina · Peruíbe</small></span>
+    </a>
+    <a class="botao botao--ambar" href="https://wa.me/5513996913460?text=Oi!%20Vim%20pela%20p%C3%A1gina%20da%201000%20Motores%20e%20preciso%20de%20ajuda%20com%20meu%20carro." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="painel" aria-labelledby="t-inicio">
+    <div class="envolve">
+      <div class="cluster" id="cluster">
+        <div class="mostrador" aria-hidden="true">
+          <svg viewBox="0 0 300 300" id="rpm"></svg>
+          <div class="rotulo">rpm ×1000</div>
+        </div>
+        <div class="centro">
+          <h1 id="t-inicio">1000 Motores <span>Oficina especializada</span></h1>
+          <p>Diagnóstico preciso e serviço bem feito no Jardim Guaraú, em Peruíbe.</p>
+          <div class="luzes-teste" aria-hidden="true"><svg style="color:#E5483B"><use href="#l-oleo"/></svg><svg style="color:#E5483B"><use href="#l-bateria"/></svg><svg style="color:#FFB020"><use href="#l-motor"/></svg><svg style="color:#E5483B"><use href="#l-temp"/></svg><svg style="color:#FFB020"><use href="#l-abs"/></svg></div>
+          <button type="button" class="partida" id="partida" aria-pressed="false" aria-label="Dar a partida no painel"><span>START<small>ENGINE</small></span></button>
+          <div class="lcd" aria-live="polite" id="lcd">Toque em <b>START</b> para dar a partida</div>
+        </div>
+        <div class="mostrador" aria-hidden="true">
+          <svg viewBox="0 0 300 300" id="temp"></svg>
+          <div class="rotulo">temperatura</div>
+        </div>
+      </div>
+      <div class="chama">
+        <a class="botao botao--ambar" href="https://wa.me/5513996913460?text=Oi!%20Vim%20pela%20p%C3%A1gina%20da%201000%20Motores%20e%20preciso%20de%20ajuda%20com%20meu%20carro." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+        <a class="botao botao--linha" href="#luzes">Acendeu uma luz?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" id="luzes" aria-labelledby="t-luzes">
+    <div class="envolve">
+      <span class="etiqueta">Diagnóstico rápido</span>
+      <h2 id="t-luzes">Acendeu uma luz no painel?</h2>
+      <p class="intro">Toque na luz que apareceu no seu carro. A gente explica o que ela costuma indicar, se dá para rodar e o que fazer agora.</p>
+      <div class="diag">
+        <div class="luzes" role="group" aria-label="Luzes do painel">
+          <button type="button" class="luz" data-luz="motor" data-cor="ambar" aria-pressed="false"><svg aria-hidden="true"><use href="#l-motor"/></svg><span>Injeção / motor</span></button>
+          <button type="button" class="luz" data-luz="oleo" data-cor="vermelho" aria-pressed="false"><svg aria-hidden="true"><use href="#l-oleo"/></svg><span>Óleo</span></button>
+          <button type="button" class="luz" data-luz="temp" data-cor="vermelho" aria-pressed="false"><svg aria-hidden="true"><use href="#l-temp"/></svg><span>Temperatura</span></button>
+          <button type="button" class="luz" data-luz="bateria" data-cor="vermelho" aria-pressed="false"><svg aria-hidden="true"><use href="#l-bateria"/></svg><span>Bateria</span></button>
+          <button type="button" class="luz" data-luz="freio" data-cor="vermelho" aria-pressed="false"><svg aria-hidden="true"><use href="#l-freio"/></svg><span>Freio</span></button>
+          <button type="button" class="luz" data-luz="abs" data-cor="ambar" aria-pressed="false"><svg aria-hidden="true"><use href="#l-abs"/></svg><span>ABS</span></button>
+        </div>
+        <article class="laudo" id="laudo" aria-live="polite">
+          <div class="laudo-vazio">
+            <div><svg aria-hidden="true"><use href="#i-lupa"/></svg>Escolha uma luz ao lado<br>para ver o laudo rápido.</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao servicos" aria-labelledby="t-servicos">
+    <div class="envolve">
+      <span class="etiqueta">Na oficina</span>
+      <h2 id="t-servicos">O que a gente resolve</h2>
+      <div class="fita">
+        <div><svg aria-hidden="true"><use href="#i-lupa"/></svg><b>Diagnóstico</b><span>Scanner e teste para achar a causa, não só trocar peça.</span></div>
+        <div><svg aria-hidden="true"><use href="#i-chave"/></svg><b>Mecânica</b><span>Motor, suspensão, freio e embreagem.</span></div>
+        <div><svg aria-hidden="true"><use href="#i-raio"/></svg><b>Elétrica</b><span>Bateria, alternador, partida e injeção.</span></div>
+        <div><svg aria-hidden="true"><use href="#i-gota"/></svg><b>Revisão</b><span>Óleo, filtros e checagem completa.</span></div>
+      </div>
+      <p class="nota-aviso">Serviços de exemplo nesta prévia. Na versão final entram os serviços reais da 1000 Motores.</p>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-bordo" style="padding-top:0">
+    <div class="envolve">
+      <span class="etiqueta">Computador de bordo</span>
+      <h2 id="t-bordo">Quem já passou por aqui</h2>
+      <div class="bordo">
+        <div class="tela">
+          <div class="titulo">Nota no Google</div>
+          <div class="grande">4,8<small> / 5</small></div>
+          <p>24 avaliações de clientes. <a href="https://www.google.com/maps/place/?q=place_id:ChIJMxAhsSMp0JQRPE4wfaieMys" target="_blank" rel="noopener">Ler no Google</a></p>
+        </div>
+        <div class="tela">
+          <div class="titulo">Agora</div>
+          <div class="status" id="status">Conferindo…</div>
+          <p>Segunda a sexta, das 8h às 18h.<br>Sábado e domingo, fechado.</p>
+        </div>
+        <div class="tela">
+          <div class="titulo">Destino</div>
+          <p style="color:var(--texto);font-weight:600;margin-top:12px">R. Prof. Italo Bianchini<br>Jardim Guaraú · Peruíbe</p>
+          <p style="margin-top:10px"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=-24.3326559,-47.0051539&amp;destination_place_id=ChIJMxAhsSMp0JQRPE4wfaieMys" target="_blank" rel="noopener">Traçar rota</a> · <a href="tel:+5513996913460">(13) 99691-3460</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao final" aria-labelledby="t-final" style="padding-top:0">
+    <div class="envolve">
+      <h2 id="t-final">Carro dando sinal? Fala com quem entende.</h2>
+      <p class="intro">Manda uma mensagem contando o que está acontecendo. A resposta vem direto da oficina.</p>
+      <div class="chama">
+        <a class="botao botao--ambar" href="https://wa.me/5513996913460?text=Oi!%20Vim%20pela%20p%C3%A1gina%20da%201000%20Motores%20e%20preciso%20de%20ajuda%20com%20meu%20carro." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envolve">
+    <span>1000 Motores Oficina Especializada · R. Prof. Italo Bianchini, Jardim Guaraú, Peruíbe - SP</span>
+    <span>Horários do perfil no Google</span>
+  </div>
+</footer>
+
+<a class="adesivo" href="https://wa.me/5513988811950?text=Oi!%20Vi%20a%20pr%C3%A9via%20da%20p%C3%A1gina%20da%201000%20Motores%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Prévia feita pela Synex Local. Quero esta página">
+  <small>Próxima revisão</small>
+  <b>Prévia Synex</b>
+  <span>Quero esta página →</span>
+</a>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ZAP = '5513996913460';
+  const el = (t, a) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); return n; };
+
+  /* ---------- mostradores ---------- */
+  function mostrador(svg, { marcas, vermelhoDe, rotulos, classe }) {
+    svg.append(el('circle', { cx: 150, cy: 150, r: 142, fill: '#0A0C0E', stroke: '#2A323C', 'stroke-width': 3 }));
+    for (let i = 0; i <= marcas; i++) {
+      const a = (-120 + (240 * i) / marcas) * Math.PI / 180;
+      const longa = i % 2 === 0;
+      const r1 = longa ? 104 : 112, r2 = 124;
+      const verm = i >= vermelhoDe;
+      svg.append(el('line', { x1: 150 + Math.sin(a) * r1, y1: 150 - Math.cos(a) * r1, x2: 150 + Math.sin(a) * r2, y2: 150 - Math.cos(a) * r2, stroke: verm ? '#E5483B' : '#ECEFF3', 'stroke-width': longa ? 4 : 2, 'stroke-linecap': 'round', opacity: longa ? 1 : .6 }));
+      if (longa && rotulos) {
+        const t = el('text', { x: 150 + Math.sin(a) * 84, y: 150 - Math.cos(a) * 84 + 6, 'text-anchor': 'middle', 'font-family': 'Chakra Petch, sans-serif', 'font-size': 18, 'font-weight': 700, fill: verm ? '#E5483B' : '#A7B0BC' });
+        t.textContent = rotulos[i / 2];
+        svg.append(t);
+      }
+    }
+    const g = el('g', { class: 'agulha ' + classe });
+    g.append(el('path', { d: 'M147 158 L150 40 L153 158 Z', fill: '#FFB020' }));
+    svg.append(g);
+    svg.append(el('circle', { cx: 150, cy: 150, r: 12, fill: '#1C2229', stroke: '#FFB020', 'stroke-width': 3 }));
+    return g;
+  }
+  const agRpm = mostrador($('#rpm'), { marcas: 16, vermelhoDe: 13, rotulos: ['0', '1', '2', '3', '4', '5', '6', '7', '8'], classe: 'agulha-rpm' });
+  const agTemp = mostrador($('#temp'), { marcas: 8, vermelhoDe: 7, rotulos: ['C', '', '', '', 'H'], classe: 'agulha-temp' });
+
+  /* ---------- partida: varredura dos ponteiros + teste das luzes (como no carro de verdade) ---------- */
+  const cluster = $('#cluster'), partida = $('#partida'), lcd = $('#lcd');
+  let ligado = false, timers = [];
+  const depois = (ms, fn) => timers.push(setTimeout(fn, reduzir ? 0 : ms));
+  function darPartida() {
+    timers.forEach(clearTimeout); timers = [];
+    if (ligado) {
+      ligado = false;
+      partida.classList.remove('ligado'); partida.setAttribute('aria-pressed', 'false');
+      agRpm.classList.remove('ligado'); agRpm.style.transform = ''; agTemp.style.transform = '';
+      lcd.innerHTML = 'Motor desligado. Toque em <b>START</b> de novo';
+      return;
+    }
+    ligado = true;
+    partida.classList.add('ligado'); partida.setAttribute('aria-pressed', 'true');
+    cluster.classList.add('teste');
+    lcd.innerHTML = 'Checando o painel…';
+    agRpm.style.transform = 'rotate(120deg)'; agTemp.style.transform = 'rotate(120deg)';
+    depois(900, () => { agRpm.style.transform = 'rotate(-120deg)'; agTemp.style.transform = 'rotate(-120deg)'; });
+    depois(1500, () => { cluster.classList.remove('teste'); cluster.classList.add('tremer'); agRpm.style.transform = 'rotate(-84deg)'; agTemp.style.transform = 'rotate(-30deg)'; });
+    depois(2100, () => { cluster.classList.remove('tremer'); agRpm.style.transform = 'rotate(-84deg)'; agRpm.classList.add('ligado'); lcd.innerHTML = 'Tudo certo: <b>nenhuma luz acesa</b>'; });
+  }
+  partida.addEventListener('click', darPartida);
+
+  /* ---------- diagnóstico pelas luzes ---------- */
+  const LUZES = {
+    motor: { nome: 'Injeção eletrônica', cor: 'Amarela', nivel: 'logo', texto: 'Vá logo à oficina',
+      sig: 'O computador do carro achou uma falha no motor ou na injeção: sensor, vela, bobina, combustível ou emissões.',
+      fazer: ['Acesa fixa: dá para rodar com calma até a oficina.', 'Piscando: reduza a velocidade e evite forçar o motor, porque a falha pode danificar o catalisador.', 'Um scanner lê o código da falha e mostra a causa exata.'] },
+    oleo: { nome: 'Pressão do óleo', cor: 'Vermelha', nivel: 'pare', texto: 'Pare agora',
+      sig: 'O motor está sem pressão de óleo suficiente para se lubrificar.',
+      fazer: ['Encoste em local seguro e desligue o motor.', 'Com o motor frio, confira o nível na vareta.', 'Não continue rodando: sem óleo o motor pode fundir em poucos minutos.'] },
+    temp: { nome: 'Temperatura do motor', cor: 'Vermelha', nivel: 'pare', texto: 'Pare agora',
+      sig: 'O motor está esquentando além do normal: pouca água no radiador, vazamento, ventoinha ou válvula termostática.',
+      fazer: ['Pare e desligue o motor.', 'Não abra o reservatório com o motor quente: o líquido sai fervendo.', 'Espere esfriar e chame ajuda antes de seguir.'] },
+    bateria: { nome: 'Bateria / carga', cor: 'Vermelha', nivel: 'logo', texto: 'Vá direto à oficina',
+      sig: 'O sistema de carga não está carregando a bateria: alternador, correia ou a própria bateria.',
+      fazer: ['Desligue rádio, ar-condicionado e o que der para poupar energia.', 'Vá direto à oficina, sem paradas: o carro pode morrer quando a bateria acabar.', 'Evite desligar o motor no caminho.'] },
+    freio: { nome: 'Sistema de freio', cor: 'Vermelha', nivel: 'pare', texto: 'Pare agora',
+      sig: 'Pode ser só o freio de mão puxado. Se não for, indica fluido de freio baixo ou falha no sistema.',
+      fazer: ['Confira se o freio de mão está todo baixado.', 'Se a luz continuar acesa, não rode: freio é segurança.', 'Peça para a oficina verificar fluido, pastilhas e vazamentos.'] },
+    abs: { nome: 'ABS', cor: 'Amarela', nivel: 'agende', texto: 'Agende uma revisão',
+      sig: 'O ABS (que evita o travamento das rodas) foi desligado por uma falha, geralmente um sensor de roda.',
+      fazer: ['O freio comum continua funcionando, mas sem o ABS.', 'Dirija com mais distância, principalmente na chuva.', 'Agende o diagnóstico para ler o código e achar o sensor com problema.'] },
+  };
+  const laudo = $('#laudo');
+  $$('.luz').forEach((b) => b.addEventListener('click', () => {
+    $$('.luz').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    const l = LUZES[b.dataset.luz];
+    const msg = `Oi! Vim pela página da 1000 Motores. Acendeu a luz de ${l.nome.toLowerCase()} (${l.cor.toLowerCase()}) no painel do meu carro. Podem me ajudar?`;
+    laudo.innerHTML = `<div class="entra">
+      <div class="os">Laudo rápido · luz ${l.cor.toLowerCase()}</div>
+      <h3>${l.nome}</h3>
+      <span class="urgencia ${l.nivel}">${l.texto}</span>
+      <p><strong>O que costuma ser:</strong> ${l.sig}</p>
+      <ul>${l.fazer.map((f) => `<li>${f}</li>`).join('')}</ul>
+      <div class="acoes"><a class="botao botao--ambar" href="https://wa.me/${ZAP}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Falar com a oficina</a></div>
+      <p class="aviso">Orientação geral. O diagnóstico certo é feito na oficina, com o carro na frente do mecânico.</p>
+    </div>`;
+    if (innerWidth < 900) laudo.scrollIntoView({ behavior: reduzir ? 'auto' : 'smooth', block: 'start' });
+  }));
+
+  /* ---------- aberto agora (horário de Brasília) ---------- */
+  function status() {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+    const dia = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday), h = Number(p.hour) + Number(p.minute) / 60;
+    const util = dia >= 1 && dia <= 5;
+    const s = $('#status');
+    if (util && h >= 8 && h < 18) { s.textContent = 'Aberto até as 18h'; s.classList.remove('fechado'); return; }
+    s.classList.add('fechado');
+    if (util && h < 8) s.textContent = 'Abre hoje às 8h';
+    else s.textContent = (dia === 5 || dia === 6) ? 'Fechado · abre segunda às 8h' : 'Fechado · abre amanhã às 8h';
+  }
+  status(); setInterval(status, 60000);
+})();
+</script>
+</body>
+</html>
