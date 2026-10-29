@@ -1,0 +1,31 @@
+{
+ "titulo": "Barbearia: o horário chega marcado no WhatsApp",
+ "voz": "pm_alex",
+ "velocidade": 1.0,
+ "arquivo_final": "synex-barbearia.mp4",
+ "cenas": [
+  {"id": "s1",
+   "texto": "Sábado, nove da manhã. Na barbearia do Léo, em Mongaguá, a cadeira não esvazia... e o WhatsApp também não.",
+   "legendas": ["Sábado, nove da manhã. Na barbearia do Léo, em Mongaguá, a cadeira não esvazia...", "...e o *WhatsApp também não*."]},
+  {"id": "s2",
+   "texto": "Tem horário hoje? Quanto é corte e barba? Atende sem marcar? Ele está com a máquina na mão, e as mensagens vão ficando sem resposta.",
+   "legendas": ["Tem horário hoje? Quanto é corte e barba?", "Atende sem marcar?", "Ele está com a máquina na mão,", "e as mensagens vão ficando *sem resposta*."]},
+  {"id": "s3",
+   "texto": "Do outro lado da cidade, o Tiago procura uma barbearia no Google. Acha um perfil sem preço, sem horário... e marca no primeiro que mostra tudo.",
+   "legendas": ["Do outro lado da cidade, o Tiago procura uma barbearia no Google.", "Acha um perfil *sem preço, sem horário*...", "...e marca no primeiro que mostra tudo."]},
+  {"id": "s4",
+   "texto": "Até que a barbearia ganha uma página própria: serviços com preços, fotos dos cortes, endereço, horário, e um botão direto pro WhatsApp.",
+   "legendas": ["Até que a barbearia ganha uma *página própria*:", "serviços com preços, fotos dos cortes, endereço, horário,", "e um *botão direto pro WhatsApp*."]},
+  {"id": "s5",
+   "texto": "Sábado de novo. O Tiago pesquisa, e agora a Barbearia do Léo aparece. Ele vê o preço do combo, as fotos... e toca no botão.",
+   "legendas": ["Sábado de novo. O Tiago pesquisa, e agora a *Barbearia do Léo* aparece.", "Ele vê o preço do combo, as fotos... e *toca no botão*."]},
+  {"id": "s6",
+   "texto": "A mensagem já chega pronta: corte e barba, sábado às onze.",
+   "legendas": ["A mensagem já chega pronta:", "“Oi! Vi a página. Corte e barba, sábado às onze.”"]},
+  {"id": "s7",
+   "texto": "O Léo só confirma. E volta pro cliente que está na cadeira.",
+   "legendas": ["O Léo *só confirma*.", "E volta pro cliente que está na cadeira."]}
+ ],
+ "efeitos": [["s1",4.4,"pop"],["s2",0.05,"pop"],["s2",0.9,"pop"],["s2",1.9,"pop"],["s2",3.6,"pop"],["s2",4.6,"pop"],
+  ["s3",8.2,"toque"],["s5",3.3,"toque"],["s5",6.2,"toque"],["s6",1.6,"mensagem"],["s7",0.3,"enviada"],["s7",2.8,"pop"]]
+}
