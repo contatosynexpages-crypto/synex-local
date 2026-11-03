@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floratta · Clínica de recuperação em Peruíbe, atendimento 24h</title>
+<meta name="description" content="Spa Terapêutico Floratta, no Centro de Peruíbe: acolhimento para dependência química e alcoolismo, com a família por perto. Atendimento 24 horas. Nota 4,7 no Google.">
+<!-- prévia de demonstração: tirar o noindex quando virar o site oficial -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF6EE">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Floratta · Peruíbe">
+<meta property="og:description" content="Você não precisa resolver isso sozinho. Fale com a equipe, 24 horas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FBF6EE'/%3E%3Cg fill='%23B24A26' opacity='.85'%3E%3Cellipse cx='32' cy='20' rx='7' ry='13'/%3E%3Cellipse cx='32' cy='20' rx='7' ry='13' transform='rotate(72 32 32)'/%3E%3Cellipse cx='32' cy='20' rx='7' ry='13' transform='rotate(144 32 32)'/%3E%3Cellipse cx='32' cy='20' rx='7' ry='13' transform='rotate(216 32 32)'/%3E%3Cellipse cx='32' cy='20' rx='7' ry='13' transform='rotate(288 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%231F2A2E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Spa Terapêutico Floratta",
+  "telephone": "+55 11 96332-9809",
+  "address": { "@type": "PostalAddress", "streetAddress": "R. João Maria Gabriel, 55 - Centro", "addressLocality": "Peruíbe", "addressRegion": "SP", "postalCode": "11750-000", "addressCountry": "BR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": -24.3189299, "longitude": -47.0005164 },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" }]
+}
+</script>
+<style>
+:root {
+  --papel: #FBF6EE;
+  --papel-2: #F3EADB;
+  --tinta: #1F2A2E;
+  --tinta-suave: #4B5A5E;
+  --salvia: #4F6E5B;
+  --salvia-clara: #DCE6DD;
+  --aurora: #B24A26;        /* cor das ações: branco por cima dá 5,3:1 */
+  --aurora-escura: #93391A;
+  --pessego: #F2C9A1;
+  --linha: rgba(31, 42, 46, .14);
+  --titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --corpo: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --entrada: cubic-bezier(.22, .8, .24, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 18px/1.65 var(--corpo); }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: transparent; border: 0; -webkit-appearance: none; appearance: none; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--aurora); outline-offset: 3px; border-radius: 6px; }
+.pular { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--tinta); color: var(--papel); padding: 10px 16px; border-radius: 10px; text-decoration: none; }
+.pular:focus { top: 12px; }
+.coluna { width: min(720px, 100% - 40px); margin-inline: auto; }
+.larga { width: min(1080px, 100% - 40px); margin-inline: auto; }
+
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 26px; border-radius: 999px; font: 700 17px/1.1 var(--corpo); text-decoration: none; border: 2px solid transparent; transition: background-color .2s, transform .2s var(--entrada), border-color .2s; }
+.botao svg { width: 22px; height: 22px; flex: none; }
+.botao--aurora { background: var(--aurora); color: #fff; }
+.botao--aurora:hover { background: var(--aurora-escura); transform: translateY(-1px); }
+.botao--contorno { background: transparent; border-color: var(--tinta); color: var(--tinta); }
+.botao--contorno:hover { background: var(--tinta); color: var(--papel); }
+.botao--salvia { background: var(--salvia); color: #fff; }
+.botao--salvia:hover { background: #3F5A4A; }
+
+/* topo discreto */
+.topo { padding: 22px 0; }
+.topo .larga { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca svg { width: 40px; height: 40px; }
+.marca b { display: block; font: 600 22px/1 var(--titulo); letter-spacing: .01em; }
+.marca small { display: block; font-size: 13px; color: var(--tinta-suave); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+.plantao { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: var(--salvia); font-weight: 700; }
+.plantao::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--salvia); box-shadow: 0 0 0 0 rgba(79,110,91,.5); animation: pulso 2.4s ease-out infinite; }
+@keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(79,110,91,.45); } 80%, 100% { box-shadow: 0 0 0 12px rgba(79,110,91,0); } }
+
+/* carta de abertura */
+.carta { padding: clamp(28px, 7vw, 80px) 0 clamp(48px, 8vw, 96px); }
+.carta .saudacao { font: italic 400 20px/1.4 var(--corpo); color: var(--tinta-suave); margin: 0 0 18px; }
+.carta h1 { font: 600 clamp(40px, 7.2vw, 76px)/1.02 var(--titulo); letter-spacing: -.02em; margin: 0 0 26px; font-variation-settings: "opsz" 144; }
+.carta h1 em { font-style: italic; color: var(--aurora); }
+.carta p { margin: 0 0 18px; font-size: clamp(18px, 2.2vw, 21px); max-width: 60ch; }
+.carta .acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.carta .assinatura { margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--linha); color: var(--tinta-suave); font-size: 16px; }
+.carta .assinatura b { color: var(--tinta); }
+
+/* pausa: respirar com a flor */
+.pausa { background: var(--tinta); color: var(--papel); padding: clamp(64px, 10vw, 120px) 0; text-align: center; position: relative; overflow: hidden; }
+.pausa .etiqueta { color: var(--pessego); }
+.pausa h2 { color: var(--papel); }
+.pausa .intro { color: #C9D2D0; margin-inline: auto; }
+.flor-area { position: relative; width: min(340px, 78vw); aspect-ratio: 1; margin: 40px auto 28px; }
+.flor-area svg { width: 100%; height: 100%; overflow: visible; }
+.petalas { transform-origin: 150px 150px; transform: scale(.46) rotate(0deg); transition: transform 4s cubic-bezier(.45, 0, .35, 1); }
+.petalas ellipse { fill: var(--pessego); opacity: .82; mix-blend-mode: screen; }
+.petalas.interna ellipse { fill: #E9A57E; opacity: .7; }
+.miolo { fill: var(--papel); }
+.halo { fill: none; stroke: rgba(242,201,161,.25); stroke-width: 2; transform-origin: 150px 150px; transform: scale(.55); transition: transform 4s cubic-bezier(.45, 0, .35, 1), opacity 1s; opacity: .6; }
+.guia { font: 600 clamp(26px, 4vw, 34px)/1.2 var(--titulo); min-height: 1.3em; margin: 0; }
+.contagem { color: #C9D2D0; font-size: 16px; margin: 6px 0 22px; min-height: 1.6em; }
+.pausa .botao--aurora { min-width: 230px; }
+.pausa .nota { font-size: 14px; color: #A9B6B3; margin-top: 18px; }
+
+/* seções */
+.secao { padding: clamp(64px, 9vw, 112px) 0; }
+.etiqueta { display: inline-block; font: 700 13px/1 var(--corpo); letter-spacing: .2em; text-transform: uppercase; color: var(--salvia); margin-bottom: 14px; }
+h2 { font: 600 clamp(32px, 5vw, 50px)/1.08 var(--titulo); letter-spacing: -.015em; margin: 0 0 16px; }
+.intro { color: var(--tinta-suave); max-width: 56ch; margin: 0; }
+
+/* primeira conversa */
+.conversa { display: grid; gap: 14px; margin-top: 34px; }
+.frase { display: grid; grid-template-columns: 1fr 1fr; border-radius: 22px; overflow: hidden; border: 1px solid var(--linha); background: #fff; }
+.frase div { padding: 20px 22px; }
+.frase .evite { background: var(--papel-2); color: var(--tinta-suave); }
+.frase .tente { background: #fff; }
+.frase small { display: flex; align-items: center; gap: 6px; font: 700 12px/1 var(--corpo); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+.frase .evite small { color: #8A4B38; }
+.frase .tente small { color: var(--salvia); }
+.frase p { margin: 0; font-size: 18px; }
+.frase .tente p { font-family: var(--titulo); font-size: 20px; line-height: 1.35; }
+.mais-frases { margin-top: 18px; }
+.frase.escondida { display: none; }
+
+/* caminho do cuidado: caule que cresce com a rolagem */
+.caminho { background: var(--salvia-clara); }
+.caminho .etiqueta { color: #3F5A4A; }
+.trilha { position: relative; margin-top: 40px; padding-left: 64px; }
+.caule { position: absolute; left: 14px; top: 0; width: 36px; height: 100%; overflow: visible; }
+.caule path { fill: none; stroke: var(--salvia); stroke-width: 3; stroke-linecap: round; }
+.etapa { position: relative; padding: 0 0 46px; }
+.etapa:last-child { padding-bottom: 0; }
+.folha { position: absolute; left: -58px; top: 2px; width: 34px; height: 34px; transform: scale(0) rotate(-30deg); transform-origin: 4px 30px; transition: transform .6s var(--entrada); }
+.folha path { fill: var(--salvia); }
+.etapa.viva .folha { transform: scale(1) rotate(0deg); }
+.etapa h3 { font: 600 24px/1.2 var(--titulo); margin: 0 0 6px; }
+.etapa p { margin: 0; color: var(--tinta-suave); max-width: 52ch; }
+.etapa .quando { display: inline-block; font-size: 14px; font-weight: 700; color: var(--salvia); margin-bottom: 4px; }
+.aviso-previa { margin-top: 30px; font-size: 15px; color: var(--tinta-suave); }
+
+/* nota */
+.nota-google { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; margin-top: 26px; padding: 26px 0; border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+.nota-google strong { font: 600 clamp(56px, 9vw, 84px)/1 var(--titulo); color: var(--aurora); }
+.nota-google span { color: var(--tinta-suave); }
+.nota-google a { font-weight: 700; text-underline-offset: 4px; }
+
+/* perguntas */
+.perguntas { margin-top: 30px; border-top: 1px solid var(--linha); }
+.perguntas details { border-bottom: 1px solid var(--linha); }
+.perguntas summary { list-style: none; cursor: pointer; padding: 22px 46px 22px 0; position: relative; font: 600 21px/1.3 var(--titulo); }
+.perguntas summary::-webkit-details-marker { display: none; }
+.perguntas summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 14px; height: 14px; margin-top: -10px; border-right: 2.5px solid var(--aurora); border-bottom: 2.5px solid var(--aurora); transform: rotate(45deg); transition: transform .25s; }
+.perguntas details[open] summary::after { transform: rotate(225deg); margin-top: -2px; }
+.perguntas details p { margin: 0 0 22px; color: var(--tinta-suave); max-width: 60ch; }
+
+/* contato */
+.contato { background: var(--papel-2); }
+.contato-grade { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; margin-top: 30px; }
+.contato .acoes { display: grid; gap: 12px; }
+.contato .acoes .botao { width: 100%; }
+.endereco { font-size: 18px; }
+.endereco b { display: block; font: 600 22px/1.25 var(--titulo); margin-bottom: 6px; }
+.endereco a { font-weight: 700; text-underline-offset: 4px; }
+.urgente { margin-top: 34px; padding: 20px 22px; border-radius: 18px; background: #fff; border-left: 6px solid var(--aurora); font-size: 16px; }
+.urgente b { display: block; font-size: 17px; margin-bottom: 4px; }
+
+footer { padding: 30px 0 110px; font-size: 14px; color: var(--tinta-suave); }
+footer .larga { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* marcador de página = destaque da prévia Synex */
+.marcador { position: fixed; right: 0; top: 50%; z-index: 40; transform: translateY(-50%); writing-mode: vertical-rl; text-orientation: mixed; background: var(--tinta); color: var(--papel); text-decoration: none; padding: 18px 10px; border-radius: 12px 0 0 12px; font: 700 13px/1 var(--corpo); letter-spacing: .12em; text-transform: uppercase; box-shadow: -6px 8px 20px -10px rgba(0,0,0,.5); transition: padding .2s; }
+.marcador span { color: var(--pessego); }
+.marcador:hover { padding-right: 16px; }
+
+/* revelação suave */
+.revela { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--entrada), transform .7s var(--entrada); }
+.revela.visivel { opacity: 1; transform: none; }
+
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  .frase { grid-template-columns: 1fr; }
+  .contato-grade { grid-template-columns: 1fr; }
+  .carta .acoes .botao { flex: 1 1 100%; }
+  .plantao span { display: none; }
+  .marcador { writing-mode: horizontal-tb; top: auto; bottom: 14px; transform: none; padding: 10px 12px; font-size: 11px; }
+  .trilha { padding-left: 54px; }
+  .folha { left: -50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .001ms !important; }
+  html { scroll-behavior: auto; }
+  .revela { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-folha" viewBox="0 0 34 34"><path fill="#4F6E5B" d="M4 30C4 14 14 4 31 3c0 17-10 27-27 27Zm0 0L20 14" stroke="#FBF6EE" stroke-width="1.6"/></symbol>
+  </defs>
+</svg>
+
+<header class="topo">
+  <div class="larga">
+    <a class="marca" href="#conteudo" aria-label="Floratta, início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="#B24A26" opacity=".85"><ellipse cx="32" cy="20" rx="7" ry="13"/><ellipse cx="32" cy="20" rx="7" ry="13" transform="rotate(72 32 32)"/><ellipse cx="32" cy="20" rx="7" ry="13" transform="rotate(144 32 32)"/><ellipse cx="32" cy="20" rx="7" ry="13" transform="rotate(216 32 32)"/><ellipse cx="32" cy="20" rx="7" ry="13" transform="rotate(288 32 32)"/></g><circle cx="32" cy="32" r="5" fill="#1F2A2E"/></svg>
+      <span><b>Floratta</b><small>Spa Terapêutico · Peruíbe</small></span>
+    </a>
+    <span class="plantao">Equipe de plantão <span>agora</span></span>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="carta" aria-labelledby="t-carta">
+    <div class="coluna">
+      <p class="saudacao">Para você, que está procurando ajuda para alguém que ama,</p>
+      <h1 id="t-carta">Você não precisa resolver isso <em>sozinho</em>.</h1>
+      <p>Quando o álcool ou as drogas tomam conta de alguém da família, todo mundo adoece junto. Dá medo, cansaço e muita dúvida sobre o que fazer.</p>
+      <p>Na Floratta, no Centro de Peruíbe, a gente acolhe quem precisa se tratar e caminha junto com a família, com notícias e acompanhamento de perto.</p>
+      <div class="acoes">
+        <a class="botao botao--aurora" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Floratta%20e%20gostaria%20de%20conversar%20sobre%20o%20tratamento%20de%20um%20familiar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Conversar com a equipe</a>
+        <a class="botao botao--contorno" href="tel:+5511963329809"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar agora</a>
+      </div>
+      <p class="assinatura"><b>Atendimento 24 horas</b>, todos os dias. A conversa é sigilosa e não obriga a nada.</p>
+    </div>
+  </section>
+
+  <section class="pausa" aria-labelledby="t-pausa">
+    <div class="coluna">
+      <span class="etiqueta">Um minuto para você</span>
+      <h2 id="t-pausa">Antes de decidir qualquer coisa, respire.</h2>
+      <p class="intro">Quem cuida também precisa de cuidado. Toque em começar e respire junto com a flor: ela abre quando você puxa o ar e fecha quando você solta.</p>
+      <div class="flor-area" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <circle class="halo" id="halo" cx="150" cy="150" r="140"/>
+          <g class="petalas" id="petalas"></g>
+          <g class="petalas interna" id="petalas2"></g>
+          <circle class="miolo" cx="150" cy="150" r="16"/>
+        </svg>
+      </div>
+      <p class="guia" id="guia" aria-live="polite">Pronto quando você estiver.</p>
+      <p class="contagem" id="contagem"></p>
+      <button type="button" class="botao botao--aurora" id="respirar" aria-pressed="false">Começar a respirar</button>
+      <p class="nota">4 respirações, cerca de 1 minuto: inspire em 4 tempos, segure 2 e solte em 6.</p>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-conversa">
+    <div class="coluna">
+      <span class="etiqueta">A primeira conversa</span>
+      <h2 id="t-conversa">Como falar sem afastar quem você ama</h2>
+      <p class="intro">Algumas frases fecham a porta, outras abrem. Orientação geral para o primeiro passo em casa.</p>
+      <div class="conversa" id="conversa">
+        <div class="frase revela"><div class="evite"><small>Em vez de</small><p>"Você está destruindo esta família."</p></div><div class="tente"><small>Experimente</small><p>"Eu estou preocupado com você e quero te ajudar."</p></div></div>
+        <div class="frase revela"><div class="evite"><small>Em vez de</small><p>"Você é um fraco, é só parar."</p></div><div class="tente"><small>Experimente</small><p>"Isso é uma doença, e doença se trata. Você não está sozinho."</p></div></div>
+        <div class="frase revela"><div class="evite"><small>Em vez de</small><p>Conversar no meio de uma briga ou com a pessoa alterada.</p></div><div class="tente"><small>Experimente</small><p>Escolher um momento calmo, com a pessoa sóbria, e falar com carinho.</p></div></div>
+        <div class="frase escondida"><div class="evite"><small>Em vez de</small><p>"Se não parar, eu vou embora."</p></div><div class="tente"><small>Experimente</small><p>"Eu vou estar do seu lado durante o tratamento."</p></div></div>
+        <div class="frase escondida"><div class="evite"><small>Em vez de</small><p>Ameaçar, vigiar ou esconder o problema dos outros parentes.</p></div><div class="tente"><small>Experimente</small><p>Buscar orientação de quem trabalha com isso antes de agir sozinho.</p></div></div>
+      </div>
+      <div class="mais-frases"><button type="button" class="botao botao--contorno" id="mais" aria-expanded="false" aria-controls="conversa">Ver mais duas frases</button></div>
+    </div>
+  </section>
+
+  <section class="secao caminho" aria-labelledby="t-caminho">
+    <div class="coluna">
+      <span class="etiqueta">O caminho do cuidado</span>
+      <h2 id="t-caminho">Do primeiro contato à volta para casa</h2>
+      <div class="trilha" id="trilha">
+        <svg class="caule" id="caule" aria-hidden="true" preserveAspectRatio="none"><path id="caule-linha" d=""/></svg>
+        <div class="etapa"><svg class="folha" aria-hidden="true"><use href="#i-folha"/></svg><span class="quando">Hoje, a qualquer hora</span><h3>A família liga ou manda mensagem</h3><p>Você conta o que está acontecendo e tira as dúvidas, sem compromisso.</p></div>
+        <div class="etapa"><svg class="folha" aria-hidden="true"><use href="#i-folha"/></svg><span class="quando">Chegada</span><h3>Acolhimento e avaliação</h3><p>A equipe conhece a pessoa, entende o caso e explica como vai ser o tratamento.</p></div>
+        <div class="etapa"><svg class="folha" aria-hidden="true"><use href="#i-folha"/></svg><span class="quando">Primeiros dias</span><h3>Desintoxicação com cuidado</h3><p>Um ambiente limpo e tranquilo, com acompanhamento de perto.</p></div>
+        <div class="etapa"><svg class="folha" aria-hidden="true"><use href="#i-folha"/></svg><span class="quando">Durante o tratamento</span><h3>Terapia, grupos e rotina</h3><p>Reuniões, conversas e uma rotina que ajuda a reconstruir o dia a dia.</p></div>
+        <div class="etapa"><svg class="folha" aria-hidden="true"><use href="#i-folha"/></svg><span class="quando">O tempo todo</span><h3>A família por perto</h3><p>Notícias frequentes para quem ficou em casa, porque a família também faz parte da recuperação.</p></div>
+      </div>
+      <p class="aviso-previa">Etapas de exemplo nesta prévia. Na versão final entram o método e as atividades reais da Floratta.</p>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="t-familias">
+    <div class="coluna">
+      <span class="etiqueta">Quem já confiou</span>
+      <h2 id="t-familias">O que as famílias dizem no Google</h2>
+      <div class="nota-google">
+        <strong>4,7</strong>
+        <span>de 5, em 15 avaliações</span>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJAU_wqBcn0JQRaHgYyBDoflg" target="_blank" rel="noopener">Ler as avaliações</a>
+      </div>
+
+      <h2 style="margin-top:72px" id="t-duvidas">Perguntas que toda família faz</h2>
+      <div class="perguntas">
+        <details><summary>A pessoa precisa aceitar o tratamento?</summary><p>Cada caso é diferente. A melhor forma de saber o que é possível é conversar com a equipe, que explica as opções e o que a lei permite em cada situação.</p></details>
+        <details><summary>A família recebe notícias?</summary><p>Sim. Manter a família informada faz parte do cuidado. A equipe combina com vocês como e com que frequência as notícias chegam.</p></details>
+        <details><summary>Quanto custa e como funciona o pagamento?</summary><p>Os valores dependem do tipo de tratamento e do tempo de permanência. Fale com a equipe para receber as informações do seu caso.</p></details>
+        <details><summary>Posso conhecer o espaço antes?</summary><p>Pode. Combine uma visita pelo WhatsApp ou telefone e venha conhecer a clínica no Centro de Peruíbe.</p></details>
+        <details><summary>A conversa é sigilosa?</summary><p>Sim. O que você contar fica entre você e a equipe.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao contato" aria-labelledby="t-contato">
+    <div class="larga">
+      <span class="etiqueta">Estamos aqui agora</span>
+      <h2 id="t-contato">O primeiro passo pode ser hoje.</h2>
+      <div class="contato-grade">
+        <div class="acoes">
+          <a class="botao botao--aurora" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Floratta%20e%20gostaria%20de%20conversar%20sobre%20o%20tratamento%20de%20um%20familiar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Conversar pelo WhatsApp</a>
+          <a class="botao botao--salvia" href="tel:+5511963329809"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar: (11) 96332-9809</a>
+          <a class="botao botao--contorno" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20a%20Floratta." target="_blank" rel="noopener">Agendar uma visita</a>
+        </div>
+        <div class="endereco">
+          <b>R. João Maria Gabriel, 55<br>Centro · Peruíbe, SP</b>
+          Atendimento 24 horas, todos os dias.<br>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-24.3189299,-47.0005164&amp;destination_place_id=ChIJAU_wqBcn0JQRaHgYyBDoflg" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
+      <div class="urgente" role="note">
+        <b>É uma emergência?</b>
+        Se alguém está desacordado, com convulsão ou correndo risco de vida agora, ligue <strong>192 (SAMU)</strong>. Para apoio emocional a qualquer hora, o <strong>CVV atende no 188</strong>.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="larga">
+    <span>Spa Terapêutico Floratta · R. João Maria Gabriel, 55, Centro, Peruíbe - SP</span>
+    <span>Informações gerais, não substituem avaliação profissional.</span>
+  </div>
+</footer>
+
+<a class="marcador" href="https://wa.me/5513988811950?text=Oi!%20Vi%20a%20pr%C3%A9via%20da%20p%C3%A1gina%20da%20Floratta%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Prévia feita pela Synex Local. Quero esta página">Prévia <span>Synex Local</span></a>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s) => document.querySelector(s);
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS = 'http://www.w3.org/2000/svg';
+
+  /* ---------- flor de respiração ---------- */
+  const desenhar = (g, n, rx, ry, cy, giro) => {
+    for (let i = 0; i < n; i++) {
+      const e = document.createElementNS(NS, 'ellipse');
+      e.setAttribute('cx', 150); e.setAttribute('cy', cy); e.setAttribute('rx', rx); e.setAttribute('ry', ry);
+      e.setAttribute('transform', `rotate(${giro + (360 / n) * i} 150 150)`);
+      g.append(e);
+    }
+  };
+  const p1 = $('#petalas'), p2 = $('#petalas2'), halo = $('#halo');
+  desenhar(p1, 8, 34, 78, 72, 0);
+  desenhar(p2, 8, 22, 52, 98, 22.5);
+  const guia = $('#guia'), contagem = $('#contagem'), btn = $('#respirar');
+  const FASES = [['Inspire devagar…', 4000, 1], ['Segure um pouco…', 2000, 1], ['Solte o ar, sem pressa…', 6000, 0]];
+  const CICLOS = 4;
+  let timers = [], rodando = false;
+  const abrir = (sim, ms) => {
+    [p1, p2, halo].forEach((el) => { el.style.transitionDuration = reduzir ? '0s' : ms + 'ms'; });
+    p1.style.transform = sim ? 'scale(1) rotate(22deg)' : 'scale(.46) rotate(0deg)';
+    p2.style.transform = sim ? 'scale(1) rotate(-14deg)' : 'scale(.46) rotate(0deg)';
+    halo.style.transform = sim ? 'scale(1.05)' : 'scale(.55)';
+  };
+  function parar(texto) {
+    timers.forEach(clearTimeout); timers = []; rodando = false;
+    btn.textContent = 'Respirar de novo'; btn.setAttribute('aria-pressed', 'false');
+    abrir(false, 1500); guia.textContent = texto; contagem.textContent = '';
+  }
+  btn.addEventListener('click', () => {
+    if (rodando) return parar('Tudo bem parar quando quiser.');
+    rodando = true; btn.textContent = 'Parar'; btn.setAttribute('aria-pressed', 'true');
+    let t = 0;
+    for (let c = 0; c < CICLOS; c++) {
+      for (const [texto, ms, aberta] of FASES) {
+        timers.push(setTimeout(() => { guia.textContent = texto; contagem.textContent = `Respiração ${c + 1} de ${CICLOS}`; if (texto.startsWith('Segure')) return; abrir(!!aberta, ms); }, t));
+        t += ms;
+      }
+    }
+    timers.push(setTimeout(() => parar('Pronto. Quando quiser, a gente conversa.'), t));
+  });
+
+  /* ---------- mais frases ---------- */
+  const mais = $('#mais');
+  mais.addEventListener('click', () => {
+    document.querySelectorAll('.frase.escondida').forEach((f) => { f.classList.remove('escondida'); f.classList.add('revela', 'visivel'); });
+    mais.setAttribute('aria-expanded', 'true'); mais.parentElement.remove();
+  });
+
+  /* ---------- caule que cresce com a rolagem ---------- */
+  const trilha = $('#trilha'), caule = $('#caule'), linha = $('#caule-linha');
+  const etapas = [...trilha.querySelectorAll('.etapa')];
+  let comp = 0;
+  function montarCaule() {
+    const h = trilha.offsetHeight; caule.setAttribute('viewBox', `0 0 36 ${h}`);
+    let d = 'M18 0'; const passo = 60;
+    for (let y = passo; y <= h; y += passo) d += ` Q ${(y / passo) % 2 ? 30 : 6} ${y - passo / 2} 18 ${y}`;
+    linha.setAttribute('d', d); comp = linha.getTotalLength();
+    linha.style.strokeDasharray = comp; atualizar();
+  }
+  function atualizar() {
+    const r = trilha.getBoundingClientRect(), vh = innerHeight;
+    let prog = reduzir ? 1 : Math.min(1, Math.max(0, (vh * .75 - r.top) / r.height));
+    linha.style.strokeDashoffset = comp * (1 - prog);
+    etapas.forEach((e) => { const er = e.getBoundingClientRect(); e.classList.toggle('viva', reduzir || er.top < vh * .75); });
+  }
+  montarCaule();
+  addEventListener('scroll', () => requestAnimationFrame(atualizar), { passive: true });
+  addEventListener('resize', montarCaule);
+  document.fonts && document.fonts.ready.then(montarCaule);
+
+  /* ---------- revelação suave ---------- */
+  if ('IntersectionObserver' in window && !reduzir) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visivel'); io.unobserve(e.target); } }), { threshold: .2 });
+    document.querySelectorAll('.revela').forEach((el) => io.observe(el));
+  } else document.querySelectorAll('.revela').forEach((el) => el.classList.add('visivel'));
+})();
+</script>
+</body>
+</html>
