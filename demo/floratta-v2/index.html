@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floratta · Clínica de recuperação em Peruíbe, atendimento 24h</title>
+<meta name="description" content="Spa Terapêutico Floratta, no Centro de Peruíbe: tratamento para dependência química e alcoolismo com a família por perto. Equipe acordada 24 horas. Nota 4,7 no Google.">
+<!-- prévia de demonstração: tirar o noindex quando virar o site oficial -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1026">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Floratta · Peruíbe">
+<meta property="og:description" content="Para quem cuida de alguém com dependência, qualquer hora pode ser madrugada. A equipe está acordada também.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B1026'/%3E%3Cg fill='%23FF9A6B'%3E%3Cellipse cx='32' cy='19' rx='7' ry='12'/%3E%3Cellipse cx='32' cy='19' rx='7' ry='12' transform='rotate(72 32 32)'/%3E%3Cellipse cx='32' cy='19' rx='7' ry='12' transform='rotate(144 32 32)'/%3E%3Cellipse cx='32' cy='19' rx='7' ry='12' transform='rotate(216 32 32)'/%3E%3Cellipse cx='32' cy='19' rx='7' ry='12' transform='rotate(288 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='5' fill='%23FFD38A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Spa Terapêutico Floratta",
+  "telephone": "+55 11 96332-9809",
+  "address": { "@type": "PostalAddress", "streetAddress": "R. João Maria Gabriel, 55 - Centro", "addressLocality": "Peruíbe", "addressRegion": "SP", "postalCode": "11750-000", "addressCountry": "BR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": -24.3189299, "longitude": -47.0005164 },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" }]
+}
+</script>
+<style>
+:root {
+  --noite: #0B1026;
+  --estrela: #E9ECFF;
+  --lua: #C9CCE6;
+  --aurora: #FF9A6B;
+  --ouro: #FFD38A;
+  --manha: #FFF4E6;
+  --tinta: #1A1F3A;
+  --acao: #FF9A6B;       /* texto #1A1F3A por cima dá 7,9:1 */
+  --acao-hover: #FFB089;
+  --display: "Instrument Serif", Georgia, serif;
+  --corpo: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --entrada: cubic-bezier(.2, .8, .2, 1);
+  --ceu: #0B1026;
+  --tinta-ceu: #E9ECFF;
+  --aurora-texto: #FFB089;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--ceu); color: var(--tinta-ceu); font: 400 18px/1.6 var(--corpo); }
+svg { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: transparent; border: 0; -webkit-appearance: none; appearance: none; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--ouro); outline-offset: 3px; border-radius: 8px; }
+.pular { position: absolute; left: 12px; top: -60px; z-index: 60; background: var(--manha); color: var(--tinta); padding: 10px 16px; border-radius: 10px; }
+.pular:focus { top: 12px; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.larga { width: min(1160px, 100% - 40px); margin-inline: auto; }
+
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 28px; border-radius: 16px; font: 800 17px/1 var(--corpo); text-decoration: none; border: 2px solid transparent; transition: background-color .2s, transform .2s var(--entrada), color .2s; }
+.botao svg { width: 22px; height: 22px; flex: none; }
+.botao--aurora { background: var(--acao); color: var(--tinta); }
+.botao--aurora:hover { background: var(--acao-hover); transform: translateY(-2px); }
+.botao--vidro { background: rgba(233,236,255,.08); color: var(--estrela); border-color: rgba(233,236,255,.4); }
+.botao--vidro:hover { background: rgba(233,236,255,.16); }
+.botao--tinta { background: var(--tinta); color: var(--manha); }
+.botao--tinta:hover { background: #2A3158; }
+
+/* 1. madrugada com lanterna */
+.madrugada { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: hidden; background: var(--noite); isolation: isolate; color: var(--estrela); }
+.jardim, .escuro { position: absolute; inset: 0; }
+.jardim svg { width: 100%; height: 100%; }
+.segredo { font: italic 400 46px/1.1 var(--display); fill: var(--ouro); }
+.escuro { z-index: 1; background: radial-gradient(120% 80% at 50% 110%, #141B3D 0%, #0B1026 60%); -webkit-mask-image: radial-gradient(circle var(--r, 190px) at var(--x, 70%) var(--y, 55%), transparent 0, transparent 35%, #000 100%); mask-image: radial-gradient(circle var(--r, 190px) at var(--x, 70%) var(--y, 55%), transparent 0, transparent 35%, #000 100%); pointer-events: none; }
+.estrelas { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.estrelas i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: var(--estrela); opacity: .6; animation: piscar 3.6s ease-in-out infinite; }
+@keyframes piscar { 50% { opacity: .15; } }
+.madrugada .conteudo { position: relative; z-index: 3; padding: 120px 0 90px; pointer-events: none; }
+.madrugada .conteudo a { pointer-events: auto; }
+.relogio { display: inline-flex; align-items: baseline; gap: 12px; font: 700 14px/1 var(--corpo); letter-spacing: .18em; text-transform: uppercase; color: var(--lua); }
+.relogio b { font: 400 56px/1 var(--display); letter-spacing: 0; color: var(--ouro); font-variant-numeric: tabular-nums; }
+.madrugada h1 { font: 400 clamp(42px, 5.8vw, 84px)/1 var(--display); margin: 18px 0 22px; max-width: 15ch; }
+.madrugada h1 em { color: var(--aurora); }
+.madrugada .sub { max-width: 46ch; font-size: clamp(18px, 2vw, 21px); color: var(--lua); margin: 0 0 32px; }
+.madrugada .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.dica { margin: 26px 0 0; font-size: 15px; color: #A9AED4; display: flex; align-items: center; gap: 10px; transition: opacity .6s; }
+.dica::before { content: ""; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle, var(--ouro), transparent 70%); }
+.topo { position: absolute; z-index: 4; top: 0; left: 0; right: 0; padding: 22px 0; }
+.topo .larga { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.marca svg { width: 38px; height: 38px; }
+.marca b { font: 400 30px/1 var(--display); font-weight: 400; }
+.acordado { font-size: 15px; font-weight: 700; color: var(--ouro); display: flex; align-items: center; gap: 8px; }
+.acordado::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--ouro); animation: piscar 2s ease-in-out infinite; }
+
+/* 2. sinais */
+.secao { padding: clamp(80px, 11vw, 140px) 0; }
+.etiqueta { display: inline-block; font: 800 13px/1 var(--corpo); letter-spacing: .22em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; }
+h2 { font: 400 clamp(40px, 5.6vw, 68px)/1.02 var(--display); margin: 0 0 18px; }
+h2 em { color: var(--aurora); }
+.intro { max-width: 56ch; margin: 0; }
+.sinais-sec { background: var(--noite); color: var(--estrela); }
+.sinais-sec .intro { color: var(--lua); }
+.sinais-grade { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(24px, 5vw, 64px); margin-top: 44px; align-items: start; }
+.sinais { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sinal { text-align: left; min-height: 92px; padding: 18px 18px 18px 56px; border-radius: 18px; background: rgba(233,236,255,.06); border: 1.5px solid rgba(233,236,255,.22); color: var(--estrela); font: 500 17px/1.35 var(--corpo); position: relative; transition: background-color .2s, border-color .2s, transform .15s; }
+.sinal::before { content: ""; position: absolute; left: 18px; top: 19px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(233,236,255,.55); transition: background-color .2s, border-color .2s, box-shadow .3s; }
+.sinal[aria-pressed="true"] { background: rgba(255,154,107,.16); border-color: var(--aurora); }
+.sinal[aria-pressed="true"]::before { background: var(--ouro); border-color: var(--ouro); box-shadow: 0 0 16px 4px rgba(255,211,138,.45); }
+.sinal:active { transform: scale(.98); }
+.leitura { position: sticky; top: 24px; border-radius: 26px; padding: 30px 28px; background: var(--manha); color: var(--tinta); }
+.lua-fase { width: 120px; height: 120px; margin-bottom: 16px; }
+.leitura .conta { font: 400 64px/1 var(--display); }
+.leitura .conta small { font: 700 16px/1 var(--corpo); margin-left: 6px; color: #50557A; }
+.leitura h3 { font: 400 32px/1.1 var(--display); margin: 14px 0 10px; }
+.leitura p { margin: 0 0 20px; color: #3F4466; }
+.leitura .aviso { font-size: 14px; color: #50557A; margin: 18px 0 0; }
+
+/* 3. amanhecer */
+.amanhecer { position: relative; height: 420vh; color: var(--tinta-ceu); background: rgb(11,16,38); }
+.palco { position: sticky; top: 0; height: 100svh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4vw; width: min(1160px, 100% - 40px); margin-inline: auto; }
+.flor-grande { width: min(520px, 42vw); aspect-ratio: 1; justify-self: center; }
+.flor-grande svg { width: 100%; height: 100%; overflow: visible; }
+.petala { transform-origin: 200px 200px; transition: transform .7s var(--entrada), opacity .6s; }
+.sol { transform-origin: 200px 200px; transition: transform .6s var(--entrada); }
+.passos { position: relative; min-height: 330px; }
+.passo { position: absolute; inset: 0; opacity: 0; transform: translateY(24px); transition: opacity .5s, transform .5s var(--entrada); }
+.passo.ativo { opacity: 1; transform: none; }
+.passo .num { font: 800 14px/1 var(--corpo); letter-spacing: .2em; text-transform: uppercase; color: var(--aurora-texto); }
+.passo h3 { font: 400 clamp(36px, 4.6vw, 60px)/1.02 var(--display); margin: 14px 0 16px; }
+.passo p { margin: 0; max-width: 40ch; font-size: 19px; }
+.progresso { display: flex; gap: 8px; margin-top: 26px; }
+.progresso i { width: 34px; height: 4px; border-radius: 2px; background: currentColor; opacity: .2; transition: opacity .3s; }
+.progresso i.on { opacity: .9; }
+.aviso-previa { font-size: 15px; margin-top: 18px; }
+
+/* 4-5. dia */
+.dia { background: var(--manha); color: var(--tinta); }
+.raiar { height: 220px; background: linear-gradient(rgb(140,62,52), #F2A27C 45%, var(--manha)); }
+.dia .etiqueta { color: #8A3F1D; }
+.dia h2 em { color: #B4532A; }
+.dia .intro { color: #3F4466; }
+.familia-grade { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 70px); align-items: center; }
+.cartao-noticia { border-radius: 28px; background: #fff; padding: 26px; box-shadow: 0 30px 60px -30px rgba(26,31,58,.35); transform: rotate(-2deg); }
+.cartao-noticia .cab { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+.cartao-noticia .cab span { width: 44px; height: 44px; border-radius: 50%; background: var(--aurora); display: grid; place-items: center; }
+.cartao-noticia .cab small { display: block; font-weight: 500; color: #50557A; }
+.cartao-noticia p { font: 400 26px/1.25 var(--display); margin: 18px 0 8px; }
+.cartao-noticia .rodape { font-size: 14px; color: #50557A; }
+.nota { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-top: 30px; }
+.nota strong { font: 400 96px/1 var(--display); color: #B4532A; font-weight: 400; }
+.nota a { font-weight: 800; text-underline-offset: 4px; }
+.contato-grade { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(24px, 5vw, 64px); margin-top: 34px; }
+.contato .acoes { display: grid; gap: 12px; }
+.contato .acoes .botao { width: 100%; }
+.endereco { font-size: 19px; }
+.endereco b { display: block; font: 400 34px/1.1 var(--display); margin-bottom: 10px; }
+.endereco a { font-weight: 800; text-underline-offset: 4px; }
+.duvidas { margin-top: 64px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.duvidas div { padding: 22px; border-radius: 20px; background: rgba(26,31,58,.06); }
+.duvidas b { display: block; font: 400 26px/1.15 var(--display); margin-bottom: 8px; font-weight: 400; }
+.duvidas p { margin: 0; font-size: 16px; color: #3F4466; }
+.urgente { margin-top: 40px; padding: 20px 22px; border-radius: 18px; background: var(--tinta); color: var(--manha); font-size: 16px; }
+.urgente strong { color: var(--ouro); }
+footer { padding: 30px 0 100px; font-size: 14px; }
+
+/* destaque da prévia: estrela-guia */
+.guia-synex { position: fixed; left: 14px; bottom: 14px; z-index: 50; display: flex; align-items: center; gap: 10px; padding: 10px 16px 10px 12px; border-radius: 999px; background: rgba(11,16,38,.9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--estrela); text-decoration: none; font: 700 13px/1.1 var(--corpo); border: 1px solid rgba(233,236,255,.25); }
+.guia-synex svg { width: 22px; height: 22px; animation: girar 12s linear infinite; }
+.guia-synex small { display: block; font-weight: 500; color: var(--ouro); }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+@media (max-width: 880px) {
+  .sinais-grade, .familia-grade, .contato-grade { grid-template-columns: 1fr; }
+  .leitura { position: static; }
+  .palco { grid-template-columns: 1fr; align-content: center; gap: 10px; }
+  .flor-grande { width: min(290px, 68vw); }
+  .passos { min-height: 270px; }
+  .duvidas { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .sinais { grid-template-columns: 1fr; }
+  .sinal { min-height: 0; }
+  .madrugada .acoes .botao { flex: 1 1 100%; }
+  .relogio b { font-size: 44px; }
+  .acordado span { display: none; }
+  .segredo { font-size: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .amanhecer { background: rgb(140,62,52) !important; color: #E9ECFF; }
+  *, *::before, *::after { animation: none !important; transition-duration: .001ms !important; }
+  .escuro { -webkit-mask-image: none; mask-image: none; opacity: .55; }
+  .amanhecer { height: auto; }
+  .palco { position: static; height: auto; padding: 80px 0; }
+  .passos { min-height: 0; }
+  .passo { position: static; opacity: 1; transform: none; margin-bottom: 36px; }
+  .progresso { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="flor5" viewBox="-20 -20 40 40"><ellipse cx="0" cy="-9" rx="5" ry="9"/><ellipse cx="0" cy="-9" rx="5" ry="9" transform="rotate(72)"/><ellipse cx="0" cy="-9" rx="5" ry="9" transform="rotate(144)"/><ellipse cx="0" cy="-9" rx="5" ry="9" transform="rotate(216)"/><ellipse cx="0" cy="-9" rx="5" ry="9" transform="rotate(288)"/><circle r="3.4" fill="#FFD38A"/></symbol>
+  </defs>
+</svg>
+
+<section class="madrugada" id="madrugada" aria-labelledby="t-inicio">
+  <div class="jardim" aria-hidden="true"><svg id="jardim" preserveAspectRatio="xMidYMid slice"></svg></div>
+  <div class="escuro" id="escuro" aria-hidden="true"></div>
+  <div class="estrelas" id="estrelas" aria-hidden="true"></div>
+  <header class="topo">
+    <div class="larga">
+      <a class="marca" href="#conteudo" aria-label="Floratta">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><use href="#flor5" fill="#FF9A6B"/></svg>
+        <b>Floratta</b>
+      </a>
+      <span class="acordado">Equipe acordada <span>agora</span></span>
+    </div>
+  </header>
+  <div class="conteudo larga">
+    <div class="relogio">Agora são <b id="hora">--:--</b></div>
+    <h1 id="t-inicio">Para quem cuida de alguém com dependência, <em>qualquer hora</em> é madrugada.</h1>
+    <p class="sub">A gente sabe como é ficar acordado de preocupação. Na Floratta, em Peruíbe, tem gente acordada também, pronta para ouvir a sua família.</p>
+    <div class="acoes">
+      <a class="botao botao--aurora" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Floratta%20e%20preciso%20de%20ajuda%20com%20um%20familiar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Falar com a equipe agora</a>
+      <a class="botao botao--vidro" href="tel:+5511963329809"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar</a>
+    </div>
+    <p class="dica" id="dica">Passe o dedo pela tela: tem um jardim escondido no escuro.</p>
+  </div>
+</section>
+
+<main id="conteudo">
+  <section class="secao sinais-sec" aria-labelledby="t-sinais">
+    <div class="larga">
+      <span class="etiqueta">Sinais</span>
+      <h2 id="t-sinais">É hora de <em>pedir ajuda</em>?</h2>
+      <p class="intro">Marque o que você tem visto em casa. Nada sai desta página: é só para você enxergar com mais clareza.</p>
+      <div class="sinais-grade">
+        <div class="sinais" role="group" aria-label="Sinais que você tem visto">
+          <button type="button" class="sinal" aria-pressed="false">Usa ou bebe escondido</button>
+          <button type="button" class="sinal" aria-pressed="false">Promete parar e não consegue</button>
+          <button type="button" class="sinal" aria-pressed="false">Some dinheiro ou objetos de casa</button>
+          <button type="button" class="sinal" aria-pressed="false">Falta no trabalho ou na escola</button>
+          <button type="button" class="sinal" aria-pressed="false">Mudanças bruscas de humor ou agressividade</button>
+          <button type="button" class="sinal" aria-pressed="false">Se afastou da família e dos amigos</button>
+          <button type="button" class="sinal" aria-pressed="false">Problemas de saúde por causa do uso</button>
+          <button type="button" class="sinal" aria-pressed="false">Já se colocou em risco (dirigir alterado, brigas)</button>
+        </div>
+        <aside class="leitura" aria-live="polite">
+          <svg class="lua-fase" viewBox="0 0 120 120" aria-hidden="true">
+            <defs><clipPath id="corte-lua"><rect id="faixa-lua" x="10" y="10" width="0" height="100"/></clipPath></defs>
+            <circle cx="60" cy="60" r="50" fill="#1A1F3A"/>
+            <circle cx="60" cy="60" r="50" fill="#FFD38A" clip-path="url(#corte-lua)"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#1A1F3A" stroke-width="2"/>
+          </svg>
+          <div class="conta"><span id="conta">0</span><small>de 8 sinais</small></div>
+          <h3 id="leitura-titulo">Marque o que você tem visto.</h3>
+          <p id="leitura-texto">Não existe resposta certa. Cada sinal que você marca acende um pouco mais a lua.</p>
+          <a class="botao botao--tinta" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Floratta%20e%20queria%20uma%20orienta%C3%A7%C3%A3o%20sobre%20um%20familiar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Pedir uma orientação</a>
+          <p class="aviso">Não é diagnóstico. Só um profissional avalia cada caso.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="amanhecer" id="amanhecer" aria-labelledby="t-caminho">
+    <h2 id="t-caminho" class="oculto">O caminho da recuperação</h2>
+    <div class="palco">
+      <div class="flor-grande" aria-hidden="true">
+        <svg viewBox="0 0 400 400" id="flor-grande"><circle class="sol" id="sol" cx="200" cy="200" r="150" fill="#FFD38A" opacity=".2"/></svg>
+      </div>
+      <div>
+        <div class="passos" id="passos">
+          <div class="passo ativo"><span class="num">Pétala 1 · hoje</span><h3>Alguém atende, a qualquer hora.</h3><p>Você conta o que está acontecendo. Sem julgamento e sem compromisso.</p></div>
+          <div class="passo"><span class="num">Pétala 2 · chegada</span><h3>Acolhimento, sem pressa.</h3><p>A equipe conhece a pessoa, entende o caso e explica cada passo para a família.</p></div>
+          <div class="passo"><span class="num">Pétala 3 · primeiros dias</span><h3>O corpo se desintoxica.</h3><p>Em um ambiente limpo e tranquilo, com cuidado de perto.</p></div>
+          <div class="passo"><span class="num">Pétala 4 · tratamento</span><h3>A cabeça volta a ter rotina.</h3><p>Terapia, grupos de reflexão e um dia a dia que ajuda a reconstruir.</p></div>
+          <div class="passo"><span class="num">Pétala 5 · sempre</span><h3>A família floresce junto.</h3><p>Notícias frequentes para quem ficou em casa. Ninguém fica no escuro.</p></div>
+        </div>
+        <div class="progresso" id="progresso" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        <p class="aviso-previa">Etapas de exemplo nesta prévia. Na versão final entra o método real da Floratta.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="raiar" aria-hidden="true"></div>
+  <section class="secao dia" aria-labelledby="t-familia">
+    <div class="larga familia-grade">
+      <div>
+        <span class="etiqueta">Família por perto</span>
+        <h2 id="t-familia">Quem fica em casa <em>também é cuidado</em>.</h2>
+        <p class="intro">A ansiedade de quem espera notícia é real. Por isso a família acompanha o tratamento de perto, do primeiro dia até a volta para casa.</p>
+        <div class="nota">
+          <strong>4,7</strong>
+          <span>de 5 no Google · 15 avaliações</span>
+          <a href="https://www.google.com/maps/place/?q=place_id:ChIJAU_wqBcn0JQRaHgYyBDoflg" target="_blank" rel="noopener">Ler o que as famílias dizem</a>
+        </div>
+      </div>
+      <div class="cartao-noticia" role="img" aria-label="Exemplo ilustrativo de notícia enviada à família">
+        <div class="cab"><span><svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true"><use href="#flor5" fill="#1A1F3A"/></svg></span><div>Equipe Floratta<small>para a família · exemplo</small></div></div>
+        <p>"Hoje ele participou do grupo da manhã e almoçou com a turma. Está mais tranquilo."</p>
+        <div class="rodape">Texto ilustrativo do tipo de notícia que a família recebe.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao dia contato" aria-labelledby="t-contato" style="padding-top:0">
+    <div class="larga">
+      <span class="etiqueta">O primeiro passo</span>
+      <h2 id="t-contato">O dia pode começar <em>hoje</em>.</h2>
+      <div class="contato-grade">
+        <div class="acoes">
+          <a class="botao botao--tinta" href="https://wa.me/5511963329809?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20Floratta%20e%20preciso%20de%20ajuda%20com%20um%20familiar." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zap"/></svg>Conversar pelo WhatsApp</a>
+          <a class="botao botao--aurora" href="tel:+5511963329809"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar: (11) 96332-9809</a>
+        </div>
+        <div class="endereco">
+          <b>R. João Maria Gabriel, 55 · Centro, Peruíbe</b>
+          Atendimento 24 horas, todos os dias. Visitas com horário combinado.<br>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-24.3189299,-47.0005164&amp;destination_place_id=ChIJAU_wqBcn0JQRaHgYyBDoflg" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+      </div>
+      <div class="duvidas">
+        <div><b>É sigiloso?</b><p>Sim. O que você conta fica entre você e a equipe.</p></div>
+        <div><b>A pessoa precisa aceitar?</b><p>Cada caso é diferente. A equipe explica as opções para a sua situação.</p></div>
+        <div><b>Quanto custa?</b><p>Depende do tratamento e do tempo. Pergunte sem compromisso.</p></div>
+      </div>
+      <div class="urgente" role="note">Emergência agora (pessoa desacordada, convulsão, risco de vida): ligue <strong>192, SAMU</strong>. Apoio emocional a qualquer hora: <strong>CVV, 188</strong>.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="dia"><div class="larga">Spa Terapêutico Floratta · R. João Maria Gabriel, 55, Centro, Peruíbe - SP · Informações gerais, não substituem avaliação profissional.</div></footer>
+
+<a class="guia-synex" href="https://wa.me/5513988811950?text=Oi!%20Vi%20a%20pr%C3%A9via%20da%20p%C3%A1gina%20da%20Floratta%20e%20quero%20saber%20mais." target="_blank" rel="noopener" aria-label="Prévia feita pela Synex Local. Quero esta página">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFD38A" d="M12 1.5 14 10l8.5 2-8.5 2-2 8.5-2-8.5-8.5-2L10 10z"/></svg>
+  <span>Prévia Synex Local<small>Quero esta página</small></span>
+</a>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s) => document.querySelector(s);
+  const $$ = (s) => [...document.querySelectorAll(s)];
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const el = (t, a) => { const n = document.createElementNS(NS, t); for (const k in a) n.setAttribute(k, a[k]); return n; };
+
+  /* relógio real (horário de Brasília) */
+  const hora = $('#hora');
+  const tic = () => { hora.textContent = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date()); };
+  tic(); setInterval(tic, 15000);
+
+  /* estrelas */
+  const est = $('#estrelas'); let semente = 7;
+  const rnd = () => (semente = (semente * 9301 + 49297) % 233280) / 233280;
+  for (let i = 0; i < 70; i++) { const s = document.createElement('i'); s.style.left = rnd() * 100 + '%'; s.style.top = rnd() * 60 + '%'; s.style.animationDelay = (rnd() * 3.6).toFixed(2) + 's'; est.append(s); }
+
+  /* jardim escondido + lanterna */
+  const jardim = $('#jardim'); const W = 1600, H = 1000;
+  jardim.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const cores = ['#FF9A6B', '#F6B7A8', '#FFD38A', '#FFB089'];
+  for (let i = 0; i < 46; i++) {
+    const x = rnd() * W, y = 420 + rnd() * 580, s = 1 + rnd() * 2.4;
+    jardim.append(el('path', { d: `M${x} ${y} q ${(rnd() - .5) * 40} 60 0 ${140 + s * 30}`, stroke: '#3E6B57', 'stroke-width': 3, fill: 'none' }));
+    jardim.append(el('use', { href: '#flor5', x: x - 20 * s, y: y - 20 * s, width: 40 * s, height: 40 * s, fill: cores[i % 4] }));
+  }
+  const t = el('text', { x: W * .66, y: 360, 'text-anchor': 'middle', class: 'segredo' }); t.textContent = 'a gente também está acordado.';
+  jardim.append(t);
+  const esc = $('#escuro'), mad = $('#madrugada'), dica = $('#dica');
+  let alvo = { x: .7, y: .55 }, atual = { x: .7, y: .55 }, tocou = false, ang = 0, visivel = true;
+  const mover = (cx, cy) => { const r = mad.getBoundingClientRect(); alvo = { x: (cx - r.left) / r.width, y: (cy - r.top) / r.height }; if (!tocou) { tocou = true; dica.style.opacity = '0'; } };
+  mad.addEventListener('pointermove', (e) => mover(e.clientX, e.clientY));
+  mad.addEventListener('touchmove', (e) => { const p = e.touches[0]; mover(p.clientX, p.clientY); }, { passive: true });
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visivel = e.isIntersecting; }).observe(mad);
+  function lanterna() {
+    if (visivel && !reduzir) {
+      if (!tocou) { ang += .006; alvo = { x: .64 + Math.cos(ang) * .22, y: .52 + Math.sin(ang * 1.3) * .2 }; }
+      atual.x += (alvo.x - atual.x) * .12; atual.y += (alvo.y - atual.y) * .12;
+      esc.style.setProperty('--x', (atual.x * 100).toFixed(2) + '%');
+      esc.style.setProperty('--y', (atual.y * 100).toFixed(2) + '%');
+      esc.style.setProperty('--r', (innerWidth < 600 ? 140 : 200) + 'px');
+    }
+    requestAnimationFrame(lanterna);
+  }
+  lanterna();
+
+  /* sinais: a lua acende */
+  const sinais = $$('.sinal'), conta = $('#conta'), faixa = $('#faixa-lua'), lt = $('#leitura-titulo'), lx = $('#leitura-texto');
+  const LEITURAS = [
+    ['Marque o que você tem visto.', 'Não existe resposta certa. Cada sinal que você marca acende um pouco mais a lua.'],
+    ['Pode ser o começo.', 'Conversar cedo faz diferença. Uma orientação agora pode evitar que piore.'],
+    ['São sinais importantes.', 'Vale ouvir quem trabalha com isso todos os dias. Você não precisa decidir nada sozinho.'],
+    ['Você não precisa esperar piorar.', 'Esse conjunto de sinais pede ajuda profissional. Fale com a equipe hoje, a qualquer hora.'],
+  ];
+  sinais.forEach((b) => b.addEventListener('click', () => {
+    b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true'));
+    const n = sinais.filter((x) => x.getAttribute('aria-pressed') === 'true').length;
+    conta.textContent = n; faixa.setAttribute('width', (n / 8) * 100);
+    const i = n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : 3; lt.textContent = LEITURAS[i][0]; lx.textContent = LEITURAS[i][1];
+  }));
+
+  /* amanhecer: o céu clareia e a flor abre pétala por pétala */
+  const flor = $('#flor-grande'), sol = $('#sol'), pet = [];
+  for (let i = 0; i < 5; i++) {
+    const g = el('g', { class: 'petala' });
+    g.append(el('path', { d: 'M200 200 C 140 150 140 50 200 22 C 260 50 260 150 200 200 Z', fill: cores[i % 4] }));
+    g.style.transform = `rotate(${i * 72}deg) scale(.12)`; g.style.opacity = '.3';
+    flor.append(g); pet.push(g);
+  }
+  flor.append(el('circle', { cx: 200, cy: 200, r: 28, fill: '#FFD38A' }));
+  const passos = $$('.passo'), barras = $$('#progresso i'), aman = $('#amanhecer');
+  const mistura = (a, b, k) => a.map((v, i) => Math.round(v + (b[i] - v) * k));
+  const NOITE = [11, 16, 38], AURORA = [74, 40, 72], BRASA = [140, 62, 52];
+  const CLARA = [233, 236, 255], ESCURA = [26, 31, 58];
+  let ultimo = -1;
+  function ceu() {
+    const r = aman.getBoundingClientRect(), vh = innerHeight;
+    const prog = reduzir ? 1 : Math.min(1, Math.max(0, -r.top / (r.height - vh)));
+    let cor;
+    if (reduzir) cor = BRASA;
+    else if (prog < .5) cor = mistura(NOITE, AURORA, prog / .5);
+    else cor = mistura(AURORA, BRASA, (prog - .5) / .5);
+    // escolhe a cor do texto que dá mais contraste com o céu do momento
+    const lum = (c) => { const f = (v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]); };
+    const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
+    const tinta = cr(cor, CLARA) >= cr(cor, ESCURA) ? CLARA : ESCURA;
+    aman.style.background = `rgb(${cor})`;
+    aman.style.setProperty('--tinta-ceu', `rgb(${tinta})`);
+    aman.style.setProperty('--aurora-texto', tinta === ESCURA ? '#8A3F1D' : '#FFC2A3');
+    const ativo = reduzir ? 4 : Math.min(4, Math.floor(prog * 5.2));
+    pet.forEach((g, i) => { const aberto = i <= ativo; g.style.transform = `rotate(${i * 72}deg) scale(${aberto ? 1 : .12})`; g.style.opacity = aberto ? '1' : '.3'; });
+    sol.style.transform = `scale(${.6 + prog * .7})`;
+    if (ativo !== ultimo) { passos.forEach((p, i) => p.classList.toggle('ativo', reduzir || i === ativo)); barras.forEach((b, i) => b.classList.toggle('on', i <= ativo)); ultimo = ativo; }
+  }
+  ceu();
+  addEventListener('scroll', () => requestAnimationFrame(ceu), { passive: true });
+  addEventListener('resize', ceu);
+})();
+</script>
+</body>
+</html>
