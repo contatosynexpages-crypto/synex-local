@@ -1445,6 +1445,9 @@ function synexInit() {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mNav.hidden) { setMenu(false); mBtn.focus(); } });
   }
 
+  var ORIGEM_LEAD = 'synexpages.net';
+  try { var qo = new URLSearchParams(location.search).get('origem'); if (qo === 'whatsapp') ORIGEM_LEAD = 'synexpages.net · prospecção WhatsApp'; } catch (e) {}
+
   // cidade vinda das páginas de cidade (?cidade=Peruíbe)
   try {
     var qc = new URLSearchParams(location.search).get('cidade'), sel = document.getElementById('cidade');
@@ -1633,6 +1636,16 @@ function synexInit() {
     });
     if (focus) t.focus();
   }
+  // link vindo da prospecção (?seg=comercio|veiculos|prestadores): já abre na aba do segmento
+  try {
+    var qs = new URLSearchParams(location.search), qseg = qs.get('seg');
+    var tSeg = qseg && tabs.filter(function (x) { return x.getAttribute('data-seg') === qseg; })[0];
+    if (tSeg) {
+      selectTab(tSeg);
+      var alvoSeg = document.getElementById('solucoes');
+      if (alvoSeg && !location.hash) setTimeout(function () { alvoSeg.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); }, 600);
+    }
+  } catch (e) {}
   tabs.forEach(function (t, i) {
     t.addEventListener('click', function () { selectTab(t); });
     t.addEventListener('keydown', function (e) {
@@ -1773,11 +1786,11 @@ function synexInit() {
     var saving = isBot ? Promise.resolve('ok') : saveLead({
       nome: data.nome.slice(0, 120), negocio: data.negocio.slice(0, 120), cidade: data.cidade,
       tipo: data.tipo, servico: data.servico, whatsapp: digits, quer_bot: data.bot,
-      mensagem: data.mensagem ? data.mensagem.slice(0, 1000) : null, origem: 'synexpages.net'
+      mensagem: data.mensagem ? data.mensagem.slice(0, 1000) : null, origem: ORIGEM_LEAD
     });
     if (LEAD_WEBHOOK && !isBot) {
       try {
-        var hook = { nome: data.nome, negocio: data.negocio, cidade: data.cidade, tipo: data.tipo, servico: data.servico, whats: digits, bot: data.bot ? 'sim' : 'não', mensagem: data.mensagem, origem: 'synexpages.net', criadoEm: new Date().toISOString() };
+        var hook = { nome: data.nome, negocio: data.negocio, cidade: data.cidade, tipo: data.tipo, servico: data.servico, whats: digits, bot: data.bot ? 'sim' : 'não', mensagem: data.mensagem, origem: ORIGEM_LEAD, criadoEm: new Date().toISOString() };
         fetch(LEAD_WEBHOOK, { method: 'POST', mode: 'no-cors', keepalive: true, body: new URLSearchParams(hook) }).catch(function () {});
       } catch (err) {}
     }
