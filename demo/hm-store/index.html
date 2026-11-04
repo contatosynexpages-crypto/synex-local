@@ -13,7 +13,7 @@
 <meta name="geo.placename" content="Itanhaém">
 <meta name="geo.position" content="-24.1820979;-46.7861554">
 <meta name="ICBM" content="-24.1820979, -46.7861554">
-<meta name="theme-color" content="#0E0E10">
+<meta name="theme-color" content="#002627">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="HM Store">
@@ -21,7 +21,7 @@
 <meta property="og:description" content="Nota 5,0 com 483 avaliações no Google. Descubra qual iPhone combina com você.">
 <meta property="og:url" content="https://synexpages.net/demo/hm-store/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E0E10'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='900' font-size='28' text-anchor='middle' fill='%23FF6B1A'%3EHM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23002627'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='900' font-size='28' text-anchor='middle' fill='%2300BCD9'%3Ehm%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -60,15 +60,16 @@
 </script>
 <style>
 :root {
-  --preto: #0E0E10;
-  --grafite: #17171B;
-  --grafite-2: #212127;
-  --titanio: #C9C3B8;
-  --branco: #F5F3EF;
-  --suave: #A8A39B;
-  --laranja: #FF6B1A;       /* ação: texto #0E0E10 por cima dá 7,1:1 */
-  --laranja-claro: #FF8A47;
-  --ceu: #6EA8FF;
+  /* cores da marca HM Store: petróleo #002627, ciano #00BCD9, branco */
+  --preto: #002627;
+  --grafite: #01302F;
+  --grafite-2: #033B3B;
+  --titanio: #A7D3D6;
+  --branco: #F4FBFB;
+  --suave: #9FC2C3;
+  --laranja: #00BCD9;       /* ação: texto #002627 por cima dá 7,6:1 */
+  --laranja-claro: #40D2EA;
+  --ceu: #00BCD9;
   --linha: rgba(245, 243, 239, .12);
   --display: "Unbounded", "Segoe UI", system-ui, sans-serif;
   --corpo: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -104,19 +105,19 @@ input { font: inherit; }
 .topo.rolou { background: rgba(14,14,16,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--linha); }
 .topo .larga { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 12px; }
 .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.marca .hm { font: 900 22px/1 var(--display); letter-spacing: -.04em; }
+.marca .hm { font: 700 24px/1 var(--display); letter-spacing: -.05em; }
 .marca .hm span { color: var(--laranja); }
 .marca small { font-size: 12px; color: var(--suave); letter-spacing: .14em; text-transform: uppercase; }
 .topo .botao { min-height: 44px; padding: 0 18px; font-size: 14px; }
 
 /* ---------- 1. vitrine 3D ---------- */
 .vitrine { position: relative; min-height: 100svh; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 30px; padding: 100px 0 60px; }
-.vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(40% 50% at 72% 50%, rgba(255,107,26,.22), transparent 70%), radial-gradient(30% 40% at 85% 20%, rgba(110,168,255,.12), transparent 70%); }
+.vitrine::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(40% 50% at 72% 50%, rgba(0,188,217,.22), transparent 70%), radial-gradient(30% 40% at 85% 20%, rgba(255,255,255,.07), transparent 70%); }
 .selo-nota { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border-radius: 999px; background: var(--grafite-2); border: 1px solid var(--linha); font-size: 14px; color: var(--titanio); text-decoration: none; }
 .selo-nota b { display: inline-grid; place-items: center; height: 28px; padding: 0 10px; border-radius: 999px; background: var(--laranja); color: var(--preto); font: 900 14px/1 var(--display); }
 .vitrine h1 { font: 900 clamp(38px, 5.6vw, 78px)/.98 var(--display); letter-spacing: -.045em; margin: 20px 0 18px; }
-.vitrine h1 .gira { display: block; height: 1.12em; overflow: hidden; color: var(--laranja); }
-.vitrine h1 .gira span { display: block; line-height: 1.12em; animation: girar-palavras 9s var(--entrada) infinite; }
+.vitrine h1 .gira { display: block; height: 1.25em; margin-top: -.08em; overflow: hidden; color: var(--laranja); }
+.vitrine h1 .gira span { display: block; line-height: 1.25em; animation: girar-palavras 9s var(--entrada) infinite; }
 @keyframes girar-palavras { 0%, 28% { transform: translateY(0); } 33%, 61% { transform: translateY(-25%); } 66%, 94% { transform: translateY(-50%); } 100% { transform: translateY(-75%); } }
 .vitrine .sub { color: var(--suave); max-width: 46ch; font-size: clamp(17px, 1.8vw, 19px); margin: 0 0 28px; }
 .vitrine .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -136,7 +137,7 @@ input { font: inherit; }
 .ilha .aviso { position: absolute; inset: 0; display: flex; align-items: center; gap: 10px; padding: 0 14px; opacity: 0; transition: opacity .3s .2s; font-size: 12px; line-height: 1.2; color: #fff; }
 .ilha.aberta .aviso { opacity: 1; }
 .ilha .aviso i { width: 30px; height: 30px; border-radius: 9px; background: var(--laranja); display: grid; place-items: center; font: 900 11px/1 var(--display); color: var(--preto); font-style: normal; flex: none; }
-.tela { position: absolute; inset: 0; background: radial-gradient(120% 70% at 20% 0%, #FF8A47 0%, #FF6B1A 28%, #4B1F7A 70%, #10101a 100%); display: flex; flex-direction: column; align-items: center; padding-top: 78px; color: #fff; }
+.tela { position: absolute; inset: 0; background: radial-gradient(120% 70% at 20% 0%, #6FE3F2 0%, #00BCD9 30%, #00505A 70%, #001A1B 100%); display: flex; flex-direction: column; align-items: center; padding-top: 78px; color: #fff; }
 .tela .data { font-size: 14px; font-weight: 700; opacity: .9; }
 .tela .hora { font: 700 76px/1 var(--display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
 .notificacoes { position: absolute; left: 12px; right: 12px; bottom: 26px; display: grid; gap: 8px; }
@@ -191,19 +192,19 @@ h2 { font: 900 clamp(32px, 4.8vw, 60px)/1 var(--display); letter-spacing: -.04em
 .aviso-guia { font-size: 13px; color: var(--suave); margin-top: 16px; }
 
 /* ---------- 3. parede de 483 estrelas ---------- */
-.parede-sec { background: var(--branco); color: var(--preto); }
-.parede-sec .etiqueta { color: #B2440A; }
-.parede-sec .intro { color: #4A4740; }
+.parede-sec { background: #E9F7F8; color: var(--preto); }
+.parede-sec .etiqueta { color: #006A78; }
+.parede-sec .intro { color: #2E4F50; }
 .nota-grande { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin: 30px 0 34px; }
 .nota-grande strong { font: 900 clamp(80px, 14vw, 180px)/.85 var(--display); letter-spacing: -.06em; }
 .nota-grande > span { font-weight: 800; font-size: 18px; }
 .parede { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 6px; }
-.parede i { aspect-ratio: 1; display: block; background: #DAD5CC; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); transform: scale(.6); transition: background-color .3s, transform .4s var(--mola); }
-.parede.acesa i { background: var(--laranja); transform: scale(1); transition-delay: calc(var(--d) * 4ms); }
+.parede i { aspect-ratio: 1; display: block; background: #C9E3E5; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); transform: scale(.6); transition: background-color .3s, transform .4s var(--mola); }
+.parede.acesa i { background: #00A9C4; transform: scale(1); transition-delay: calc(var(--d) * 4ms); }
 .temas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
 .temas span { padding: 10px 16px; border-radius: 999px; background: var(--preto); color: var(--branco); font-weight: 700; font-size: 15px; }
-.temas-nota { font-size: 13px; color: #5C5850; margin-top: 12px; }
-.parede-sec a.ler { font-weight: 800; color: #B2440A; text-underline-offset: 4px; }
+.temas-nota { font-size: 13px; color: #3C5C5D; margin-top: 12px; }
+.parede-sec a.ler { font-weight: 800; color: #006A78; text-underline-offset: 4px; }
 
 /* ---------- 4. como comprar (cartões que viram) ---------- */
 .passos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 44px; }
@@ -266,7 +267,7 @@ footer { border-top: 1px solid var(--linha); padding: 26px 0 120px; font-size: 1
   *, *::before, *::after { animation: none !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
   html { scroll-behavior: auto; }
   .passo { opacity: 1; transform: none; }
-  .parede i { background: var(--laranja); transform: none; }
+  .parede i { background: #00A9C4; transform: none; }
 }
 </style>
 </head>
@@ -282,7 +283,7 @@ footer { border-top: 1px solid var(--linha); padding: 26px 0 120px; font-size: 1
 
 <header class="topo" id="topo">
   <div class="larga">
-    <a class="marca" href="#inicio" aria-label="HM Store, início"><span class="hm">HM<span>.</span></span><small>Store · Itanhaém</small></a>
+    <a class="marca" href="#inicio" aria-label="HM Store, início"><svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><path d="M12 15v-3a8 8 0 0 1 16 0v3" fill="none" stroke="#F4FBFB" stroke-width="4.5" stroke-linecap="round"/><rect x="8" y="14" width="24" height="8" rx="1.5" fill="#F4FBFB"/><path d="M8 24h24v6a5 5 0 0 1-5 5H13a5 5 0 0 1-5-5z" fill="#00BCD9"/><path d="M15 24v5M20 24v5M25 24v5" stroke="#002627" stroke-width="2.4"/></svg><span class="hm">hm<span>store</span></span><small>Itanhaém</small></a>
     <a class="botao botao--laranja" href="https://wa.me/5513982185287?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20da%20HM%20Store%20e%20quero%20saber%20dos%20iPhones%20dispon%C3%ADveis." target="_blank" rel="noopener" aria-label="Chamar a HM Store no WhatsApp"><svg aria-hidden="true"><use href="#i-zap"/></svg><span>Chamar no WhatsApp</span></a>
   </div>
 </header>
@@ -316,13 +317,13 @@ footer { border-top: 1px solid var(--linha); padding: 26px 0 120px; font-size: 1
           </div>
           <div class="face tras">
             <div class="camera"><span class="lente l1"></span><span class="lente l2"></span><span class="lente l3"></span><span class="flash"></span></div>
-            <div class="gravado">HM.</div>
+            <div class="gravado">hm</div>
           </div>
         </div>
       </div>
       <div class="cores" role="group" aria-label="Cor do aparelho">
         <button type="button" aria-pressed="true" data-cor="#CFC6B6" style="background:#CFC6B6" aria-label="Titânio"></button>
-        <button type="button" aria-pressed="false" data-cor="#FF6B1A" style="background:#FF6B1A" aria-label="Laranja"></button>
+        <button type="button" aria-pressed="false" data-cor="#7FD3DE" style="background:#7FD3DE" aria-label="Azul-claro"></button>
         <button type="button" aria-pressed="false" data-cor="#3B4A63" style="background:#3B4A63" aria-label="Azul escuro"></button>
         <button type="button" aria-pressed="false" data-cor="#E8E4DD" style="background:#E8E4DD" aria-label="Branco"></button>
         <button type="button" aria-pressed="false" data-cor="#2A2A2E" style="background:#2A2A2E" aria-label="Preto"></button>
