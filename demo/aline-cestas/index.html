@@ -18,11 +18,11 @@
 <meta property="og:site_name" content="Aline Cestas e Presentes">
 <meta property="og:title" content="Aline Cestas e Presentes · Peruíbe">
 <meta property="og:description" content="Cestas montadas com carinho e entregues com emoção. Nota 5,0 com 795 avaliações.">
-<meta property="og:image" content="https://synexpages.net/demo/aline-cestas/topo.jpg">
+<meta property="og:image" content="https://synexpages.net/demo/aline-cestas/topo-flow.jpg">
 <meta property="og:url" content="https://synexpages.net/demo/aline-cestas/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FBF3E8'/%3E%3Cpath d='M14 30h36l-5 22H19z' fill='%23C9A27E'/%3E%3Cpath d='M32 30c-6-8-14-6-12 0 2 5 8 4 12 0zm0 0c6-8 14-6 12 0-2 5-8 4-12 0z' fill='%238E2441'/%3E%3C/svg%3E">
-<link rel="preload" as="image" href="topo.webp" fetchpriority="high">
+<link rel="preload" as="image" href="topo-flow.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
       "name": "Aline Cestas & Presentes Peruíbe",
       "description": "Cestas de café da manhã, aniversário e datas especiais, e presentes em Peruíbe, com entrega.",
       "url": "https://synexpages.net/demo/aline-cestas/",
-      "image": "https://synexpages.net/demo/aline-cestas/topo.jpg",
+      "image": "https://synexpages.net/demo/aline-cestas/topo-flow.jpg",
       "telephone": "+55 13 99710-1930",
       "address": { "@type": "PostalAddress", "streetAddress": "R. Rui Barbosa, 1619 - Jardim Ribamar", "addressLocality": "Peruíbe", "addressRegion": "SP", "postalCode": "11770-464", "addressCountry": "BR" },
       "geo": { "@type": "GeoCoordinates", "latitude": -24.3061173, "longitude": -46.9980365 },
@@ -102,13 +102,15 @@ button { background: transparent; border: 0; -webkit-appearance: none; appearanc
 /* ---------- topo com vídeo ---------- */
 .marca-topo { position: absolute; z-index: 5; top: 16px; left: 50%; transform: translateX(-50%); width: min(1140px, 100% - 36px); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .marca { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+.marca { background: rgba(255,249,241,.9); padding: 8px 14px 6px; border-radius: 12px; }
 .marca b { font: 400 28px/1 var(--titulo); color: var(--vinho); }
 .marca small { font: 700 22px/1 var(--mao); color: var(--salvia); margin-top: 2px; }
 .marca-topo .botao { min-height: 46px; padding: 0 18px; font-size: 14px; }
-.video-topo { position: relative; height: min(78vh, 760px); min-height: 460px; overflow: hidden; background: #FBF3E8 url("topo.webp") center / cover no-repeat; }
-.video-topo video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.video-topo { position: relative; height: min(82vh, 820px); min-height: 480px; overflow: hidden; background: #3A2A20; }
+.video-topo .fundo { position: absolute; inset: -40px; background: url("topo-flow.webp") center / cover no-repeat; filter: blur(28px) saturate(1.1) brightness(.92); transform: scale(1.1); }
+.video-topo video { position: relative; height: 100%; width: auto; max-width: 100%; margin: 0 auto; object-fit: cover; box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
 .video-topo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(transparent, var(--creme)); pointer-events: none; }
-.pausar { position: absolute; z-index: 4; right: 18px; bottom: 24%; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,249,241,.85); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(58,42,32,.2); }
+.pausar { position: absolute; z-index: 4; right: 18px; bottom: 30%; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,249,241,.85); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(58,42,32,.2); }
 .pausar svg { width: 18px; height: 18px; }
 
 .cartao-abertura { position: relative; z-index: 3; margin: -120px auto 0; width: min(860px, 100% - 28px); background: var(--papel); border-radius: 6px; padding: clamp(28px, 5vw, 52px); box-shadow: 0 30px 60px -30px rgba(58,42,32,.45); transform: rotate(-.6deg); }
@@ -224,8 +226,8 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
 .revela.visivel { opacity: 1; transform: none; }
 
 @media (max-width: 860px) {
-  .video-topo { height: 64vh; min-height: 420px; }
-  .video-topo video { object-position: 50% 60%; }
+  .video-topo { height: 78vh; min-height: 460px; }
+  .video-topo video { width: 100%; object-position: 50% 40%; box-shadow: none; }
   .escreva, .entrega, .loja-grade { grid-template-columns: 1fr; }
   .cartaozinho { transform: rotate(.8deg); }
 }
@@ -268,9 +270,9 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
 </header>
 
 <div class="video-topo">
-  <video id="video" autoplay muted loop playsinline preload="auto" poster="topo.webp" aria-label="Animação de uma cesta de presente sendo montada com flores, caneca, chocolate, ursinho, laço e cartão">
-    <source src="topo.webm" type="video/webm">
-    <source src="topo.mp4" type="video/mp4">
+  <div class="fundo" aria-hidden="true"></div>
+  <video id="video" autoplay muted loop playsinline preload="auto" poster="topo-flow.webp" aria-label="Vídeo de mãos amarrando um laço vinho em uma cesta de café da manhã com flores, ursinho e caneca, ao lado de uma janela iluminada">
+    <source src="topo-flow.mp4" type="video/mp4">
   </video>
   <button type="button" class="pausar" id="pausar" aria-label="Pausar animação"><svg aria-hidden="true"><use href="#i-pausa"/></svg></button>
 </div>
