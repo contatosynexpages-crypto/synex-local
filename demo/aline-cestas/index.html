@@ -107,11 +107,13 @@ button { background: transparent; border: 0; -webkit-appearance: none; appearanc
 .marca small { font: 700 22px/1 var(--mao); color: var(--salvia); margin-top: 2px; }
 .marca-topo .botao { min-height: 46px; padding: 0 18px; font-size: 14px; }
 .video-topo { position: relative; height: min(82vh, 820px); min-height: 480px; overflow: hidden; background: #3A2A20; }
+.video-topo .anim-topo { display: block; position: relative; height: 100%; margin: 0 auto; object-fit: cover; }
 .video-topo .fundo { position: absolute; inset: -40px; background: url("topo-flow.webp") center / cover no-repeat; filter: blur(28px) saturate(1.1) brightness(.92); transform: scale(1.1); }
-.video-topo video { position: relative; height: 100%; width: auto; max-width: 100%; margin: 0 auto; object-fit: cover; box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
+.video-topo video, .video-topo .anim-topo { position: relative; height: 100%; width: auto; max-width: 100%; margin: 0 auto; object-fit: cover; box-shadow: 0 30px 80px -20px rgba(0,0,0,.5); }
 .video-topo::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(transparent, var(--creme)); pointer-events: none; }
 .pausar { position: absolute; z-index: 4; right: 18px; bottom: 30%; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,249,241,.85); display: grid; place-items: center; box-shadow: 0 4px 14px rgba(58,42,32,.2); }
 .pausar svg { width: 18px; height: 18px; }
+.pausar[hidden] { display: none; }
 
 .cartao-abertura { position: relative; z-index: 3; margin: -120px auto 0; width: min(860px, 100% - 28px); background: var(--papel); border-radius: 6px; padding: clamp(28px, 5vw, 52px); box-shadow: 0 30px 60px -30px rgba(58,42,32,.45); transform: rotate(-.6deg); }
 .cartao-abertura::before { content: ""; position: absolute; top: -14px; left: 50%; width: 140px; height: 30px; margin-left: -70px; background: rgba(242,196,196,.85); transform: rotate(2deg); }
@@ -227,7 +229,8 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
 
 @media (max-width: 860px) {
   .video-topo { height: 78vh; min-height: 460px; }
-  .video-topo video { width: 100%; object-position: 50% 40%; box-shadow: none; }
+  .video-topo video, .video-topo .anim-topo { width: 100%; object-position: 50% 40%; box-shadow: none; }
+  .video-topo .anim-topo { height: 100%; }
   .escreva, .entrega, .loja-grade { grid-template-columns: 1fr; }
   .cartaozinho { transform: rotate(.8deg); }
 }
@@ -276,13 +279,27 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
     <source src="topo-flow.mp4" type="video/mp4">
   </video>
   <script>
-    // dá o play na hora, sem esperar o resto da página
+    // dá o play na hora, sem esperar o resto da página.
+    // Se o celular bloquear vídeo automático (economia de bateria, economia de dados),
+    // troca por uma versão animada em imagem, que toca sozinha em qualquer celular.
     (function () {
       var v = document.getElementById('video');
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute('muted', '');
-      var tocar = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', '');
+      var trocou = false;
+      function trocarPorImagem() {
+        if (trocou || !v.paused || window.__videoPausadoPeloUsuario) return;
+        trocou = true;
+        var img = new Image();
+        img.alt = v.getAttribute('aria-label') || '';
+        img.className = 'anim-topo';
+        img.decoding = 'async';
+        img.onload = function () { v.replaceWith(img); var b = document.getElementById('pausar'); if (b) b.hidden = true; };
+        img.src = 'topo-anim.webp';
+      }
+      function tocar() { var p = v.play(); if (p && p.catch) p.catch(function (e) { if (e && e.name === 'NotAllowedError') trocarPorImagem(); }); }
       tocar(); v.addEventListener('loadeddata', tocar, { once: true }); v.addEventListener('canplay', tocar, { once: true });
+      setTimeout(function () { if (v.readyState >= 2 && v.paused) trocarPorImagem(); }, 2500);
+      v.addEventListener('suspend', function () { setTimeout(function () { if (v.readyState >= 2 && v.paused) trocarPorImagem(); }, 300); });
     })();
   </script>
   <button type="button" class="pausar" id="pausar" aria-label="Pausar animação"><svg aria-hidden="true"><use href="#i-pausa"/></svg></button>
@@ -425,12 +442,11 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
   const reduzir = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ZAP = '5513997101930';
 
-  /* vídeo do topo: pausa com reduzir movimento, botão de pausa e só toca quando visível */
+  /* vídeo do topo: botão de pausa e só toca quando visível */
   const video = $('#video'), pausar = $('#pausar');
   const icone = (play) => { pausar.innerHTML = `<svg aria-hidden="true"><use href="#i-${play ? 'play' : 'pausa'}"/></svg>`; pausar.setAttribute('aria-label', play ? 'Tocar animação' : 'Pausar animação'); };
   let pausadoPeloUsuario = false;
-  if (reduzir) { video.removeAttribute('autoplay'); video.pause(); pausadoPeloUsuario = true; icone(true); }
-  pausar.addEventListener('click', () => { if (video.paused) { video.play(); pausadoPeloUsuario = false; icone(false); } else { video.pause(); pausadoPeloUsuario = true; icone(true); } });
+  pausar.addEventListener('click', () => { if (video.paused) { video.play(); pausadoPeloUsuario = false; icone(false); } else { video.pause(); pausadoPeloUsuario = true; icone(true); } window.__videoPausadoPeloUsuario = pausadoPeloUsuario; });
   if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { if (pausadoPeloUsuario) return; e.isIntersecting ? video.play().catch(() => {}) : video.pause(); }).observe(video);
   // garante o loop mesmo em navegadores de app (Instagram, WhatsApp) que às vezes ignoram o atributo loop
   video.loop = true;
