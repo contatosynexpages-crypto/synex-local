@@ -421,6 +421,11 @@ footer { padding: 30px 0 110px; font-size: 14px; color: var(--suave); border-top
   if (reduzir) { video.removeAttribute('autoplay'); video.pause(); pausadoPeloUsuario = true; icone(true); }
   pausar.addEventListener('click', () => { if (video.paused) { video.play(); pausadoPeloUsuario = false; icone(false); } else { video.pause(); pausadoPeloUsuario = true; icone(true); } });
   if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { if (pausadoPeloUsuario) return; e.isIntersecting ? video.play().catch(() => {}) : video.pause(); }).observe(video);
+  // garante o loop mesmo em navegadores de app (Instagram, WhatsApp) que às vezes ignoram o atributo loop
+  video.loop = true;
+  video.addEventListener('ended', () => { if (!pausadoPeloUsuario) { video.currentTime = 0; video.play().catch(() => {}); } });
+  // alguns celulares bloqueiam o autoplay até o primeiro toque: tenta de novo no primeiro toque
+  addEventListener('touchstart', () => { if (!pausadoPeloUsuario && video.paused) video.play().catch(() => {}); }, { once: true, passive: true });
 
   /* escreva o cartão */
   const IDEIAS = {
