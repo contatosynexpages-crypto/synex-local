@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Painel de pedidos · Aline Cestas</title>
+<meta name="description" content="Painel onde a Aline Cestas recebe, organiza e acompanha os pedidos pagos pelo site.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5A1428">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235A1428'/%3E%3Cpath d='M32 50S14 39 14 27c0-6 4-10 9-10 4 0 7 2 9 6 2-4 5-6 9-6 5 0 9 4 9 10 0 12-18 23-18 23Z' fill='%23F2C4C4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fundo: #F4EBDF; --creme: #FBF3E8; --cartao: #FFFFFF;
+  --mata: #5A1428; --folha: #8E2441; --broto: #4E6E44;
+  --rosa-claro: #FBE3E3; --pessego: #F2C4C4; --terracota: #8E2441; --erro: #A33A3A;
+  --tinta: #3A2A20; --suave: #6B5646; --linha: rgba(58,42,32,.15);
+  --titulo: "DM Serif Display", Georgia, serif; --corpo: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif; --mao: "Caveat", "Segoe Print", cursive;
+  --mola: cubic-bezier(.34,1.56,.64,1); --entrada: cubic-bezier(.2,.8,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--fundo); color: var(--tinta); font: 400 15px/1.5 var(--corpo); }
+svg { display: block; }
+a { color: inherit; }
+button, input { font: inherit; color: inherit; }
+button { background: transparent; border: 0; -webkit-appearance: none; appearance: none; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--terracota); outline-offset: 2px; border-radius: 8px; }
+[hidden] { display: none !important; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.larga { width: min(1320px, 100% - 28px); margin-inline: auto; }
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; border: 1.5px solid transparent; transition: transform .2s var(--mola), background-color .2s; }
+.botao svg { width: 18px; height: 18px; }
+.botao--folha { background: var(--folha); color: var(--creme); }
+.botao--claro { background: var(--cartao); color: var(--folha); border-color: var(--linha); }
+.botao:active { transform: scale(.97); }
+
+.barra { background: var(--mata); color: var(--creme); }
+.barra .larga { display: flex; align-items: center; gap: 14px; min-height: 66px; flex-wrap: wrap; padding: 8px 0; }
+.barra .marca { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; }
+.barra .marca svg { width: 34px; height: 34px; }
+.barra b { font: 400 19px/1 var(--titulo); }
+.barra small { display: block; color: #F2D9DE; font-size: 12px; margin-top: 3px; }
+.abas { display: flex; gap: 4px; background: rgba(255,255,255,.08); padding: 4px; border-radius: 12px; }
+.abas button { min-height: 40px; padding: 0 16px; border-radius: 9px; color: #F7E4E8; font-weight: 600; }
+.abas button[aria-selected="true"] { background: var(--creme); color: var(--mata); }
+.ao-vivo { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #F2D9DE; }
+.ao-vivo i { width: 9px; height: 9px; border-radius: 50%; background: #7BD88F; box-shadow: 0 0 0 0 rgba(123,216,143,.6); animation: pulso 2s infinite; }
+@keyframes pulso { 70% { box-shadow: 0 0 0 10px rgba(123,216,143,0); } 100% { box-shadow: 0 0 0 0 rgba(123,216,143,0); } }
+
+.demo { margin: 16px 0 0; padding: 12px 16px; border-radius: 14px; background: #FFF1D6; color: #6B4A0E; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.demo p { margin: 0; flex: 1 1 300px; }
+.numeros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+.numero { background: var(--cartao); border-radius: 18px; padding: 16px 18px; border: 1px solid var(--linha); }
+.numero small { color: var(--suave); font-weight: 600; }
+.numero b { display: block; font: 400 30px/1.15 var(--titulo); color: var(--folha); }
+
+.quadro { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; padding-bottom: 60px; align-items: start; }
+.coluna { background: rgba(255,255,255,.5); border-radius: 20px; padding: 12px; min-height: 240px; border: 1px solid var(--linha); }
+.coluna h2 { display: flex; align-items: center; gap: 8px; font: 700 14px/1 var(--corpo); letter-spacing: .08em; text-transform: uppercase; margin: 4px 4px 12px; color: var(--suave); }
+.coluna h2 i { width: 10px; height: 10px; border-radius: 50%; }
+.coluna h2 span { margin-left: auto; background: var(--cartao); border-radius: 999px; padding: 3px 9px; font-size: 13px; color: var(--tinta); letter-spacing: 0; }
+.lista { display: grid; gap: 10px; }
+.pedido { background: var(--cartao); border-radius: 16px; padding: 14px; border: 1px solid var(--linha); box-shadow: 0 10px 20px -18px rgba(0,0,0,.5); display: grid; gap: 8px; text-align: left; width: 100%; animation: chegar .5s var(--mola) both; }
+.pedido.novo-agora { animation: chegar .5s var(--mola) both, brilho 1.6s 3; }
+@keyframes chegar { from { opacity: 0; transform: translateY(-12px) scale(.96); } }
+@keyframes brilho { 50% { box-shadow: 0 0 0 4px rgba(142,36,65,.35); } }
+.pedido .topo { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.pedido .topo b { font: 400 17px/1 var(--titulo); color: var(--folha); }
+.pedido .quando { font-weight: 700; font-size: 13px; padding: 3px 9px; border-radius: 999px; background: var(--rosa-claro); color: #6E1A32; white-space: nowrap; }
+.pedido .quando.hoje { background: var(--terracota); color: #fff; }
+.pedido ul { margin: 0; padding: 0 0 0 18px; color: var(--tinta); }
+.pedido .meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; color: var(--suave); }
+.pedido .meta span { background: var(--fundo); border-radius: 8px; padding: 2px 8px; }
+.pedido .meta .pago { background: #E2EFDD; color: #2C5A2A; font-weight: 700; }
+.pedido .acoes { display: flex; gap: 8px; }
+.pedido .acoes .botao { min-height: 40px; flex: 1; font-size: 14px; }
+.coluna .vazio { color: var(--suave); text-align: center; padding: 24px 8px; font-size: 14px; }
+
+/* produtos */
+.produtos { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; padding: 16px 0 60px; }
+.prod { display: flex; align-items: center; gap: 14px; background: var(--cartao); border-radius: 18px; padding: 12px 14px; border: 1px solid var(--linha); }
+.prod svg.il { width: 56px; height: 56px; flex: none; background: var(--fundo); border-radius: 12px; }
+.prod div { flex: 1; min-width: 0; }
+.prod b { display: block; }
+.prod small { color: var(--suave); }
+.chave { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; font-size: 13px; }
+.chave i { width: 46px; height: 28px; border-radius: 999px; background: var(--broto); position: relative; transition: background-color .2s; }
+.chave i::after { content: ""; position: absolute; top: 3px; left: 21px; width: 22px; height: 22px; border-radius: 50%; background: #fff; transition: left .25s var(--mola); }
+.chave[aria-checked="false"] i { background: #B8BDB5; }
+.chave[aria-checked="false"] i::after { left: 3px; }
+
+/* detalhe */
+dialog { border: 0; padding: 0; background: transparent; color: inherit; max-width: none; max-height: none; }
+dialog::backdrop { background: rgba(20,30,24,.55); }
+.detalhe { width: min(620px, 100vw - 20px); }
+.detalhe .caixa { position: relative; background: var(--creme); border-radius: 24px; padding: 24px; max-height: calc(100dvh - 20px); overflow-y: auto; display: grid; gap: 16px; animation: chegar .35s var(--mola); }
+.detalhe h2 { font: 400 26px/1.1 var(--titulo); color: var(--folha); margin: 0; padding-right: 48px; }
+.detalhe .fechar { position: absolute; right: 14px; top: 14px; width: 44px; height: 44px; border-radius: 50%; background: var(--cartao); display: grid; place-items: center; color: var(--folha); }
+.detalhe .fechar svg { width: 18px; height: 18px; }
+.bloco { background: var(--cartao); border-radius: 16px; padding: 14px 16px; border: 1px solid var(--linha); }
+.bloco h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--terracota); }
+.bloco p { margin: 0; }
+.cartao-msg { background: #fff; border-radius: 6px; padding: 18px 20px; box-shadow: 0 12px 22px -16px rgba(0,0,0,.5); transform: rotate(-1deg); font: 600 22px/1.3 var(--mao); color: #2E3B6B; white-space: pre-wrap; }
+.linha-t { display: flex; justify-content: space-between; gap: 10px; }
+.detalhe .acoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.detalhe .acoes .botao { flex: 1 1 180px; }
+
+.aviso-novo { position: fixed; left: 50%; top: 16px; z-index: 50; transform: translate(-50%, -140%); background: var(--terracota); color: #fff; padding: 12px 20px; border-radius: 14px; font-weight: 700; box-shadow: 0 14px 30px -10px rgba(0,0,0,.4); transition: transform .5s var(--mola); }
+.aviso-novo.mostrar { transform: translate(-50%, 0); }
+
+@media (max-width: 980px) {
+  .quadro { grid-template-columns: repeat(4, 82vw); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 40px; }
+  .coluna { scroll-snap-align: start; }
+  .numeros { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .barra small, .ao-vivo span { display: none; }
+  .abas { order: 3; width: 100%; } .abas button { flex: 1; }
+}
+@media print {
+  body * { visibility: hidden; }
+  .cartao-msg, .cartao-msg * { visibility: visible; }
+  .cartao-msg { position: fixed; left: 0; top: 0; transform: none; box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition-duration: .001ms !important; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-x" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  <symbol id="i-mapa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</defs></svg>
+
+<header class="barra"><div class="larga">
+  <a class="marca" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 50S14 39 14 27c0-6 4-10 9-10 4 0 7 2 9 6 2-4 5-6 9-6 5 0 9 4 9 10 0 12-18 23-18 23Z" fill="#F2C4C4"/></svg><span><b>Painel da Aline</b><small>Aline Cestas &amp; Presentes</small></span></a>
+  <span class="ao-vivo"><i aria-hidden="true"></i><span>Recebendo pedidos</span></span>
+  <div class="abas" role="tablist" aria-label="Seções do painel">
+    <button type="button" role="tab" aria-selected="true" aria-controls="sec-pedidos" id="aba-pedidos">Pedidos</button>
+    <button type="button" role="tab" aria-selected="false" aria-controls="sec-produtos" id="aba-produtos">Produtos</button>
+  </div>
+</div></header>
+
+<main class="larga">
+  <div class="demo"><p><b>Prévia de demonstração.</b> Os pedidos feitos na <a href="../loja/">loja online</a> aparecem aqui na hora (abra as duas em abas lado a lado). Na versão real, o painel tem login e a Aline também recebe cada pedido no WhatsApp (13) 99710-1930.</p><button type="button" class="botao botao--claro" id="limpar">Recomeçar demonstração</button></div>
+
+  <section id="sec-pedidos" role="tabpanel" aria-labelledby="aba-pedidos">
+    <h1 class="oculto">Pedidos</h1><div class="numeros" id="numeros"></div>
+    <div class="quadro" id="quadro"></div>
+  </section>
+  <section id="sec-produtos" role="tabpanel" aria-labelledby="aba-produtos" hidden>
+    <p style="margin:16px 0 0;color:var(--suave)">Acabou algum item? Desligue aqui e o produto aparece como "Esgotado hoje" na loja.</p>
+    <div class="produtos" id="produtos"></div>
+  </section>
+</main>
+
+<dialog class="detalhe" id="detalhe" aria-labelledby="d-titulo"><div class="caixa" id="d-caixa"></div></dialog>
+<div class="aviso-novo" id="aviso-novo" role="status" aria-live="polite"></div>
+
+<script src="../dados.js"></script>
+<script>
+(() => {
+  'use strict';
+  const { PRODUTOS, brl, ler, gravar, agoraSP, somarDias, CHAVE_PEDIDOS, CHAVE_ESGOTADOS } = window.CJ;
+  document.body.insertAdjacentHTML('afterbegin', window.CJ.SPRITE);
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  const COLUNAS = [
+    { id: 'novo', nome: 'Novos · pagos', cor: '#8E2441', proxima: 'Começar a montar' },
+    { id: 'preparo', nome: 'Montando', cor: '#8E6A48', proxima: 'Saiu / pronto' },
+    { id: 'saiu', nome: 'Saiu ou pronto p/ retirar', cor: '#4E6E44', proxima: 'Marcar entregue' },
+    { id: 'entregue', nome: 'Entregues', cor: '#3A2A20' },
+  ];
+  const ORDEM = COLUNAS.map((c) => c.id);
+
+  // pedidos de exemplo para a demonstração não começar vazia
+  function exemplos() {
+    const hoje = agoraSP().data, amanha = somarDias(hoje, 1);
+    return [
+      { numero: 'AL-1031', exemplo: true, criado: new Date(Date.now() - 50 * 60000).toISOString(), status: 'preparo', pagamento: 'Pix', modo: 'entrega', itens: [{ nome: 'Café da manhã completo', opcao: 'Para 2 pessoas', extras: ['Balão metalizado'], qtd: 1, total: 284 }], taxa: 10, total: 294, data: amanha, periodo: 'Bem cedinho', endereco: { bairro: 'Centro', rua: 'Rua de exemplo', numero: '120', complemento: 'Casa 2', referencia: 'Perto da praça' }, cartao: { para: 'Ana', msg: 'Feliz aniversário! Que seu ano seja doce.', de: 'Marcos' }, cliente: { nome: 'Cliente de exemplo', whats: '(13) 90000-0001' }, recebe: { nome: 'Ana', tel: '' }, obs: 'É surpresa, chegar antes das 8h' },
+      { numero: 'AL-1032', exemplo: true, criado: new Date(Date.now() - 25 * 60000).toISOString(), status: 'novo', pagamento: 'Cartão de crédito', modo: 'retirada', itens: [{ nome: 'Cesta de chocolates', opcao: 'Grande', extras: [], qtd: 1, total: 199 }], taxa: 0, total: 199, data: hoje, periodo: 'Tarde', endereco: null, cartao: { para: 'Dona Cida', msg: 'Obrigado por tudo. Você faz diferença.', de: 'Equipe da clínica' }, cliente: { nome: 'Cliente de exemplo', whats: '(13) 90000-0002' }, recebe: null, obs: '' },
+      { numero: 'AL-1029', exemplo: true, criado: new Date(Date.now() - 20 * 3600000).toISOString(), status: 'novo', pagamento: 'Pix', modo: 'entrega', itens: [{ nome: 'Cesta romântica', opcao: 'Completa', extras: ['Mini buquê de rosas'], qtd: 1, total: 284 }], taxa: 12, total: 296, data: amanha, periodo: 'Manhã', endereco: { bairro: 'Stella Maris', rua: 'Avenida de exemplo', numero: '45', complemento: '', referencia: '' }, cartao: { para: 'Meu amor', msg: 'Te amo hoje e em todos os outros dias.', de: '(anônimo)' }, cliente: { nome: 'Cliente de exemplo', whats: '(13) 90000-0003' }, recebe: { nome: 'Juliana', tel: '' }, obs: '' },
+    ];
+  }
+  let pedidos = ler(CHAVE_PEDIDOS, null);
+  if (!pedidos) { pedidos = exemplos(); gravar(CHAVE_PEDIDOS, pedidos); }
+  let conhecidos = new Set(pedidos.map((p) => p.numero));
+
+  const hoje = () => agoraSP().data;
+  const rotuloDia = (d) => (d === hoje() ? 'Hoje' : d === somarDias(hoje(), 1) ? 'Amanhã' : `${d.slice(8)}/${d.slice(5, 7)}`);
+  const hora = (iso) => new Date(iso).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' });
+
+  function desenhar(novos = new Set()) {
+    const h = hoje();
+    const deHoje = pedidos.filter((p) => p.criado && p.criado.slice(0, 10) === new Date().toISOString().slice(0, 10));
+    const entregasHoje = pedidos.filter((p) => p.data === h && p.status !== 'entregue');
+    $('#numeros').innerHTML = [
+      ['Pedidos pagos', pedidos.length], ['Vendido', brl(pedidos.reduce((s, p) => s + p.total, 0))],
+      ['Para hoje', entregasHoje.length], ['Montando', pedidos.filter((p) => p.status === 'preparo').length],
+    ].map(([t, v]) => `<span class="numero"><small>${t}</small><b>${v}</b></span>`).join('');
+    $('#quadro').innerHTML = COLUNAS.map((c) => {
+      const lista = pedidos.filter((p) => p.status === c.id).sort((a, b) => (a.data + a.periodo).localeCompare(b.data + b.periodo));
+      return `<section class="coluna" aria-label="${c.nome}"><h2><i style="background:${c.cor}"></i>${c.nome}<span>${lista.length}</span></h2><div class="lista">${lista.length ? lista.map((p) => cartao(p, c, novos.has(p.numero))).join('') : '<p class="vazio">Nada por aqui.</p>'}</div></section>`;
+    }).join('');
+  }
+  function cartao(p, c, novo) {
+    const dia = rotuloDia(p.data);
+    return `<article class="pedido${novo ? ' novo-agora' : ''}">
+      <div class="topo"><b>${esc(p.numero)}</b><span class="quando${dia === 'Hoje' ? ' hoje' : ''}">${dia} · ${esc(p.periodo)}</span></div>
+      <ul>${p.itens.map((i) => `<li>${i.qtd}× ${esc(i.nome)} <small>(${esc(i.opcao)})</small></li>`).join('')}</ul>
+      <div class="meta"><span class="pago">Pago · ${esc(p.pagamento)}</span><span>${p.modo === 'entrega' ? esc(p.endereco.bairro) : 'Retirada'}</span><span>${brl(p.total)}</span><span>às ${hora(p.criado)}</span></div>
+      <div class="acoes"><button type="button" class="botao botao--claro" data-ver="${esc(p.numero)}">Detalhes</button>${c.proxima ? `<button type="button" class="botao botao--folha" data-avancar="${esc(p.numero)}">${c.id === 'preparo' && p.modo === 'retirada' ? 'Pronto p/ retirar' : c.proxima}</button>` : ''}</div>
+    </article>`;
+  }
+  $('#quadro').addEventListener('click', (e) => {
+    const a = e.target.closest('[data-avancar]'), v = e.target.closest('[data-ver]');
+    if (a) { const p = pedidos.find((x) => x.numero === a.dataset.avancar); p.status = ORDEM[ORDEM.indexOf(p.status) + 1]; gravar(CHAVE_PEDIDOS, pedidos); desenhar(new Set([p.numero])); }
+    if (v) abrirDetalhe(v.dataset.ver);
+  });
+
+  function abrirDetalhe(numero) {
+    const p = pedidos.find((x) => x.numero === numero);
+    const digitos = p.cliente.whats.replace(/\D/g, '');
+    const msgCliente = encodeURIComponent(`Oi, ${p.cliente.nome.split(' ')[0]}! Aqui é da Aline Cestas & Presentes. Seu pedido ${p.numero} ${p.status === 'saiu' ? (p.modo === 'entrega' ? 'saiu para entrega' : 'está pronto para retirar') : 'está sendo montado'}. 💝`);
+    const endereco = p.endereco ? `${p.endereco.rua}, ${p.endereco.numero}${p.endereco.complemento ? ' - ' + p.endereco.complemento : ''}, ${p.endereco.bairro}, Peruíbe - SP` : '';
+    $('#d-caixa').innerHTML = `
+      <button type="button" class="fechar" data-fechar aria-label="Fechar"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+      <h2 id="d-titulo">Pedido ${esc(p.numero)}${p.exemplo ? ' <small style="font:500 13px var(--corpo);color:var(--suave)">(exemplo)</small>' : ''}</h2>
+      <div class="bloco"><h3>Itens</h3>${p.itens.map((i) => `<div class="linha-t"><span>${i.qtd}× ${esc(i.nome)} (${esc(i.opcao)})${i.extras.length ? '<br><small>+ ' + i.extras.map(esc).join(', ') + '</small>' : ''}</span><b>${brl(i.total)}</b></div>`).join('')}
+        <div class="linha-t"><span>${p.modo === 'entrega' ? 'Entrega' : 'Retirada'}</span><b>${p.taxa ? brl(p.taxa) : 'grátis'}</b></div>
+        <div class="linha-t" style="border-top:1px dashed var(--linha);margin-top:6px;padding-top:6px"><span>Total pago (${esc(p.pagamento)})</span><b>${brl(p.total)}</b></div></div>
+      <div class="bloco"><h3>${p.modo === 'entrega' ? 'Entregar' : 'Retirada'} · ${rotuloDia(p.data)}, ${esc(p.periodo.toLowerCase())}</h3>
+        ${p.modo === 'entrega' ? `<p>${esc(endereco)}${p.endereco.referencia ? '<br><small>Referência: ' + esc(p.endereco.referencia) + '</small>' : ''}</p><p style="margin-top:6px">Recebe: <b>${esc(p.recebe.nome)}</b>${p.recebe.tel ? ' · ' + esc(p.recebe.tel) : ''}</p>` : '<p>O cliente retira no balcão da loja.</p>'}
+        ${p.obs ? `<p style="margin-top:6px"><b>Obs.:</b> ${esc(p.obs)}</p>` : ''}</div>
+      <div class="bloco"><h3>Cartão</h3>${p.cartao.msg || p.cartao.para ? `<div class="cartao-msg">${p.cartao.para ? 'Para: ' + esc(p.cartao.para) + '\n' : ''}${esc(p.cartao.msg)}${p.cartao.de ? '\nDe: ' + esc(p.cartao.de) : ''}</div>` : '<p>Sem cartão.</p>'}</div>
+      <div class="bloco"><h3>Cliente</h3><p>${esc(p.cliente.nome)} · ${esc(p.cliente.whats)}</p></div>
+      <div class="acoes">
+        ${p.cartao.msg ? '<button type="button" class="botao botao--claro" id="imprimir">Imprimir cartão</button>' : ''}
+        ${p.endereco ? `<a class="botao botao--claro" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(endereco)}"><svg aria-hidden="true"><use href="#i-mapa"/></svg>Rota</a>` : ''}
+        ${p.exemplo ? '' : `<a class="botao botao--folha" target="_blank" rel="noopener" href="https://wa.me/55${digitos}?text=${msgCliente}"><svg aria-hidden="true"><use href="#i-zap"/></svg>Avisar cliente</a>`}
+      </div>`;
+    $('#detalhe').showModal();
+  }
+  $('#detalhe').addEventListener('click', (e) => { if (e.target.id === 'detalhe' || e.target.closest('[data-fechar]')) $('#detalhe').close(); if (e.target.closest('#imprimir')) print(); });
+
+  // abas
+  $$('[role=tab]').forEach((t) => t.addEventListener('click', () => {
+    $$('[role=tab]').forEach((x) => x.setAttribute('aria-selected', String(x === t)));
+    $$('[role=tabpanel]').forEach((s) => { s.hidden = s.id !== t.getAttribute('aria-controls'); });
+  }));
+
+  // produtos: disponível / esgotado
+  let esgotados = new Set(ler(CHAVE_ESGOTADOS, []));
+  function desenharProdutos() {
+    $('#produtos').innerHTML = PRODUTOS.map((p) => `<div class="prod"><svg class="il" viewBox="0 0 120 120" aria-hidden="true"><use href="#il-${p.ilus}"/></svg><div><b>${p.nome}</b><small>${p.opcoes.map((o) => brl(o.preco)).join(' · ')}</small></div>
+      <button type="button" class="chave" role="switch" aria-checked="${!esgotados.has(p.id)}" data-prod="${p.id}" aria-label="${p.nome} disponível"><i aria-hidden="true"></i><span>${esgotados.has(p.id) ? 'Esgotado' : 'Disponível'}</span></button></div>`).join('');
+  }
+  $('#produtos').addEventListener('click', (e) => { const b = e.target.closest('[data-prod]'); if (!b) return; const id = b.dataset.prod; esgotados.has(id) ? esgotados.delete(id) : esgotados.add(id); gravar(CHAVE_ESGOTADOS, [...esgotados]); desenharProdutos(); });
+
+  // pedido novo vindo da loja (outra aba)
+  addEventListener('storage', (e) => {
+    if (e.key === CHAVE_ESGOTADOS) { esgotados = new Set(ler(CHAVE_ESGOTADOS, [])); desenharProdutos(); }
+    if (e.key !== CHAVE_PEDIDOS) return;
+    pedidos = ler(CHAVE_PEDIDOS, []);
+    const novos = new Set(pedidos.filter((p) => !conhecidos.has(p.numero)).map((p) => p.numero));
+    conhecidos = new Set(pedidos.map((p) => p.numero));
+    desenhar(novos);
+    if (novos.size) { const av = $('#aviso-novo'); av.textContent = `Novo pedido pago: ${[...novos].join(', ')}`; av.classList.add('mostrar'); setTimeout(() => av.classList.remove('mostrar'), 4500); }
+  });
+
+  $('#limpar').addEventListener('click', () => { pedidos = exemplos(); gravar(CHAVE_PEDIDOS, pedidos); esgotados = new Set(); gravar(CHAVE_ESGOTADOS, []); conhecidos = new Set(pedidos.map((p) => p.numero)); desenhar(); desenharProdutos(); });
+
+  desenhar(); desenharProdutos();
+})();
+</script>
+</body>
+</html>
