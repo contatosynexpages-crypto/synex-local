@@ -111,7 +111,7 @@
       "data": "2026-10-30 10:00",
       "tipo": "POST",
       "tema": "Carrossel: 3 sinais de que seu cliente está indo pro concorrente",
-      "status": "pronto (fila, não agendado); 02/11: Metricool ainda sem acesso à marca 7026216, segue na fila; 05/11: Metricool conectado agora à marca 'Bento, a capivara' (7341287), sem acesso à 7026216, segue na fila; 09/11: Metricool ainda conectado só à marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila",
+      "status": "pronto (fila, não agendado); 02/11: Metricool ainda sem acesso à marca 7026216, segue na fila; 05/11: Metricool conectado agora à marca 'Bento, a capivara' (7341287), sem acesso à 7026216, segue na fila; 09/11: Metricool ainda conectado só à marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila; 12/11: Metricool continua só com a marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila",
       "midia": "social/2026-10-30-3-sinais-1.png … -5.png"
     },
     {
@@ -120,7 +120,7 @@
       "tema": "Barbearia em Mongaguá: horário chega marcado no WhatsApp (narrado, voz Alex, 49,7 s)",
       "segmento": "barbearia",
       "midia": "social/2026-11-03-barbearia.mp4",
-      "status": "pronto (fila, não agendado: Metricool sem acesso à marca em 29/10); 02/11: Metricool ainda sem acesso à marca 7026216, segue na fila; 05/11: Metricool conectado agora à marca 'Bento, a capivara' (7341287), sem acesso à 7026216, segue na fila; 09/11: Metricool ainda conectado só à marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila"
+      "status": "pronto (fila, não agendado: Metricool sem acesso à marca em 29/10); 02/11: Metricool ainda sem acesso à marca 7026216, segue na fila; 05/11: Metricool conectado agora à marca 'Bento, a capivara' (7341287), sem acesso à 7026216, segue na fila; 09/11: Metricool ainda conectado só à marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila; 12/11: Metricool continua só com a marca 'Bento, a capivara' (7341287), 403 na 7026216, segue na fila"
     }
   ]
 }
